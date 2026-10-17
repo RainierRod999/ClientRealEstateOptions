@@ -1,0 +1,76 @@
+{
+  "client": "Allan",
+  "slug": "allan-2ufa",
+  "city": "Tulum",
+  "subtitle": "TULUM · RIVIERA MAYA · MÉXICO",
+  "footer_location": "TULUM · QUINTANA ROO · MÉXICO",
+  "whatsapp": "16463424105",
+  "properties": [
+    {
+      "name": "Casa Caramelo<br>4-Bed Villa",
+      "short": "Casa Caramelo",
+      "plain": "Casa Caramelo 4-Bed Villa",
+      "zone": "La Veleta",
+      "city": "Tulum",
+      "m2": 252,
+      "bed": 4,
+      "bath": "4.5",
+      "levels": null,
+      "price": 369000,
+      "type": "VILLA",
+      "badge_en": "PRICE REDUCED",
+      "badge_es": "PRECIO REDUCIDO",
+      "features": [
+        "Price reduced &mdash; previously listed above $440K USD",
+        "252 m² built on a 288 m² lot · private pool &amp; parking",
+        "Two kitchens · turnkey and ready to rent",
+        "La Veleta, across from Nimeño café · seller reports $60K+ gross annual rental income"
+      ],
+      "note": "Reduced from $440K+ · City tax: $9,000 MXN",
+      "folder": "1NbuRdNbfXXWxQMxZdERorusFFDa2p29Z",
+      "photos": [
+        "1_VoQLQ5GbhK5jJibuom0cbQiJ7Vchx_F",
+        "1WUlL-zrmPSOqYdN94oOa-25tOnvvCzdu",
+        "17WCiI-enI2BlKPBtJBnYcFDeMDYLFuZx",
+        "17SQ6mL8QhcxTSINhFhCwiy9qOaE8kCS_",
+        "1Klr7i3acmfaeSagSvyPU2QdMIZxzQmO1",
+        "1Anq1hmUt0VT6GxpDULvS8o3Cmbyk5bCi",
+        "1TbBghAS_znkOBHPVPQ7hUDBGfokUx80p",
+        "166ZfZhNU1q_mTrGRBycZT6J3p4xq8drO"
+      ]
+    },
+    {
+      "name": "Casa Selva<br>Luum Zama Townhouse",
+      "short": "Casa Selva",
+      "plain": "Casa Selva Townhouse",
+      "zone": "Luum Zama · Aldea Zama",
+      "city": "Tulum",
+      "m2": null,
+      "bed": 2,
+      "bath": "2.5",
+      "levels": "2 + Roof",
+      "price": 388000,
+      "type": "TOWNHOUSE",
+      "badge_en": "GATED COMMUNITY",
+      "badge_es": "COMUNIDAD PRIVADA",
+      "features": [
+        "Secure gated community of Luum Zama, within Aldea Zama",
+        "One of Tulum's most private &amp; sought-after communities &mdash; minutes to everything",
+        "Private plunge pool and rooftop · large common pool in the project",
+        "Two levels plus rooftop · 2 bedrooms, 2.5 baths"
+      ],
+      "note": "Asking $6.6M MXN (USD approx.) · HOA $4,513 MXN/mo (≈ $265) · Property tax $1,920 MXN/yr (≈ $113)",
+      "folder": "1-dqAPGjCT_5y-Iqf8nNhWwEQLg5-dGup",
+      "photos": [
+        "1xaTGoCYDl1gLAyhDPNw604TPKoHqzwTi",
+        "1-R-xOn41Y9NIK4Qm03R9JO916JWLyQiN",
+        "1CuSqYRV1Ziw4CP82tevWKvLajp9q0Ezp",
+        "1XVl1zbFA5A6SjBnixUYHp2YCMcdtSiy4",
+        "1n6vKi7ClD1fKgmvHpsbkhFNTdJLf3K30",
+        "1x8EzfZTtBXftcXZKmfAz8xENEL3lzXAI",
+        "1gaPk_eUdQX3dMUsgR_Pr_BPPMNpnGz6V",
+        "187lHhzaIzq9J5MLVh_frAKaP0qACxyal"
+      ]
+    }
+  ]
+}

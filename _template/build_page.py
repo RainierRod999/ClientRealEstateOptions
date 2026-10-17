@@ -28,7 +28,7 @@ for i, p in enumerate(props, 1):
         f'          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/{pid}=w1600" alt="{p["plain"]} photo {j+1}" referrerpolicy="no-referrer" {"" if j==0 else "loading=\"lazy\""} onerror="dropSlide(this)"></div>'
         for j, pid in enumerate(ids))
     dots = "".join(f'<div class="carousel-dot{" active" if j==0 else ""}" onclick="goToSlide(\'carousel-{i}\',{j})"></div>' for j in range(len(ids)))
-    stats = [(p['m2'], "M² TOTAL", "M² TOTAL"), (p['bed'], "BEDROOMS", "RECÁMARAS"), (p['bath'], "BATHROOMS", "BAÑOS")]
+    stats = ([(p['m2'], "M² TOTAL", "M² TOTAL")] if p.get('m2') else []) + [(p['bed'], "BEDROOMS", "RECÁMARAS"), (p['bath'], "BATHROOMS", "BAÑOS")]
     if p['levels']: stats.append((p['levels'], "LEVELS", "NIVELES"))
     stats_html = "".join(f'<div class="prop-stat"><span class="prop-stat-num">{v}</span><span class="prop-stat-label" data-en="{en}" data-es="{es}">{en}</span></div>' for v, en, es in stats)
     feats = "".join(f"<li>{f}</li>" for f in p['features'])
@@ -73,8 +73,8 @@ for i, p in enumerate(props, 1):
 
 # fix "PENTHOUSE" label for villa
 
-beds = [p['bed'] for p in props]; m2 = [p['m2'] for p in props]; pr = [p['price'] for p in props]
-rows = "".join(f"<tr><td>{p['short']}</td><td>{p['zone'].split(' · ')[0]}</td><td>{p['bed']}</td><td>{p['bath']}</td><td>{p['m2']}</td><td>{money(p['price'])}</td></tr>" for p in props)
+beds = [p['bed'] for p in props]; m2 = [p.get('m2') for p in props]; pr = [p['price'] for p in props]
+rows = "".join(f"<tr><td>{p['short']}</td><td>{p['zone'].split(' · ')[0]}</td><td>{p['bed']}</td><td>{p['bath']}</td><td>{p.get('m2') or '—'}</td><td>{money(p['price'])}</td></tr>" for p in props)
 
 extra_css = """
   .prop-badge { z-index: 12; }
@@ -118,7 +118,7 @@ page = f'''<!DOCTYPE html>
   <div class="hero-stats">
     <div class="hero-stat"><span class="hero-stat-number">{len(props)}</span><span class="hero-stat-label" data-en="PROPERTIES" data-es="PROPIEDADES">PROPERTIES</span></div>
     <div class="hero-stat"><span class="hero-stat-number">{min(beds)}–{max(beds)}</span><span class="hero-stat-label" data-en="BEDROOMS" data-es="RECÁMARAS">BEDROOMS</span></div>
-    <div class="hero-stat"><span class="hero-stat-number">{min(m2)}–{max(m2)}</span><span class="hero-stat-label" data-en="M² TOTAL" data-es="M² TOTAL">M² TOTAL</span></div>
+    {f'<div class="hero-stat"><span class="hero-stat-number">{min(m2)}–{max(m2)}</span><span class="hero-stat-label" data-en="M² TOTAL" data-es="M² TOTAL">M² TOTAL</span></div>' if all(m2) else ''}
     <div class="hero-stat"><span class="hero-stat-number">{k(min(pr))}–{k(max(pr))}</span><span class="hero-stat-label" data-en="PRICE RANGE" data-es="RANGO DE PRECIO">PRICE RANGE</span></div>
   </div>
   <div class="scroll-indicator">&#8964;</div>
