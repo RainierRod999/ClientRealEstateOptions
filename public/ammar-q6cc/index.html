@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Property Options in Playa del Carmen — Mycasa Real Estate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400;1,500&family=Playfair+Display:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+  /* ── PALETTE A: Pure Forest Green ── */
+  :root {
+    --bg:         #040E03;
+    --bg-card:    #0d1a0b;
+    --bg-footer:  #020802;
+    --gold:       #55A147;   /* mid green as accent */
+    --gold-dim:   #2A5622;
+    --text:       #e8f5e6;
+    --text-muted: #6a8a68;
+    --text-dim:   #c0dbbe;
+    --border:     rgba(85,161,71,0.22);
+    --row-hover:  rgba(85,161,71,0.06);
+    --btn-hover-text: #040E03;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, sans-serif; font-weight: 300; line-height: 1.6; overflow-x: hidden; }
+
+  #lang-toggle { position: fixed; top: 20px; right: 20px; z-index: 200; background: rgba(4,14,3,0.88); border: 1px solid var(--gold); color: var(--gold); padding: 6px 16px; font-size: 0.62rem; letter-spacing: 0.18em; cursor: pointer; backdrop-filter: blur(6px); transition: background 0.2s; }
+  #lang-toggle:hover { background: rgba(85,161,71,0.15); }
+
+  #hero { position: relative; height: 100vh; min-height: 600px; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; }
+
+  .hero-bg { position: absolute; inset: 0; background: linear-gradient(135deg, #020b01 0%, #0e2209 45%, #020b01 100%); z-index: 0; }
+  .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 0%, rgba(85,161,71,0.05) 50%, transparent 100%); background-size: 200% 100%; animation: shimmer 5s ease-in-out infinite; }
+  @keyframes shimmer { 0%, 100% { background-position: -100% 0; } 50% { background-position: 200% 0; } }
+
+  .hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.48); z-index: 1; }
+
+  .hero-content { position: relative; z-index: 2; text-align: center; padding: 0 20px; width: 100%; }
+  .hero-line { width: 40px; height: 1px; background: var(--gold); margin: 0 auto 20px; }
+  .hero-brand { font-size: 0.65rem; letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase; margin-bottom: 28px; }
+  .hero-title { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 400; color: var(--text); line-height: 1.15; text-shadow: 0 2px 40px rgba(0,0,0,0.6); margin-bottom: 20px; max-width: 820px; margin-left: auto; margin-right: auto; }
+  .hero-subtitle { font-size: 0.72rem; letter-spacing: 0.18em; color: var(--text-muted); text-transform: uppercase; }
+
+  .hero-stats { position: absolute; bottom: 60px; left: 0; right: 0; z-index: 2; display: flex; justify-content: center; }
+  .hero-stat { text-align: center; padding: 0 40px; border-right: 1px solid var(--border); }
+  .hero-stat:last-child { border-right: none; }
+  .hero-stat-number { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 300; color: var(--text); line-height: 1; display: block; }
+  .hero-stat-label { font-size: 0.6rem; letter-spacing: 0.16em; color: var(--gold); text-transform: uppercase; margin-top: 6px; display: block; }
+
+  .scroll-indicator { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 2; color: var(--gold); font-size: 1.2rem; animation: bounce 2s ease-in-out infinite; opacity: 0.7; }
+  @keyframes bounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
+
+  section { padding: 100px 40px; max-width: 1200px; margin: 0 auto; }
+  .section-label { font-size: 0.62rem; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; display: block; }
+  .section-heading { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 400; color: var(--text); margin-bottom: 60px; line-height: 1.2; }
+
+  .property-card { display: flex; background: var(--bg-card); border: 1px solid var(--border); margin-bottom: 3px; min-height: 420px; transition: border-color 0.3s; }
+  .property-card:hover { border-color: rgba(85,161,71,0.45); }
+  .property-card.even { flex-direction: row-reverse; }
+
+  .prop-image { flex: 0 0 50%; position: relative; background: linear-gradient(135deg, #0e2209 0%, #061204 60%, #112808 100%); display: flex; align-items: center; justify-content: center; overflow: hidden; min-height: 380px; }
+  .prop-image::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(85,161,71,0.02) 40px, rgba(85,161,71,0.02) 41px), repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(85,161,71,0.02) 40px, rgba(85,161,71,0.02) 41px); }
+  .prop-image-name { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.4rem; color: var(--gold); text-align: center; padding: 20px; position: relative; z-index: 1; text-shadow: 0 2px 20px rgba(0,0,0,0.9); }
+  .prop-badge { position: absolute; top: 20px; left: 20px; border: 1px solid var(--gold); color: var(--gold); font-size: 0.58rem; letter-spacing: 0.14em; padding: 5px 12px; text-transform: uppercase; background: rgba(4,14,3,0.75); backdrop-filter: blur(4px); z-index: 2; }
+
+  .prop-text { flex: 0 0 50%; padding: 50px 54px; display: flex; flex-direction: column; justify-content: center; }
+  .prop-number { font-size: 0.62rem; letter-spacing: 0.18em; color: var(--gold); text-transform: uppercase; margin-bottom: 14px; }
+  .prop-name { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.6rem, 2.5vw, 2rem); font-weight: 400; color: var(--text); line-height: 1.2; margin-bottom: 16px; }
+  .prop-location { font-size: 0.68rem; letter-spacing: 0.14em; color: var(--text-muted); text-transform: uppercase; margin-bottom: 24px; display: flex; align-items: center; gap: 10px; }
+  .prop-location::before { content: ''; display: inline-block; width: 30px; height: 1px; background: var(--gold-dim); }
+
+  .prop-stats { display: flex; gap: 32px; margin-bottom: 24px; flex-wrap: wrap; }
+  .prop-stat { text-align: left; }
+  .prop-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--text); line-height: 1; display: block; }
+  .prop-stat-label { font-size: 0.55rem; letter-spacing: 0.14em; color: var(--gold); text-transform: uppercase; margin-top: 4px; display: block; }
+
+  .prop-divider { width: 100%; height: 1px; background: var(--border); margin: 20px 0; }
+  .prop-features { list-style: none; margin-bottom: 28px; }
+  .prop-features li { color: var(--text-dim); font-size: 0.88rem; padding: 4px 0; display: flex; align-items: flex-start; gap: 10px; }
+  .prop-features li::before { content: '·'; color: var(--gold); font-size: 1.2rem; line-height: 1; flex-shrink: 0; margin-top: 2px; }
+
+  .prop-price-block { margin-bottom: 28px; }
+  .prop-price-original { font-size: 0.88rem; color: var(--text-muted); text-decoration: line-through; margin-bottom: 4px; }
+  .prop-price-current { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 400; color: var(--gold); line-height: 1; }
+  .prop-price-note { font-size: 0.6rem; letter-spacing: 0.14em; color: var(--text-muted); text-transform: uppercase; margin-top: 6px; }
+
+  .prop-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn { display: inline-block; border: 1px solid var(--gold); color: var(--gold); background: transparent; padding: 11px 26px; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: all 0.2s ease; }
+  .btn:hover { background: var(--gold); color: var(--btn-hover-text); }
+
+  #table-section { background: rgba(85,161,71,0.03); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); max-width: 100%; padding: 100px 40px; }
+  #table-section > div { max-width: 1200px; margin: 0 auto; }
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; min-width: 600px; }
+  thead tr { background: rgba(85,161,71,0.1); border-bottom: 1px solid var(--border); }
+  th { font-size: 0.6rem; letter-spacing: 0.18em; color: var(--gold); text-transform: uppercase; padding: 14px 18px; text-align: left; font-weight: 400; }
+  td { padding: 16px 18px; border-bottom: 1px solid rgba(85,161,71,0.07); color: var(--text-muted); font-size: 0.88rem; }
+  td:first-child { font-family: 'Playfair Display', serif; font-style: italic; color: var(--text); font-size: 0.95rem; }
+  tr:hover td { background: var(--row-hover); }
+  .price-badge { display: inline-block; border: 1px solid var(--gold-dim); color: var(--gold); font-size: 0.58rem; padding: 2px 7px; margin-left: 8px; letter-spacing: 0.08em; vertical-align: middle; }
+
+  #cta { background: var(--bg-footer); text-align: center; padding: 100px 40px; border-top: 1px solid var(--border); }
+  .cta-brand { font-size: 0.62rem; letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase; margin-bottom: 24px; }
+  .cta-heading { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(2rem, 4vw, 2.8rem); color: var(--text); margin-bottom: 14px; line-height: 1.2; }
+  .cta-sub { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 48px; }
+  .cta-btn { display: inline-flex; align-items: center; gap: 12px; background: var(--gold); color: var(--btn-hover-text); padding: 16px 36px; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; transition: opacity 0.2s; margin-bottom: 60px; }
+  .cta-btn:hover { opacity: 0.85; }
+  .cta-address { font-size: 0.62rem; letter-spacing: 0.16em; color: var(--text-muted); text-transform: uppercase; }
+
+  @media (max-width: 768px) {
+    section { padding: 70px 20px; }
+    .hero-stats { flex-wrap: wrap; gap: 20px; bottom: 40px; }
+    .hero-stat { border-right: none; padding: 0 20px; }
+    .property-card, .property-card.even { flex-direction: column; }
+    .prop-image { flex: none; min-height: 260px; }
+    .prop-text { flex: none; padding: 36px 28px; }
+    .prop-stats { gap: 20px; }
+    #table-section { padding: 70px 20px; }
+    #cta { padding: 70px 20px; }
+    .hero-title { font-size: 2.4rem; }
+  }
+
+  /* ── PHOTO CAROUSEL ── */
+  .carousel { position: relative; width: 100%; height: 100%; min-height: 380px; overflow: hidden; }
+  .carousel-track { display: flex; height: 100%; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); }
+  .carousel-slide { flex: 0 0 100%; height: 100%; }
+  .carousel-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .carousel-btn {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    z-index: 10; background: rgba(4,14,3,0.65); border: 1px solid var(--gold);
+    color: var(--gold); width: 36px; height: 36px; display: flex; align-items: center;
+    justify-content: center; cursor: pointer; font-size: 1rem; transition: background 0.2s;
+    backdrop-filter: blur(4px);
+  }
+  .carousel-btn:hover { background: rgba(85,161,71,0.25); }
+  .carousel-btn.prev { left: 14px; }
+  .carousel-btn.next { right: 14px; }
+  .carousel-dots { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%);
+    display: flex; gap: 6px; z-index: 10; }
+  .carousel-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.35);
+    cursor: pointer; transition: background 0.2s; }
+  .carousel-dot.active { background: var(--gold); }
+  .carousel-count { position: absolute; top: 14px; right: 14px; z-index: 10;
+    background: rgba(4,14,3,0.65); color: var(--gold); font-size: 0.58rem;
+    letter-spacing: 0.12em; padding: 4px 10px; backdrop-filter: blur(4px); }
+
+
+  /* ── FAVORITES ── */
+  #fav-counter {
+    position: fixed; top: 20px; left: 20px; z-index: 200;
+    background: rgba(4,14,3,0.88); border: 1px solid var(--gold);
+    color: var(--gold); padding: 6px 16px; font-size: 0.62rem;
+    letter-spacing: 0.14em; cursor: pointer; backdrop-filter: blur(6px);
+    transition: all 0.2s; display: none;
+  }
+  #fav-counter:hover { background: rgba(85,161,71,0.15); }
+  #fav-counter.visible { display: block; }
+
+  .save-btn { border-color: var(--text-muted); color: var(--text-muted); }
+  .save-btn.saved {
+    border-color: var(--gold); color: var(--gold);
+    background: rgba(85,161,71,0.1);
+  }
+  .save-btn.saved::before { content: '★ '; }
+
+  /* Favorites view */
+  #fav-view { display: none; }
+  #fav-view.active { display: block; }
+  #main-view.hidden { display: none; }
+
+  .remove-btn {
+    border-color: #8a3a3a; color: #c07070; background: transparent;
+    padding: 11px 26px; font-size: 0.65rem; letter-spacing: 0.14em;
+    text-transform: uppercase; cursor: pointer; transition: all 0.2s;
+    border-width: 1px; border-style: solid;
+  }
+  .remove-btn:hover { background: rgba(180,60,60,0.15); }
+
+  #fav-empty {
+    text-align: center; padding: 80px 40px;
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: 1.4rem; color: var(--text-muted);
+  }
+
+
+  .prop-badge { z-index: 12; }
+  .carousel { position: absolute; inset: 0; min-height: 0; }
+  .prop-image { min-height: 460px; }
+  .like-btn { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 16px; background: var(--gold); color: var(--btn-hover-text); border: 1px solid var(--gold); padding: 14px 26px; font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; font-weight: 500; transition: opacity 0.2s, transform 0.2s; }
+  .like-btn:hover { opacity: 0.88; }
+  .like-btn.sent { background: transparent; color: var(--gold); }
+  .like-hint { font-size: 0.68rem; color: var(--text-muted); margin-top: 8px; text-align: center; letter-spacing: 0.02em; }
+  @media (max-width: 768px) { .prop-image { min-height: 300px; } }
+</style>
+</head>
+<body>
+
+<button id="fav-counter" onclick="showFavorites()"></button>
+
+<div id="main-view">
+<button id="lang-toggle" onclick="toggleLang()"><span id="lang-label">ES</span></button>
+
+<div id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-line"></div>
+    <p class="hero-brand">Mycasa Real Estate</p>
+    <h1 class="hero-title" data-en="Your Property Options<br>in Playa del Carmen" data-es="Tus Opciones de Propiedades<br>en Playa del Carmen">Your Property Options<br>in Playa del Carmen</h1>
+    <p class="hero-subtitle">PLAYA DEL CARMEN · RIVIERA MAYA · MÉXICO</p>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat"><span class="hero-stat-number">3</span><span class="hero-stat-label" data-en="PROPERTIES" data-es="PROPIEDADES">PROPERTIES</span></div>
+    <div class="hero-stat"><span class="hero-stat-number">2–3</span><span class="hero-stat-label" data-en="BEDROOMS" data-es="RECÁMARAS">BEDROOMS</span></div>
+    <div class="hero-stat"><span class="hero-stat-number">85–164</span><span class="hero-stat-label" data-en="M² TOTAL" data-es="M² TOTAL">M² TOTAL</span></div>
+    <div class="hero-stat"><span class="hero-stat-number">$358k–$549k</span><span class="hero-stat-label" data-en="PRICE RANGE" data-es="RANGO DE PRECIO">PRICE RANGE</span></div>
+  </div>
+  <div class="scroll-indicator">&#8964;</div>
+</div>
+
+<section id="properties">
+  <span class="section-label" data-en="CURATED FOR YOU" data-es="SELECCIONADO PARA TI">CURATED FOR YOU</span>
+  <h2 class="section-heading" data-en="Properties selected for Ammar" data-es="Propiedades seleccionadas para Ammar">Properties selected for Ammar</h2>
+
+  <div class="property-card" data-prop-id="prop-1" data-prop-name="The Leaf Playacar 2-Bed Condo" data-prop-price="$357,974">
+    <div class="prop-image" style="padding:0;">
+      <span class="prop-badge" data-en="BY ACCIONA · PLAYACAR" data-es="POR ACCIONA · PLAYACAR">BY ACCIONA · PLAYACAR</span>
+      <div class="carousel" id="carousel-1">
+        <div class="carousel-track" id="track-1">
+          <div class="carousel-slide"><img src="img/leaf-1.jpg" alt="The Leaf Playacar 2-Bed Condo photo 1" referrerpolicy="no-referrer"  onerror="dropSlide(this)"></div>
+          <div class="carousel-slide"><img src="img/leaf-2.jpg" alt="The Leaf Playacar 2-Bed Condo photo 2" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
+          <div class="carousel-slide"><img src="img/leaf-3.jpg" alt="The Leaf Playacar 2-Bed Condo photo 3" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
+          <div class="carousel-slide"><img src="img/leaf-4.jpg" alt="The Leaf Playacar 2-Bed Condo photo 4" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
+          <div class="carousel-slide"><img src="img/leaf-5.jpg" alt="The Leaf Playacar 2-Bed Condo photo 5" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
+          <div class="carousel-slide"><img src="img/leaf-6.jpg" alt="The Leaf Playacar 2-Bed Condo photo 6" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
+          <div class="carousel-slide"><img src="img/leaf-7.jpg" alt="The Leaf Playacar 2-Bed Condo photo 7" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
+          <div class="carousel-slide"><img src="img/leaf-8.jpg" alt="The Leaf Playacar 2-Bed Condo photo 8" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
+        </div>
+        <button class="carousel-btn prev" onclick="moveCarousel('carousel-1', -1)" aria-label="Previous photo">&#8592;</button>
+        <button class="carousel-btn next" onclick="moveCarousel('carousel-1', 1)" aria-label="Next photo">&#8594;</button>
+        <div class="carousel-dots" id="dots-1"><div class="carousel-dot active" onclick="goToSlide('carousel-1',0)"></div><div class="carousel-dot" onclick="goToSlide('carousel-1',1)"></div><div class="carousel-dot" onclick="goToSlide('carousel-1',2)"></div><div class="carousel-dot" onclick="goToSlide('carousel-1',3)"></div><div class="carousel-dot" onclick="goToSlide('carousel-1',4)"></div><div class="carousel-dot" onclick="goToSlide('carousel-1',5)"></div><div class="carousel-dot" onclick="goToSlide('carousel-1',6)"></div><div class="carousel-dot" onclick="goToSlide('carousel-1',7)"></div></div>
+        <div class="carousel-count" id="count-1">1 / 8</div>
+      </div>
+    </div>
+    <div class="prop-text">
+      <p class="prop-number">01 · CONDO</p>
+      <h3 class="prop-name">The Leaf Playacar<br>2-Bed Condo</h3>
+      <p class="prop-location">PLAYACAR · PLAYA DEL CARMEN</p>
+      <div class="prop-stats"><div class="prop-stat"><span class="prop-stat-num">85</span><span class="prop-stat-label" data-en="M² TOTAL" data-es="M² TOTAL">M² TOTAL</span></div><div class="prop-stat"><span class="prop-stat-num">2</span><span class="prop-stat-label" data-en="BEDROOMS" data-es="RECÁMARAS">BEDROOMS</span></div><div class="prop-stat"><span class="prop-stat-num">1.5</span><span class="prop-stat-label" data-en="BATHROOMS" data-es="BAÑOS">BATHROOMS</span></div></div>
+      <div class="prop-divider"></div>
+      <ul class="prop-features"><li>2-bedroom layouts from 84 m² · lock-off options available</li><li>4 pools, gym, yoga area, kids' zone &amp; pet zone</li><li>4,000+ m² of private gardens · 24/7 controlled access</li><li>Gated Playacar · 1.5 km to the beach, 15 min to Fifth Avenue</li></ul>
+      <div class="prop-price-block">
+        <p class="prop-price-current">USD $357,974</p>
+        <p class="prop-price-note">Starting price · unit D202 · $6,085,562 MXN (USD at 17 MXN)</p>
+      </div>
+      <div class="prop-buttons">
+        <a href="https://drive.google.com/file/d/1eOXIE6JyjSmarstpTL4k-38nRetRz92N/view" target="_blank" class="btn" data-en="PHOTOS —" data-es="FOTOS —">PHOTOS —</a>
+        <button class="btn save-btn" onclick="toggleSave(this)" data-en="☆ SAVE" data-es="☆ GUARDAR">☆ SAVE</button>
+        <a href="https://wa.me/16463424105?text=Hi+Rainier%2C+I%27m+interested+in+The+Leaf+Playacar+2-Bed+Condo.+Can+we+talk%3F" target="_blank" class="btn" data-en="INQUIRE —" data-es="CONSULTAR —">INQUIRE —</a>
+      </div>
+      <a href="https://wa.me/16463424105" target="_blank" class="like-btn" onclick="likeThis(this)">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span data-en="I LIKE THIS ONE" data-es="ME GUSTA ESTA">I LIKE THIS ONE</span>
+      </a>
+      <p class="like-hint" data-en="Opens WhatsApp with a message to Rainier — just tap Send" data-es="Abre WhatsApp con un mensaje para Rainier — solo toca Enviar">Opens WhatsApp with a message to Rainier — just tap Send</p>
+    </div>
+  </div>
+  <div class="property-card even" data-prop-id="prop-2" data-prop-name="Natz Ti Ha 3-Bed Residence" data-prop-price="$498,000">
+    <div class="prop-image" style="padding:0;">
+      <span class="prop-badge" data-en="STEPS FROM THE SEA" data-es="A PASOS DEL MAR">STEPS FROM THE SEA</span>
+      <div class="carousel" id="carousel-2">
+        <div class="carousel-track" id="track-2">
+          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/16cMCzH52Iv3zJsoooBGJe6B_lIvbj2l-=w1600" alt="Natz Ti Ha 3-Bed Residence photo 1" referrerpolicy="no-referrer"  onerror="dropSlide(this)"></div>
+          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1EFWUX62YnfT3UwQkeMxJR_h-9uWXCKkV=w1600" alt="Natz Ti Ha 3-Bed Residence photo 2" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
+          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1bDDNvCnb5HAMQ4OuDyDJgNxxiY8SlSM6=w1600" alt="Natz Ti Ha 3-Bed Residence photo 3" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
+          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1s-diPCwsnWRV9-6EcK0B2jc3CJn2BTE8=w1600" alt="Natz Ti Ha 3-Bed Residence photo 4" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
+          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1BTwVR7Z6w5krsJ1cCs0APxpnrd_LI4wi=w1600" alt="Natz Ti Ha 3-Bed Residence photo 5" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
+          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1T2Xf7dVMo_kPlP3g9iRM5fL_2fK0ISVK=w1600" alt="Natz Ti Ha 3-Bed Residence photo 6" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
+          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1SrVubWDG84FtQeg-efBwuRsKmuP1bo0B=w1600" alt="Natz Ti Ha 3-Bed Residence photo 7" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
+          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1l0bKUQExSHZQ6ouXYm5RYMyOYTGOfSIe=w1600" alt="Natz Ti Ha 3-Bed Residence photo 8" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
+        </div>
+        <button class="carousel-btn prev" onclick="moveCarousel('carousel-2', -1)" aria-label="Previous photo">&#8592;</button>
+        <button class="carousel-btn next" onclick="moveCarousel('carousel-2', 1)" aria-label="Next photo">&#8594;</button>
+        <div class="carousel-dots" id="dots-2"><div class="carousel-dot active" onclick="goToSlide('carousel-2',0)"></div><div class="carousel-dot" onclick="goToSlide('carousel-2',1)"></div><div class="carousel-dot" onclick="goToSlide('carousel-2',2)"></div><div class="carousel-dot" onclick="goToSlide('carousel-2',3)"></div><div class="carousel-dot" onclick="goToSlide('carousel-2',4)"></div><div class="carousel-dot" onclick="goToSlide('carousel-2',5)"></div><div class="carousel-dot" onclick="goToSlide('carousel-2',6)"></div><div class="carousel-dot" onclick="goToSlide('carousel-2',7)"></div></div>
+        <div class="carousel-count" id="count-2">1 / 8</div>
+      </div>
+    </div>
+    <div class="prop-text">
+      <p class="prop-number">02 · CONDO</p>
+      <h3 class="prop-name">Natz Ti Ha<br>3-Bed Residence</h3>
+      <p class="prop-location">CALLE 38 · STEPS FROM THE BEACH · PLAYA DEL CARMEN</p>
+      <div class="prop-stats"><div class="prop-stat"><span class="prop-stat-num">164</span><span class="prop-stat-label" data-en="M² TOTAL" data-es="M² TOTAL">M² TOTAL</span></div><div class="prop-stat"><span class="prop-stat-num">3</span><span class="prop-stat-label" data-en="BEDROOMS" data-es="RECÁMARAS">BEDROOMS</span></div><div class="prop-stat"><span class="prop-stat-num">3</span><span class="prop-stat-label" data-en="BATHROOMS" data-es="BAÑOS">BATHROOMS</span></div></div>
+      <div class="prop-divider"></div>
+      <ul class="prop-features"><li>Mediterranean-inspired design · high ceilings &amp; cross ventilation</li><li>Private terraces that catch the ocean breeze</li><li>Shared pool and panoramic rooftop terrace</li><li>Guard-gated · steps from Calle 38 and Fifth Avenue</li></ul>
+      <div class="prop-price-block">
+        <p class="prop-price-current">USD $498,000</p>
+        <p class="prop-price-note">HOA: $13,350 MXN / month · Taxes: $6,180 MXN / year</p>
+      </div>
+      <div class="prop-buttons">
+        <a href="https://drive.google.com/drive/folders/1ucD7pyf6CVjDyN8vOlV2wJX_Wf_kyhEW" target="_blank" class="btn" data-en="PHOTOS —" data-es="FOTOS —">PHOTOS —</a>
+        <button class="btn save-btn" onclick="toggleSave(this)" data-en="☆ SAVE" data-es="☆ GUARDAR">☆ SAVE</button>
+        <a href="https://wa.me/16463424105?text=Hi+Rainier%2C+I%27m+interested+in+Natz+Ti+Ha+3-Bed+Residence.+Can+we+talk%3F" target="_blank" class="btn" data-en="INQUIRE —" data-es="CONSULTAR —">INQUIRE —</a>
+      </div>
+      <a href="https://wa.me/16463424105" target="_blank" class="like-btn" onclick="likeThis(this)">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span data-en="I LIKE THIS ONE" data-es="ME GUSTA ESTA">I LIKE THIS ONE</span>
+      </a>
+      <p class="like-hint" data-en="Opens WhatsApp with a message to Rainier — just tap Send" data-es="Abre WhatsApp con un mensaje para Rainier — solo toca Enviar">Opens WhatsApp with a message to Rainier — just tap Send</p>
+    </div>
+  </div>
+  <div class="property-card" data-prop-id="prop-3" data-prop-name="Terrazas 3-Bed Lock-Off Condo" data-prop-price="$549,000">
+    <div class="prop-image" style="padding:0;">
+      <span class="prop-badge" data-en="LOCK-OFF · RENTAL HISTORY" data-es="LOCK-OFF · HISTORIAL DE RENTA">LOCK-OFF · RENTAL HISTORY</span>
+      <div class="carousel" id="carousel-3">
+        <div class="carousel-track" id="track-3">
+          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/17N5MCYYy9JxDp8PpmHB0_ulN3O2uT1r6=w1600" alt="Terrazas 3-Bed Lock-Off Condo photo 1" referrerpolicy="no-referrer"  onerror="dropSlide(this)"></div>
+          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1BJ6dJQewsdUWp2OQIl9V73xwd2Fhh7r_=w1600" alt="Terrazas 3-Bed Lock-Off Condo photo 2" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
+          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1z1SPym6j3wiBxMTvq1QnTGkS9zrkA6r6=w1600" alt="Terrazas 3-Bed Lock-Off Condo photo 3" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
+          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/19PzCMfYRzIr8AA_PdEYl1jhldvNT3qZO=w1600" alt="Terrazas 3-Bed Lock-Off Condo photo 4" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
+          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1qM2tN7un5hPoYRS17TKPyCCSJVRQNzCR=w1600" alt="Terrazas 3-Bed Lock-Off Condo photo 5" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
+          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1rS9HuPn37wZP4nAVI1Au-yRNxsGL5gaT=w1600" alt="Terrazas 3-Bed Lock-Off Condo photo 6" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
+          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/15W5PsJka7RVzmScy_bJ12J_HrX2WFaUQ=w1600" alt="Terrazas 3-Bed Lock-Off Condo photo 7" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
+          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1FW7BwNRgbZ2E2qqfyiSU5RoLoL1WxNst=w1600" alt="Terrazas 3-Bed Lock-Off Condo photo 8" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
+        </div>
+        <button class="carousel-btn prev" onclick="moveCarousel('carousel-3', -1)" aria-label="Previous photo">&#8592;</button>
+        <button class="carousel-btn next" onclick="moveCarousel('carousel-3', 1)" aria-label="Next photo">&#8594;</button>
+        <div class="carousel-dots" id="dots-3"><div class="carousel-dot active" onclick="goToSlide('carousel-3',0)"></div><div class="carousel-dot" onclick="goToSlide('carousel-3',1)"></div><div class="carousel-dot" onclick="goToSlide('carousel-3',2)"></div><div class="carousel-dot" onclick="goToSlide('carousel-3',3)"></div><div class="carousel-dot" onclick="goToSlide('carousel-3',4)"></div><div class="carousel-dot" onclick="goToSlide('carousel-3',5)"></div><div class="carousel-dot" onclick="goToSlide('carousel-3',6)"></div><div class="carousel-dot" onclick="goToSlide('carousel-3',7)"></div></div>
+        <div class="carousel-count" id="count-3">1 / 8</div>
+      </div>
+    </div>
+    <div class="prop-text">
+      <p class="prop-number">03 · CONDO</p>
+      <h3 class="prop-name">Terrazas<br>3-Bed Lock-Off Condo</h3>
+      <p class="prop-location">CALLE 38 · COCO BEACH · PLAYA DEL CARMEN</p>
+      <div class="prop-stats"><div class="prop-stat"><span class="prop-stat-num">148.6</span><span class="prop-stat-label" data-en="M² TOTAL" data-es="M² TOTAL">M² TOTAL</span></div><div class="prop-stat"><span class="prop-stat-num">3</span><span class="prop-stat-label" data-en="BEDROOMS" data-es="RECÁMARAS">BEDROOMS</span></div><div class="prop-stat"><span class="prop-stat-num">3</span><span class="prop-stat-label" data-en="BATHROOMS" data-es="BAÑOS">BATHROOMS</span></div></div>
+      <div class="prop-divider"></div>
+      <ul class="prop-features"><li>Lock-off layout with a 10-year rental income track record</li><li>Rooftop pool with ocean views, gym &amp; spa</li><li>Fully furnished · large private terrace · underground parking</li><li>On Calle 38, steps from Fifth Avenue and Coco Beach</li></ul>
+      <div class="prop-price-block">
+        <p class="prop-price-current">USD $549,000</p>
+        <p class="prop-price-note">HOA: $535 USD / month · Taxes: $2,616 MXN</p>
+      </div>
+      <div class="prop-buttons">
+        <a href="https://drive.google.com/drive/folders/1npqCplFs6vu4JHgj2ZgXTz2zsT_nutEC" target="_blank" class="btn" data-en="PHOTOS —" data-es="FOTOS —">PHOTOS —</a>
+        <button class="btn save-btn" onclick="toggleSave(this)" data-en="☆ SAVE" data-es="☆ GUARDAR">☆ SAVE</button>
+        <a href="https://wa.me/16463424105?text=Hi+Rainier%2C+I%27m+interested+in+Terrazas+3-Bed+Lock-Off+Condo.+Can+we+talk%3F" target="_blank" class="btn" data-en="INQUIRE —" data-es="CONSULTAR —">INQUIRE —</a>
+      </div>
+      <a href="https://wa.me/16463424105" target="_blank" class="like-btn" onclick="likeThis(this)">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span data-en="I LIKE THIS ONE" data-es="ME GUSTA ESTA">I LIKE THIS ONE</span>
+      </a>
+      <p class="like-hint" data-en="Opens WhatsApp with a message to Rainier — just tap Send" data-es="Abre WhatsApp con un mensaje para Rainier — solo toca Enviar">Opens WhatsApp with a message to Rainier — just tap Send</p>
+    </div>
+  </div>
+</section>
+
+<div id="table-section">
+  <div>
+    <span class="section-label" data-en="OVERVIEW" data-es="RESUMEN">OVERVIEW</span>
+    <h2 class="section-heading" data-en="Property Comparison" data-es="Comparativa de propiedades">Property Comparison</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th data-en="PROPERTY" data-es="PROPIEDAD">PROPERTY</th>
+          <th data-en="ZONE" data-es="ZONA">ZONE</th>
+          <th data-en="BED" data-es="RÉC">BED</th>
+          <th data-en="BATH" data-es="BAÑOS">BATH</th>
+          <th>M²</th>
+          <th data-en="PRICE USD" data-es="PRECIO USD">PRICE USD</th>
+        </tr></thead>
+        <tbody><tr><td>The Leaf 2-Bed</td><td>Playacar</td><td>2</td><td>1.5</td><td>85</td><td>$357,974</td></tr><tr><td>Natz Ti Ha 3-Bed</td><td>Calle 38</td><td>3</td><td>3</td><td>164</td><td>$498,000</td></tr><tr><td>Terrazas 3-Bed</td><td>Calle 38</td><td>3</td><td>3</td><td>148.6</td><td>$549,000</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div id="cta">
+  <p class="cta-brand">Mycasa Real Estate</p>
+  <h2 class="cta-heading" data-en="Did any catch your eye?" data-es="¿Alguna te llamó la atención?">Did any catch your eye?</h2>
+  <p class="cta-sub" data-en="Schedule a visit or request more information" data-es="Coordina una visita o solicita más información">Schedule a visit or request more information</p>
+  <a href="https://wa.me/16463424105?text=Hi+Rainier%2C+it%27s+Ammar.+I+saw+the+Playa+del+Carmen+properties.+Can+we+schedule+a+visit%3F" target="_blank" class="cta-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span data-en="SCHEDULE A VISIT" data-es="AGENDAR VISITA">SCHEDULE A VISIT</span>
+  </a>
+  <p class="cta-address">PLAYA DEL CARMEN · QUINTANA ROO · MÉXICO &nbsp;·&nbsp; +1 646 342 4105</p>
+</div>
+
+<script>
+  var currentLang = 'en';
+  function toggleLang() {
+    currentLang = currentLang === 'en' ? 'es' : 'en';
+    document.getElementById('lang-label').textContent = currentLang === 'en' ? 'ES' : 'EN';
+    document.querySelectorAll('[data-en]').forEach(el => {
+      el.innerHTML = currentLang === 'en' ? el.dataset.en : el.dataset.es;
+    });
+  }
+
+  const carouselState = {};
+
+  function moveCarousel(id, dir) {
+    const el = document.getElementById(id);
+    const slides = el.querySelectorAll('.carousel-slide').length;
+    if (!carouselState[id]) carouselState[id] = 0;
+    carouselState[id] = (carouselState[id] + dir + slides) % slides;
+    updateCarousel(id, slides);
+  }
+
+  function goToSlide(id, idx) {
+    const el = document.getElementById(id);
+    const slides = el.querySelectorAll('.carousel-slide').length;
+    carouselState[id] = idx;
+    updateCarousel(id, slides);
+  }
+
+  function updateCarousel(id, slides) {
+    const idx = carouselState[id];
+    const num = id.split('-')[1];
+    document.getElementById('track-' + num).style.transform = 'translateX(-' + (idx * 100) + '%)';
+    document.getElementById('count-' + num).textContent = (idx + 1) + ' / ' + slides;
+    document.querySelectorAll('#dots-' + num + ' .carousel-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === idx);
+    });
+  }
+
+
+  // ── FAVORITES ──────────────────────────────────────────────
+  const STORAGE_KEY = 'mycasa_saved_ammar-q6cc';
+
+  function getSaved() {
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); }
+    catch(e) { return []; }
+  }
+
+  function setSaved(arr) {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(arr)); } catch(e) {}
+  }
+
+  function updateCounter() {
+    const saved = getSaved();
+    const el = document.getElementById('fav-counter');
+    if (saved.length > 0) {
+      el.classList.add('visible');
+      el.textContent = '★ SAVED (' + saved.length + ')';
+    } else {
+      el.classList.remove('visible');
+    }
+  }
+
+  function toggleSave(btn) {
+    const card = btn.closest('.property-card');
+    const propId = card.dataset.propId;
+    let saved = getSaved();
+    const idx = saved.indexOf(propId);
+    if (idx === -1) {
+      saved.push(propId);
+      btn.classList.add('saved');
+      btn.dataset.en = 'SAVED';
+      btn.dataset.es = 'GUARDADO';
+      btn.textContent = currentLang === 'en' ? 'SAVED' : 'GUARDADO';
+    } else {
+      saved.splice(idx, 1);
+      btn.classList.remove('saved');
+      btn.dataset.en = '☆ SAVE';
+      btn.dataset.es = '☆ GUARDAR';
+      btn.textContent = currentLang === 'en' ? '☆ SAVE' : '☆ GUARDAR';
+    }
+    setSaved(saved);
+    updateCounter();
+  }
+
+  function showFavorites() {
+    const saved = getSaved();
+    const container = document.getElementById('fav-cards');
+    container.innerHTML = '';
+
+    if (saved.length === 0) {
+      document.getElementById('fav-empty').style.display = 'block';
+    } else {
+      document.getElementById('fav-empty').style.display = 'none';
+      saved.forEach((propId, i) => {
+        const origCard = document.querySelector('[data-prop-id="' + propId + '"]');
+        if (!origCard) return;
+        const clone = origCard.cloneNode(true);
+        // Re-index for alternating layout
+        clone.className = 'property-card' + (i % 2 === 1 ? ' even' : '');
+        // Replace save btn with remove btn
+        const saveBtn = clone.querySelector('.save-btn');
+        if (saveBtn) {
+          const removeBtn = document.createElement('button');
+          removeBtn.className = 'remove-btn';
+          removeBtn.textContent = '✕ REMOVE';
+          removeBtn.setAttribute('data-prop-id', propId);
+          removeBtn.onclick = function() { removeFromFav(propId); };
+          saveBtn.parentNode.replaceChild(removeBtn, saveBtn);
+        }
+        container.appendChild(clone);
+      });
+    }
+
+    document.getElementById('main-view').classList.add('hidden');
+    document.getElementById('fav-view').classList.add('active');
+    window.scrollTo(0, 0);
+  }
+
+  function removeFromFav(propId) {
+    let saved = getSaved();
+    saved = saved.filter(id => id !== propId);
+    setSaved(saved);
+    updateCounter();
+    // Update save btn on main page
+    const mainCard = document.querySelector('[data-prop-id="' + propId + '"]');
+    if (mainCard) {
+      const saveBtn = mainCard.querySelector('.save-btn');
+      if (saveBtn) {
+        saveBtn.classList.remove('saved');
+        saveBtn.dataset.en = '☆ SAVE';
+        saveBtn.dataset.es = '☆ GUARDAR';
+        saveBtn.textContent = currentLang === 'en' ? '☆ SAVE' : '☆ GUARDAR';
+      }
+    }
+    // Re-render favorites
+    showFavorites();
+  }
+
+  function backToMain() {
+    document.getElementById('fav-view').classList.remove('active');
+    document.getElementById('main-view').classList.remove('hidden');
+    window.scrollTo(0, 0);
+  }
+
+  // Restore saved state on load
+  window.addEventListener('DOMContentLoaded', () => {
+    const saved = getSaved();
+    saved.forEach(propId => {
+      const card = document.querySelector('[data-prop-id="' + propId + '"]');
+      if (!card) return;
+      const btn = card.querySelector('.save-btn');
+      if (btn) {
+        btn.classList.add('saved');
+        btn.dataset.en = 'SAVED';
+        btn.dataset.es = 'GUARDADO';
+        btn.textContent = currentLang === 'en' ? 'SAVED' : 'GUARDADO';
+      }
+    });
+    updateCounter();
+  });
+
+
+  // ── CAROUSEL: drop photos that fail to load (e.g. a video in the folder) ──
+  function dropSlide(img) {
+    const slide = img.closest('.carousel-slide');
+    const carousel = img.closest('.carousel');
+    if (!slide || !carousel) return;
+    const num = carousel.id.split('-')[1];
+    const idx = [...slide.parentNode.children].indexOf(slide);
+    slide.remove();
+    const dots = document.querySelectorAll('#dots-' + num + ' .carousel-dot');
+    if (dots[idx]) dots[idx].remove();
+    document.querySelectorAll('#dots-' + num + ' .carousel-dot').forEach((d, i) => d.setAttribute('onclick', "goToSlide('carousel-" + num + "'," + i + ")"));
+    carouselState[carousel.id] = 0;
+    updateCarousel(carousel.id, carousel.querySelectorAll('.carousel-slide').length);
+  }
+
+  // ── "I LIKE THIS ONE" → WhatsApp to Rainier ──
+  const CLIENT_NAME = 'Ammar';
+  const WA_NUMBER = '16463424105';
+  function likeThis(a) {
+    const card = a.closest('.property-card');
+    const now = new Date();
+    let cancun = '', local = '';
+    try {
+      cancun = now.toLocaleString('en-US', { timeZone: 'America/Cancun', weekday: 'short', month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit' });
+      local = now.toLocaleString('en-US', { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' });
+    } catch (e) { cancun = now.toString(); }
+    const msg =
+      '👍 I LIKE THIS ONE!\n\n' +
+      'Client: ' + CLIENT_NAME + '\n' +
+      'Property: ' + card.dataset.propName + ' (USD ' + card.dataset.propPrice + ')\n' +
+      'Clicked: ' + cancun + ' (Cancún time)' + (local ? '\nClient local time: ' + local : '') + '\n\n' +
+      'Sent from my Playa del Carmen options page';
+    a.href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg);
+    a.classList.add('sent');
+  }
+</script>
+</div><!-- /main-view -->
+
+<!-- ══════════════════════════════════════
+     FAVORITES VIEW
+══════════════════════════════════════ -->
+<div id="fav-view">
+  <!-- Favorites Hero -->
+  <div id="fav-hero" style="position:relative;height:55vh;min-height:340px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-line"></div>
+      <p class="hero-brand">Mycasa Real Estate</p>
+      <h1 class="hero-title" style="font-size:clamp(2rem,4vw,3.2rem);"
+          data-en="Saved Properties<br>for Ammar"
+          data-es="Propiedades Guardadas<br>para Ammar">
+        Saved Properties<br>for Ammar
+      </h1>
+      <p class="hero-subtitle">YOUR SHORTLIST · PLAYA DEL CARMEN · RIVIERA MAYA</p>
+    </div>
+    <button onclick="backToMain()" style="position:absolute;bottom:32px;left:50%;transform:translateX(-50%);z-index:2;background:transparent;border:1px solid var(--gold);color:var(--gold);padding:10px 28px;font-size:0.65rem;letter-spacing:0.14em;cursor:pointer;">
+      ← BACK TO ALL PROPERTIES
+    </button>
+  </div>
+
+  <!-- Saved Cards Container -->
+  <section id="fav-cards" style="padding-top:60px;"></section>
+
+  <div id="fav-empty" style="display:none;">
+    No saved properties yet.<br>
+    <span style="font-size:0.9rem;color:var(--text-muted);font-family:system-ui;">Go back and save the ones that interest you.</span>
+  </div>
+</div>
+
+</body>
+</html>
