@@ -25,7 +25,7 @@ cards = []
 for i, p in enumerate(props, 1):
     ids = p['photos'].split(',')
     slides = "\n".join(
-        f'          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/{pid}=w1600" alt="{p["plain"]} photo {j+1}" referrerpolicy="no-referrer" {"" if j==0 else "loading=\"lazy\""} onerror="dropSlide(this)"></div>'
+        f'          <div class="carousel-slide"><img src="{pid if ('/' in pid or '.' in pid) else 'https://lh3.googleusercontent.com/d/'+pid+'=w1600'}" alt="{p["plain"]} photo {j+1}" referrerpolicy="no-referrer" {"" if j==0 else "loading=\"lazy\""} onerror="dropSlide(this)"></div>'
         for j, pid in enumerate(ids))
     dots = "".join(f'<div class="carousel-dot{" active" if j==0 else ""}" onclick="goToSlide(\'carousel-{i}\',{j})"></div>' for j in range(len(ids)))
     stats = ([(p['m2'], "M² TOTAL", "M² TOTAL")] if p.get('m2') else []) + [(p['bed'], "BEDROOMS", "RECÁMARAS"), (p['bath'], "BATHROOMS", "BAÑOS")]
@@ -59,7 +59,7 @@ for i, p in enumerate(props, 1):
         <p class="prop-price-note">{p['note']}</p>
       </div>
       <div class="prop-buttons">
-        <a href="https://drive.google.com/drive/folders/{p['folder']}" target="_blank" class="btn" data-en="PHOTOS —" data-es="FOTOS —">PHOTOS —</a>
+        <a href="{p['folder'] if p['folder'].startswith('http') else 'https://drive.google.com/drive/folders/'+p['folder']}" target="_blank" class="btn" data-en="PHOTOS —" data-es="FOTOS —">PHOTOS —</a>
         <button class="btn save-btn" onclick="toggleSave(this)" data-en="☆ SAVE" data-es="☆ GUARDAR">☆ SAVE</button>
         <a href="{inquire}" target="_blank" class="btn" data-en="INQUIRE —" data-es="CONSULTAR —">INQUIRE —</a>
       </div>

@@ -1,0 +1,100 @@
+{
+  "client": "Ammar",
+  "slug": "ammar-q6cc",
+  "city": "Playa del Carmen",
+  "subtitle": "PLAYA DEL CARMEN · RIVIERA MAYA · MÉXICO",
+  "footer_location": "PLAYA DEL CARMEN · QUINTANA ROO · MÉXICO",
+  "whatsapp": "16463424105",
+  "properties": [
+    {
+      "name": "The Leaf Playacar<br>2-Bed Condo",
+      "short": "The Leaf 2-Bed",
+      "plain": "The Leaf Playacar 2-Bed Condo",
+      "zone": "Playacar",
+      "city": "Playa del Carmen",
+      "m2": 85,
+      "bed": 2,
+      "bath": "1.5",
+      "levels": null,
+      "price": 357974,
+      "badge_en": "BY ACCIONA · PLAYACAR",
+      "badge_es": "POR ACCIONA · PLAYACAR",
+      "features": [
+        "2-bedroom layouts from 84 m² · lock-off options available",
+        "4 pools, gym, yoga area, kids' zone &amp; pet zone",
+        "4,000+ m² of private gardens · 24/7 controlled access",
+        "Gated Playacar · 1.5 km to the beach, 15 min to Fifth Avenue"
+      ],
+      "note": "Starting price · unit D202 · $6,085,562 MXN (USD at 17 MXN)",
+      "folder": "https://drive.google.com/file/d/1eOXIE6JyjSmarstpTL4k-38nRetRz92N/view",
+      "photos": [],
+      "type": "CONDO"
+    },
+    {
+      "name": "Natz Ti Ha<br>3-Bed Residence",
+      "short": "Natz Ti Ha 3-Bed",
+      "plain": "Natz Ti Ha 3-Bed Residence",
+      "zone": "Calle 38 · Steps from the Beach",
+      "city": "Playa del Carmen",
+      "m2": 164,
+      "bed": 3,
+      "bath": "3",
+      "levels": null,
+      "price": 498000,
+      "badge_en": "STEPS FROM THE SEA",
+      "badge_es": "A PASOS DEL MAR",
+      "features": [
+        "Mediterranean-inspired design · high ceilings &amp; cross ventilation",
+        "Private terraces that catch the ocean breeze",
+        "Shared pool and panoramic rooftop terrace",
+        "Guard-gated · steps from Calle 38 and Fifth Avenue"
+      ],
+      "note": "HOA: $13,350 MXN / month · Taxes: $6,180 MXN / year",
+      "folder": "1ucD7pyf6CVjDyN8vOlV2wJX_Wf_kyhEW",
+      "photos": [
+        "16cMCzH52Iv3zJsoooBGJe6B_lIvbj2l-",
+        "1EFWUX62YnfT3UwQkeMxJR_h-9uWXCKkV",
+        "1bDDNvCnb5HAMQ4OuDyDJgNxxiY8SlSM6",
+        "1s-diPCwsnWRV9-6EcK0B2jc3CJn2BTE8",
+        "1BTwVR7Z6w5krsJ1cCs0APxpnrd_LI4wi",
+        "1T2Xf7dVMo_kPlP3g9iRM5fL_2fK0ISVK",
+        "1SrVubWDG84FtQeg-efBwuRsKmuP1bo0B",
+        "1l0bKUQExSHZQ6ouXYm5RYMyOYTGOfSIe"
+      ],
+      "type": "CONDO"
+    },
+    {
+      "name": "Terrazas<br>3-Bed Lock-Off Condo",
+      "short": "Terrazas 3-Bed",
+      "plain": "Terrazas 3-Bed Lock-Off Condo",
+      "zone": "Calle 38 · Coco Beach",
+      "city": "Playa del Carmen",
+      "m2": 148.6,
+      "bed": 3,
+      "bath": "3",
+      "levels": null,
+      "price": 549000,
+      "badge_en": "LOCK-OFF · RENTAL HISTORY",
+      "badge_es": "LOCK-OFF · HISTORIAL DE RENTA",
+      "features": [
+        "Lock-off layout with a 10-year rental income track record",
+        "Rooftop pool with ocean views, gym &amp; spa",
+        "Fully furnished · large private terrace · underground parking",
+        "On Calle 38, steps from Fifth Avenue and Coco Beach"
+      ],
+      "note": "HOA: $535 USD / month · Taxes: $2,616 MXN",
+      "folder": "1npqCplFs6vu4JHgj2ZgXTz2zsT_nutEC",
+      "photos": [
+        "17N5MCYYy9JxDp8PpmHB0_ulN3O2uT1r6",
+        "1BJ6dJQewsdUWp2OQIl9V73xwd2Fhh7r_",
+        "1z1SPym6j3wiBxMTvq1QnTGkS9zrkA6r6",
+        "19PzCMfYRzIr8AA_PdEYl1jhldvNT3qZO",
+        "1qM2tN7un5hPoYRS17TKPyCCSJVRQNzCR",
+        "1rS9HuPn37wZP4nAVI1Au-yRNxsGL5gaT",
+        "15W5PsJka7RVzmScy_bJ12J_HrX2WFaUQ",
+        "1FW7BwNRgbZ2E2qqfyiSU5RoLoL1WxNst"
+      ],
+      "type": "CONDO"
+    }
+  ]
+}
