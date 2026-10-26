@@ -63,6 +63,7 @@ for i, p in enumerate(props, 1):
         <button class="btn save-btn" onclick="toggleSave(this)" data-en="☆ SAVE" data-es="☆ GUARDAR">☆ SAVE</button>
         <a href="{inquire}" target="_blank" class="btn" data-en="INQUIRE —" data-es="CONSULTAR —">INQUIRE —</a>
       </div>
+      {f'<a href="{p["video"] if p["video"].startswith("http") else "https://drive.google.com/file/d/"+p["video"]+"/view"}" target="_blank" class="btn video-btn" style="display:block;text-align:center;margin-top:14px;" data-en="▶ WATCH TOUR VIDEO" data-es="▶ VER VIDEO TOUR">▶ WATCH TOUR VIDEO</a>' if p.get('video') else ''}
       <a href="https://wa.me/{WA}" target="_blank" class="like-btn" onclick="likeThis(this)">
         {WA_SVG.replace('width="18" height="18"', 'width="16" height="16"')}
         <span data-en="I LIKE THIS ONE" data-es="ME GUSTA ESTA">I LIKE THIS ONE</span>
