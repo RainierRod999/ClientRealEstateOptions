@@ -59,7 +59,7 @@ for i, p in enumerate(props, 1):
         <p class="prop-price-note">{p['note']}</p>
       </div>
       <div class="prop-buttons">
-        <a href="{p['folder'] if p['folder'].startswith('http') else 'https://drive.google.com/drive/folders/'+p['folder']}" target="_blank" class="btn" data-en="PHOTOS —" data-es="FOTOS —">PHOTOS —</a>
+        {(f'<a href="{p["folder"] if p["folder"].startswith("http") else "https://drive.google.com/drive/folders/"+p["folder"]}" target="_blank" class="btn" data-en="PHOTOS —" data-es="FOTOS —">PHOTOS —</a>') if p.get('folder') else ''}
         <button class="btn save-btn" onclick="toggleSave(this)" data-en="☆ SAVE" data-es="☆ GUARDAR">☆ SAVE</button>
         <a href="{inquire}" target="_blank" class="btn" data-en="INQUIRE —" data-es="CONSULTAR —">INQUIRE —</a>
       </div>
