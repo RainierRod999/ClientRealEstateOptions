@@ -132,7 +132,7 @@ page = f'''<!DOCTYPE html>
   </div>
   <div class="hero-stats">
     <div class="hero-stat"><span class="hero-stat-number">{len(props)}</span><span class="hero-stat-label" data-en="PROPERTIES" data-es="PROPIEDADES">PROPERTIES</span></div>
-    <div class="hero-stat"><span class="hero-stat-number">{min(beds)}–{max(beds)}</span><span class="hero-stat-label" data-en="BEDROOMS" data-es="RECÁMARAS">BEDROOMS</span></div>
+    <div class="hero-stat"><span class="hero-stat-number">{min(beds) if min(beds)==max(beds) else f'{min(beds)}–{max(beds)}'}</span><span class="hero-stat-label" data-en="BEDROOMS" data-es="RECÁMARAS">BEDROOMS</span></div>
     {f'<div class="hero-stat"><span class="hero-stat-number">{min(m2)}–{max(m2)}</span><span class="hero-stat-label" data-en="M² TOTAL" data-es="M² TOTAL">M² TOTAL</span></div>' if all(m2) else ''}
     <div class="hero-stat"><span class="hero-stat-number">{k(min(pr))}–{k(max(pr))}</span><span class="hero-stat-label" data-en="PRICE RANGE" data-es="RANGO DE PRECIO">PRICE RANGE</span></div>
   </div>
