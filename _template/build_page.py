@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """Mycasa client options page builder.
-Usage: python3 build_page.py <template-base.html> <client.json> <out.html>
+Usage: python3 build_page.py <template.html> <client.json> <out.html>
+Templates: _template/mycasa-one-sheet.html (brand-guide design, default)
+           _template/rainier-one-sheet.html (original design)
+A template may override parts of the page with <!-- SLOT:name -->...<!-- /SLOT:name -->
+blocks: head, hero-brand, cta-brand. Missing slots fall back to the original markup.
 """
 import re, sys, json, urllib.parse
 tpl_path, cfg_path, out_path = sys.argv[1:4]
@@ -16,6 +20,13 @@ for p in props:
     p.setdefault('levels', None); p.setdefault('note', ''); p.setdefault('type', 'PROPERTY')
     p.setdefault('badge_en', ''); p.setdefault('badge_es', p.get('badge_en', ''))
     p.setdefault('short', p['plain']); p.setdefault('name', p['plain'])
+def slot(name, default):
+    m = re.search(r'<!-- SLOT:%s -->(.*?)<!-- /SLOT:%s -->' % (name, name), src, re.S)
+    return m.group(1).strip() if m else default
+FONTS = re.search(r'<link href="https://fonts\.googleapis\.com/css2[^"]*" rel="stylesheet">', src).group(0)
+HEAD_EXTRA = slot('head', '')
+HERO_BRAND = slot('hero-brand', '<div class="hero-line"></div>\n    <p class="hero-brand">Mycasa Real Estate</p>')
+CTA_BRAND = slot('cta-brand', '<p class="cta-brand">Mycasa Real Estate</p>')
 WA_SVG = re.search(r'(<svg xmlns.*?</svg>)', src, re.S).group(1)
 
 def money(n): return f"${n:,.0f}"
@@ -97,7 +108,7 @@ page = f'''<!DOCTYPE html>
 <title>Your Property Options in {CITY} — Mycasa Real Estate</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400;1,500&family=Playfair+Display:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
+{FONTS}{("\n" + HEAD_EXTRA) if HEAD_EXTRA else ""}
 <style>{style}{extra_css}</style>
 </head>
 <body>
@@ -111,8 +122,7 @@ page = f'''<!DOCTYPE html>
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="hero-line"></div>
-    <p class="hero-brand">Mycasa Real Estate</p>
+    {HERO_BRAND}
     <h1 class="hero-title" data-en="Your Property Options<br>in {CITY}" data-es="Tus Opciones de Propiedades<br>en {CITY}">Your Property Options<br>in {CITY}</h1>
     <p class="hero-subtitle">{SUB}</p>
   </div>
@@ -152,7 +162,7 @@ page = f'''<!DOCTYPE html>
 </div>
 
 <div id="cta">
-  <p class="cta-brand">Mycasa Real Estate</p>
+  {CTA_BRAND}
   <h2 class="cta-heading" data-en="Did any catch your eye?" data-es="¿Alguna te llamó la atención?">Did any catch your eye?</h2>
   <p class="cta-sub" data-en="Schedule a visit or request more information" data-es="Coordina una visita o solicita más información">Schedule a visit or request more information</p>
   <a href="https://wa.me/{WA}?text={urllib.parse.quote_plus("Hi Rainier, it's " + CLIENT + ". I saw the " + CITY + " properties. Can we schedule a visit?")}" target="_blank" class="cta-btn">
