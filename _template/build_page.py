@@ -8,6 +8,10 @@ blocks: head, hero-brand, cta-brand. Missing slots fall back to the original mar
 """
 import re, sys, json, urllib.parse
 tpl_path, cfg_path, out_path = sys.argv[1:4]
+import os
+# Old instructions pointed at template-base.html; it is now Mycasa One Sheet by default.
+if os.path.basename(tpl_path) == 'template-base.html' and not os.path.exists(tpl_path):
+    tpl_path = os.path.join(os.path.dirname(tpl_path), 'mycasa-one-sheet.html')
 src = open(tpl_path, encoding='utf-8').read()
 style = re.search(r'<style>(.*?)</style>', src, re.S).group(1)
 cfg = json.load(open(cfg_path, encoding='utf-8'))
