@@ -1,0 +1,109 @@
+{
+ "client": "Thimel",
+ "slug": "thimel-8o3q",
+ "city": "Tulum",
+ "subtitle": "TULUM · RIVIERA MAYA · MÉXICO",
+ "footer_location": "TULUM · QUINTANA ROO · MÉXICO",
+ "whatsapp": "16463424105",
+ "properties": [
+  {
+   "name": "Casa Piedra<br>3-Bed Townhouse",
+   "short": "Casa Piedra",
+   "plain": "Casa Piedra 3-Bed Townhouse",
+   "zone": "Aldea Zamá",
+   "city": "Tulum",
+   "m2": 251,
+   "bed": 3,
+   "bath": "3.5",
+   "levels": "2 + Roof",
+   "price": 338300,
+   "type": "TOWNHOUSE",
+   "badge_en": "LOCK-OFF SUITE",
+   "badge_es": "SUITE INDEPENDIENTE",
+   "features": [
+    "Private pool and terrace wrapped in tropical greenery",
+    "Rooftop bedroom with its own independent entrance &mdash; perfect as a guest suite or separate rental",
+    "Stone and wood finishes, kitchen island, A/C throughout &middot; built 2020",
+    "Gated community with 24/7 security &middot; 1 parking space &middot; minutes to the beach and downtown"
+   ],
+   "note": "MXN $6,300,000 asking &middot; HOA $8,000 MXN/month",
+   "photos": [
+    "https://sirchimp.s3.us-east-1.amazonaws.com/rm/wp-content/uploads/2026/10/property-b6ecae78-1813-4e1e-a5ac-f2567241902e-3FB2D2F3-seq1-scaled.jpg",
+    "https://sirchimp.s3.us-east-1.amazonaws.com/rm/wp-content/uploads/2026/10/property-b6ecae78-1813-4e1e-a5ac-f2567241902e-9C14BD45-seq7-scaled.jpg",
+    "https://sirchimp.s3.us-east-1.amazonaws.com/rm/wp-content/uploads/2026/10/property-b6ecae78-1813-4e1e-a5ac-f2567241902e-E72C4F6B-seq8-scaled.jpg",
+    "https://sirchimp.s3.us-east-1.amazonaws.com/rm/wp-content/uploads/2026/10/property-b6ecae78-1813-4e1e-a5ac-f2567241902e-B4142FC0-seq11-scaled.jpg",
+    "https://sirchimp.s3.us-east-1.amazonaws.com/rm/wp-content/uploads/2026/10/property-b6ecae78-1813-4e1e-a5ac-f2567241902e-E02DD853-seq10-scaled.jpg",
+    "https://sirchimp.s3.us-east-1.amazonaws.com/rm/wp-content/uploads/2026/10/property-b6ecae78-1813-4e1e-a5ac-f2567241902e-E68106BB-seq9-scaled.jpg",
+    "https://sirchimp.s3.us-east-1.amazonaws.com/rm/wp-content/uploads/2026/10/property-b6ecae78-1813-4e1e-a5ac-f2567241902e-41FDCF6B-seq4-scaled.jpg",
+    "https://sirchimp.s3.us-east-1.amazonaws.com/rm/wp-content/uploads/2026/10/property-b6ecae78-1813-4e1e-a5ac-f2567241902e-2121AB1A-seq12-scaled.jpg"
+   ]
+  },
+  {
+   "name": "Casa Selva<br>2-Bed Townhouse",
+   "short": "Casa Selva",
+   "plain": "Casa Selva 2-Bed Townhouse",
+   "zone": "Luum Zamá · Aldea Zamá",
+   "city": "Tulum",
+   "m2": 146,
+   "bed": 2,
+   "bath": "2.5",
+   "levels": "2 + Roof",
+   "price": 354400,
+   "type": "TOWNHOUSE",
+   "badge_en": "JUNGLE VIEWS",
+   "badge_es": "VISTAS A LA SELVA",
+   "features": [
+    "Private pool plus a private rooftop overlooking the jungle canopy",
+    "One bedroom on the ground floor, one upstairs &mdash; real privacy between suites",
+    "Designer finishes: green tile, gold fixtures, warm wood accents",
+    "Luum Zamá amenities: spa, heated and cold pools &middot; 24/7 gated security"
+   ],
+   "note": "MXN $6,600,000 asking &middot; HOA $4,513 MXN/month &middot; property tax $1,920 MXN/year",
+   "folder": "1-dqAPGjCT_5y-Iqf8nNhWwEQLg5-dGup",
+   "photos": [
+    "1xaTGoCYDl1gLAyhDPNw604TPKoHqzwTi",
+    "1-R-xOn41Y9NIK4Qm03R9JO916JWLyQiN",
+    "1CuSqYRV1Ziw4CP82tevWKvLajp9q0Ezp",
+    "10SwiDZLh2e6ReFOQzrPqdc6Rg7uWeTg-",
+    "1XVl1zbFA5A6SjBnixUYHp2YCMcdtSiy4",
+    "1n6vKi7ClD1fKgmvHpsbkhFNTdJLf3K30",
+    "1x8EzfZTtBXftcXZKmfAz8xENEL3lzXAI",
+    "18b34Bn_whvxm3-rAZeYv4G0xFSTPr7vM"
+   ]
+  },
+  {
+   "name": "Casa Caramelo<br>4-Bed Villa",
+   "short": "Casa Caramelo",
+   "plain": "Casa Caramelo 4-Bed Villa",
+   "zone": "La Veleta",
+   "city": "Tulum",
+   "m2": 252,
+   "bed": 4,
+   "bath": "4.5",
+   "levels": null,
+   "price": 369000,
+   "type": "HOUSE",
+   "badge_en": "TURNKEY INCOME",
+   "badge_es": "LISTA PARA RENTAR",
+   "features": [
+    "Proven Airbnb Superhost rental &mdash; sold turnkey, ready to earn from day one",
+    "4 bedrooms &middot; 4.5 baths &middot; two kitchens &mdash; flexible for family or two rental units",
+    "Private pool, rooftop terrace and parking on a 288 m² lot",
+    "In the heart of La Veleta, Tulum's most walkable café and restaurant neighborhood"
+   ],
+   "note": "252 m² built on 288 m² of land &middot; city tax $9,000 MXN/year",
+   "folder": "1NbuRdNbfXXWxQMxZdERorusFFDa2p29Z",
+   "video": "1MqsMF_IkygDju_tLeLLiIuMvWrAWUm4D",
+   "photos": [
+    "1GRYK5BGt5bo-dtKS1CLF38N0RmUPdtRn",
+    "1_VoQLQ5GbhK5jJibuom0cbQiJ7Vchx_F",
+    "17WCiI-enI2BlKPBtJBnYcFDeMDYLFuZx",
+    "1GEizInvJlvp445cXCeIS_nCDTx_ytpES",
+    "1WUlL-zrmPSOqYdN94oOa-25tOnvvCzdu",
+    "1Klr7i3acmfaeSagSvyPU2QdMIZxzQmO1",
+    "1Anq1hmUt0VT6GxpDULvS8o3Cmbyk5bCi",
+    "17SQ6mL8QhcxTSINhFhCwiy9qOaE8kCS_"
+   ]
+  }
+ ]
+}
