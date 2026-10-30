@@ -1,0 +1,74 @@
+{
+  "client": "Ammar",
+  "slug": "ammar-imo7",
+  "city": "Playa del Carmen",
+  "subtitle": "PLAYA DEL CARMEN · RIVIERA MAYA · MÉXICO",
+  "footer_location": "PLAYA DEL CARMEN · QUINTANA ROO · MÉXICO",
+  "whatsapp": "16463424105",
+  "properties": [
+    {
+      "name": "Infinito<br>2-Bed Condo",
+      "short": "Infinito 2-Bed",
+      "plain": "Infinito 2-Bed Condo",
+      "zone": "Mamitas",
+      "city": "Playa del Carmen",
+      "m2": 134,
+      "bed": 2,
+      "bath": "2",
+      "levels": null,
+      "price": 310000,
+      "type": "CONDO",
+      "badge_en": "TURNKEY · STEPS TO FIFTH AVENUE",
+      "badge_es": "LLAVE EN MANO · A PASOS DE LA QUINTA",
+      "features": [
+        "Between Fifth Avenue and the beach in Mamitas",
+        "Fully furnished, updated, move-in ready",
+        "Wide balcony with city views off the open kitchen &amp; living area",
+        "Rooftop terrace with shared pool &amp; sundeck · elevator · parking · pets allowed"
+      ],
+      "note": "Resale · built 2010 · $5,270,000 MXN · HOA: $3,639 MXN · Taxes: $4,134 MXN",
+      "photos": [
+        "https://buyplaya.co/site/assets/files/251678/dsc_0127.1220x710.jpg",
+        "https://buyplaya.co/site/assets/files/251678/dsc_0190.1220x710.jpg",
+        "https://buyplaya.co/site/assets/files/251678/dsc_0192.1220x710.jpg",
+        "https://buyplaya.co/site/assets/files/251678/dsc_0196.1220x710.jpg",
+        "https://buyplaya.co/site/assets/files/251678/dsc_0119.1220x710.jpg",
+        "https://buyplaya.co/site/assets/files/251678/dsc_0202.1220x710.jpg",
+        "https://buyplaya.co/site/assets/files/251678/dsc_0216.1220x710.jpg",
+        "https://buyplaya.co/site/assets/files/251678/dsc_0123.1220x710.jpg"
+      ]
+    },
+    {
+      "name": "Porto Playa<br>2-Bed Garden Condo",
+      "short": "Porto Playa 2-Bed",
+      "plain": "Porto Playa 2-Bed Garden Condo",
+      "zone": "Downtown",
+      "city": "Playa del Carmen",
+      "m2": 92.9,
+      "bed": 2,
+      "bath": "2",
+      "levels": null,
+      "price": 285000,
+      "type": "CONDO",
+      "badge_en": "CONDO-HOTEL · 1 BLOCK TO THE BEACH",
+      "badge_es": "CONDO-HOTEL · A 1 CUADRA DE LA PLAYA",
+      "features": [
+        "Garden-level unit, quiet and private · covered patio",
+        "One block from the beach and Fifth Avenue",
+        "Established condo-hotel: two large pools, spa, gym, front desk &amp; housekeeping",
+        "Furnished · central A/C · underground parking · 24/7 security"
+      ],
+      "note": "Resale · built 2006 · $4,845,000 MXN · HOA: $1,215 USD / quarter · Taxes: $88.76 USD",
+      "photos": [
+        "https://buyplaya.co/site/assets/files/609195/dsc_0013.1220x710.jpg",
+        "https://buyplaya.co/site/assets/files/609195/dsc_0029.1220x710.jpg",
+        "https://buyplaya.co/site/assets/files/609195/dsc_0041.1220x710.jpg",
+        "https://buyplaya.co/site/assets/files/609195/dsc_0043.1220x710.jpg",
+        "https://buyplaya.co/site/assets/files/609195/dsc_0009.1220x710.jpg",
+        "https://buyplaya.co/site/assets/files/609195/dsc_0046.1220x710.jpg",
+        "https://buyplaya.co/site/assets/files/609195/dsc_0068.1220x710.jpg",
+        "https://buyplaya.co/site/assets/files/609195/dsc_0001.1220x710.jpg"
+      ]
+    }
+  ]
+}
