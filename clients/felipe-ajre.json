@@ -27,7 +27,16 @@
       ],
       "note": "Asking $2,600,000 MXN (USD at 17.2)",
       "folder": "1DhrMArIZ3mxSGNhurVKWhAN9TO7YfNgI",
-      "photos": ["1gnVUTG3DGy2V8n_qGtQxVyQHu8jwKySn","1POSnoGmmgqAQLkCHVpz-Xpz1PhTXVR3_","1Z50nTQiEXJ2OVvzjC_-tiyyy_yeZRpyJ","10dNfniS2kXPYQOPv1P5hp_tNCLR3KvzB","1ytPKMH7Fat6yKMZs_ZTAdXWesS-hbL6N","1wZzXWM4dAwYq_9mHD8hznAlF383DUSMy","1qCj57aR2uE4L-Hhimc2r-UWayx_JQTY_","1k8W8i31byD-jmM0H0R3jr9gukM2Nr6AV"],
+      "photos": [
+        "1gnVUTG3DGy2V8n_qGtQxVyQHu8jwKySn",
+        "1POSnoGmmgqAQLkCHVpz-Xpz1PhTXVR3_",
+        "1Z50nTQiEXJ2OVvzjC_-tiyyy_yeZRpyJ",
+        "10dNfniS2kXPYQOPv1P5hp_tNCLR3KvzB",
+        "1ytPKMH7Fat6yKMZs_ZTAdXWesS-hbL6N",
+        "1wZzXWM4dAwYq_9mHD8hznAlF383DUSMy",
+        "1qCj57aR2uE4L-Hhimc2r-UWayx_JQTY_",
+        "1k8W8i31byD-jmM0H0R3jr9gukM2Nr6AV"
+      ],
       "type": "CONDO"
     },
     {
@@ -51,8 +60,14 @@
       ],
       "note": "Asking $2,300,000 MXN (USD at 17.2)",
       "folder": "158ZA5CLnGXR1AvOcSRILNAPyFwHUoiJK",
-      "photos": ["14N5y_c_vC3W7tAGLGWV-13lNe4kGbdNa","1RIbtdJPUemnlDg1lFtt9vY4NnFtnKb1E","1ERX3BFGCJXpYeUjB85XfbxOAqJy4dTno","1R-s5-YL-9XttBlKjoLT4ApjuwPgr-0Tu"],
-      "type": "CONDO"
+      "photos": [
+        "14N5y_c_vC3W7tAGLGWV-13lNe4kGbdNa",
+        "1RIbtdJPUemnlDg1lFtt9vY4NnFtnKb1E",
+        "1ERX3BFGCJXpYeUjB85XfbxOAqJy4dTno",
+        "1R-s5-YL-9XttBlKjoLT4ApjuwPgr-0Tu"
+      ],
+      "type": "CONDO",
+      "video": "11oF3sthTmGw3lXVXhAE9A0582f5RBhyo"
     },
     {
       "name": "Bali Residencial<br>3-Bed House",
@@ -74,7 +89,16 @@
         "Parking for 2 cars · pet friendly"
       ],
       "note": "Asking $2,500,000 MXN (USD at 17.2) · HOA $2,400 MXN / month · Taxes $2,040 MXN / year",
-      "photos": ["https://remaxmaya.com/wp-content/uploads/2026/06/28-de-tamano-grande.jpeg","https://remaxmaya.com/wp-content/uploads/2026/06/1-de-tamano-grande.jpeg","https://remaxmaya.com/wp-content/uploads/2026/06/6-de-tamano-grande.jpeg","https://remaxmaya.com/wp-content/uploads/2026/06/7-de-tamano-grande.jpeg","https://remaxmaya.com/wp-content/uploads/2026/06/3-de-tamano-grande.jpeg","https://remaxmaya.com/wp-content/uploads/2026/06/11-de-tamano-grande.jpeg","https://remaxmaya.com/wp-content/uploads/2026/06/10-de-tamano-grande.jpeg","https://remaxmaya.com/wp-content/uploads/2026/06/2-de-tamano-grande.jpeg"],
+      "photos": [
+        "https://remaxmaya.com/wp-content/uploads/2026/06/28-de-tamano-grande.jpeg",
+        "https://remaxmaya.com/wp-content/uploads/2026/06/1-de-tamano-grande.jpeg",
+        "https://remaxmaya.com/wp-content/uploads/2026/06/6-de-tamano-grande.jpeg",
+        "https://remaxmaya.com/wp-content/uploads/2026/06/7-de-tamano-grande.jpeg",
+        "https://remaxmaya.com/wp-content/uploads/2026/06/3-de-tamano-grande.jpeg",
+        "https://remaxmaya.com/wp-content/uploads/2026/06/11-de-tamano-grande.jpeg",
+        "https://remaxmaya.com/wp-content/uploads/2026/06/10-de-tamano-grande.jpeg",
+        "https://remaxmaya.com/wp-content/uploads/2026/06/2-de-tamano-grande.jpeg"
+      ],
       "type": "HOUSE"
     }
   ]
