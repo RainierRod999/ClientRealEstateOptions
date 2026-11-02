@@ -1,0 +1,76 @@
+{
+  "client": "Ammar",
+  "slug": "ammar-6ofy",
+  "city": "Playa del Carmen",
+  "subtitle": "PLAYA DEL CARMEN · RIVIERA MAYA · MÉXICO",
+  "footer_location": "PLAYA DEL CARMEN · QUINTANA ROO · MÉXICO",
+  "whatsapp": "16463424105",
+  "properties": [
+    {
+      "name": "Lunada<br>2-Bed Garden-Level Condo",
+      "short": "Lunada 2-Bed",
+      "plain": "Lunada 2-Bed Ground-Floor Condo",
+      "zone": "Colonia Hollywood",
+      "city": "Playa del Carmen",
+      "m2": 124,
+      "bed": 2,
+      "bath": "3",
+      "levels": null,
+      "price": 310000,
+      "type": "CONDO",
+      "badge_en": "PRICE REDUCED · FULLY FURNISHED",
+      "badge_es": "PRECIO REDUCIDO · AMUEBLADO",
+      "features": [
+        "Ground-floor unit with private terrace · 3 full bathrooms",
+        "Sold fully furnished and equipped",
+        "Rooftop pool, jacuzzi, sun deck &amp; grill area",
+        "Gym, lobby, elevator, 24/7 security · 1 parking space",
+        "Boutique, low-density building (built 2016)"
+      ],
+      "note": "Reduced from $319,000 · HOA $285/mo · property tax $375/yr",
+      "photos": [
+        "https://storage.googleapis.com/moskito/2025/11/two-bedroom-ground-floor-condo-in-playa-del-carmen-lunada-sky-pool-1.jpg.webp",
+        "https://storage.googleapis.com/moskito/2026/01/two-bedroom-ground-floor-condo-in-playa-del-carmen-lunada-living-room-with-ac-20260116153959.jpg.webp",
+        "https://storage.googleapis.com/moskito/2025/11/two-bedroom-ground-floor-condo-in-playa-del-carmen-lunada-living-and-dining-room-1.jpg",
+        "https://storage.googleapis.com/moskito/2025/11/two-bedroom-ground-floor-condo-in-playa-del-carmen-lunada-sofa-with-terrace-1.jpg",
+        "https://storage.googleapis.com/moskito/2025/11/two-bedroom-ground-floor-condo-in-playa-del-carmen-lunada-kitchen-with-bar-1.jpg",
+        "https://storage.googleapis.com/moskito/2025/11/two-bedroom-ground-floor-condo-in-playa-del-carmen-lunada-terrace-1.jpg",
+        "https://storage.googleapis.com/moskito/2025/11/two-bedroom-ground-floor-condo-in-playa-del-carmen-lunada-master-bedroom-1.jpg",
+        "https://storage.googleapis.com/moskito/2025/11/two-bedroom-ground-floor-condo-in-playa-del-carmen-lunada-pool-with-sunbeds-1.jpg.webp"
+      ]
+    },
+    {
+      "name": "Heliko<br>2-Bed Condo",
+      "short": "Heliko 2-Bed",
+      "plain": "Heliko 2-Bed Condo",
+      "zone": "Zazil-Ha · Steps from Fifth Avenue",
+      "city": "Playa del Carmen",
+      "m2": 138.68,
+      "bed": 2,
+      "bath": "2.5",
+      "levels": null,
+      "price": 319000,
+      "type": "CONDO",
+      "badge_en": "STEPS FROM FIFTH AVENUE",
+      "badge_es": "A PASOS DE LA QUINTA AVENIDA",
+      "features": [
+        "138.68 m² interior · roughly $2,300 USD per m²",
+        "Rooftop pool &amp; jacuzzi with ocean views",
+        "In-unit washer &amp; dryer · elevator · parking",
+        "On-site security · walk to Quinta Avenida"
+      ],
+      "note": "Asking price · unit 204",
+      "folder": "1Im0Az8ovUg2MR8jJnIC5-2LqxFEYeYuU",
+      "photos": [
+        "1PDbR-T7A8yRtoY61EtOJ1Vl88Avo9jmb",
+        "11rZxqUO3nzow0Jv6iV98VzcO1XIy02h-",
+        "1zmn4LQZv0SLwXzZEPDta69noPK6iQkV_",
+        "1OPEFSABXUXsTsA-cWY-h1oEkAo0wC_4q",
+        "109hZpMw6SnMy5TwG134SECV9bRdVzPxJ",
+        "1mPwhLsl-5-rqtEkNUk7ZbUu7Ips2pWgF",
+        "1mkL1peim1Csydvj5JlRU4AX7Rmvfy60S",
+        "1X40dTzQYMbxZEMIBDD175YSVg0w2iNMa"
+      ]
+    }
+  ]
+}
