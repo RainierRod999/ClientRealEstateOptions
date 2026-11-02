@@ -1,0 +1,81 @@
+{
+  "client": "Felipe",
+  "slug": "felipe-ajre",
+  "city": "Playa del Carmen",
+  "subtitle": "PLAYA DEL CARMEN · RIVIERA MAYA · MÉXICO",
+  "footer_location": "PLAYA DEL CARMEN · QUINTANA ROO · MÉXICO",
+  "whatsapp": "16463424105",
+  "properties": [
+    {
+      "name": "Menotto 10<br>Unit D-302",
+      "short": "Menotto 10 D-302",
+      "plain": "Menotto 10 Unit D-302",
+      "zone": "Calle 48 &amp; 15th Ave",
+      "city": "Playa del Carmen",
+      "m2": 40,
+      "bed": 1,
+      "bath": "1",
+      "levels": null,
+      "price": 151163,
+      "badge_en": "PRESALE · DELIVERY FEB 2028",
+      "badge_es": "PREVENTA · ENTREGA FEB 2028",
+      "features": [
+        "Rooftop pool and lounge with ocean views",
+        "3rd floor, front-facing, with a private 4.7 m² balcony",
+        "Gym, sports bar, reception lobby, elevator, 24/7 security",
+        "Strong short-term rental potential near the Caribbean"
+      ],
+      "note": "Asking $2,600,000 MXN (USD at 17.2)",
+      "folder": "1DhrMArIZ3mxSGNhurVKWhAN9TO7YfNgI",
+      "photos": ["1gnVUTG3DGy2V8n_qGtQxVyQHu8jwKySn","1POSnoGmmgqAQLkCHVpz-Xpz1PhTXVR3_","1Z50nTQiEXJ2OVvzjC_-tiyyy_yeZRpyJ","10dNfniS2kXPYQOPv1P5hp_tNCLR3KvzB","1ytPKMH7Fat6yKMZs_ZTAdXWesS-hbL6N","1wZzXWM4dAwYq_9mHD8hznAlF383DUSMy","1qCj57aR2uE4L-Hhimc2r-UWayx_JQTY_","1k8W8i31byD-jmM0H0R3jr9gukM2Nr6AV"],
+      "type": "CONDO"
+    },
+    {
+      "name": "Playa 32<br>Unit 302",
+      "short": "Playa 32 Unit 302",
+      "plain": "Playa 32 Unit 302",
+      "zone": "Calle 32 · Ave 30–35",
+      "city": "Playa del Carmen",
+      "m2": 47,
+      "bed": 1,
+      "bath": "1",
+      "levels": null,
+      "price": 133721,
+      "badge_en": "BOUTIQUE · ONLY 14 UNITS",
+      "badge_es": "BOUTIQUE · SOLO 14 UNIDADES",
+      "features": [
+        "Boutique building with only 14 units, low density",
+        "Delivered furnished and equipped",
+        "Private balcony and building rooftop",
+        "Central location on Calle 32 between 30th and 35th Ave"
+      ],
+      "note": "Asking $2,300,000 MXN (USD at 17.2)",
+      "folder": "158ZA5CLnGXR1AvOcSRILNAPyFwHUoiJK",
+      "photos": ["14N5y_c_vC3W7tAGLGWV-13lNe4kGbdNa","1RIbtdJPUemnlDg1lFtt9vY4NnFtnKb1E","1ERX3BFGCJXpYeUjB85XfbxOAqJy4dTno","1R-s5-YL-9XttBlKjoLT4ApjuwPgr-0Tu"],
+      "type": "CONDO"
+    },
+    {
+      "name": "Bali Residencial<br>3-Bed House",
+      "short": "Bali 3-Bed House",
+      "plain": "Bali Residencial 3-Bed House",
+      "zone": "Bali Residencial",
+      "city": "Playa del Carmen",
+      "m2": 99,
+      "bed": 3,
+      "bath": "2.5",
+      "levels": null,
+      "price": 145349,
+      "badge_en": "GATED COMMUNITY · MOVE-IN READY",
+      "badge_es": "COMUNIDAD PRIVADA · LISTA PARA HABITAR",
+      "features": [
+        "Gated community with 24/7 security at the entrance",
+        "Sports club: semi-Olympic pool, gym, tennis, padel, basketball &amp; soccer",
+        "Private patio, laundry area, storage, A/C and ceiling fans",
+        "Parking for 2 cars · pet friendly"
+      ],
+      "note": "Asking $2,500,000 MXN (USD at 17.2) · HOA $2,400 MXN / month · Taxes $2,040 MXN / year",
+      "photos": ["https://remaxmaya.com/wp-content/uploads/2026/06/28-de-tamano-grande.jpeg","https://remaxmaya.com/wp-content/uploads/2026/06/1-de-tamano-grande.jpeg","https://remaxmaya.com/wp-content/uploads/2026/06/6-de-tamano-grande.jpeg","https://remaxmaya.com/wp-content/uploads/2026/06/7-de-tamano-grande.jpeg","https://remaxmaya.com/wp-content/uploads/2026/06/3-de-tamano-grande.jpeg","https://remaxmaya.com/wp-content/uploads/2026/06/11-de-tamano-grande.jpeg","https://remaxmaya.com/wp-content/uploads/2026/06/10-de-tamano-grande.jpeg","https://remaxmaya.com/wp-content/uploads/2026/06/2-de-tamano-grande.jpeg"],
+      "type": "HOUSE"
+    }
+  ]
+}
