@@ -1,0 +1,76 @@
+{
+  "client": "Vianne",
+  "slug": "vianne-rgh8",
+  "city": "Playa del Carmen",
+  "subtitle": "2-BEDROOM CONDOS · READY TO MOVE IN · PLAYA DEL CARMEN",
+  "footer_location": "PLAYA DEL CARMEN · QUINTANA ROO · MÉXICO",
+  "whatsapp": "16463424105",
+  "properties": [
+    {
+      "name": "Luna Maya<br>2-Bed Condo",
+      "short": "Luna Maya",
+      "plain": "Luna Maya 2-Bedroom Condo",
+      "zone": "Las Brisas",
+      "city": "Playa del Carmen",
+      "m2": 134.7,
+      "bed": 2,
+      "bath": "2",
+      "levels": null,
+      "price": 275000,
+      "type": "CONDO",
+      "badge_en": "READY TO MOVE IN · STEPS FROM THE BEACH",
+      "badge_es": "LISTO PARA HABITAR · A PASOS DE LA PLAYA",
+      "features": [
+        "Fully furnished 2-bed, 2-bath on the second level · 1,450 sq ft interior",
+        "Pool, palapa and landscaped gardens · beach club access",
+        "Gated building with 24/7 security and doorman · covered parking",
+        "Balcony/covered terrace · A/C, ceiling fans, granite counters &amp; breakfast bar"
+      ],
+      "note": "HOA approx. $303/mo (5,210 MXN) · USD at 17.2 · built 2011",
+      "folder": "",
+      "photos": [
+        "https://sirchimp.s3.us-east-1.amazonaws.com/rm/wp-content/uploads/2026/05/property-bcd44c5f-e148-4f8b-b2df-630b0c1addae-32012F0B-seq2-scaled.jpg",
+        "https://sirchimp.s3.us-east-1.amazonaws.com/rm/wp-content/uploads/2026/05/property-bcd44c5f-e148-4f8b-b2df-630b0c1addae-AE773D6A-seq1-scaled.jpg",
+        "https://sirchimp.s3.us-east-1.amazonaws.com/rm/wp-content/uploads/2026/05/property-bcd44c5f-e148-4f8b-b2df-630b0c1addae-821D8FBB-seq4-scaled.jpg",
+        "https://sirchimp.s3.us-east-1.amazonaws.com/rm/wp-content/uploads/2026/05/property-bcd44c5f-e148-4f8b-b2df-630b0c1addae-1422D641-seq9.jpg",
+        "https://sirchimp.s3.us-east-1.amazonaws.com/rm/wp-content/uploads/2026/05/property-bcd44c5f-e148-4f8b-b2df-630b0c1addae-FCC12EE0-seq11.jpg",
+        "https://sirchimp.s3.us-east-1.amazonaws.com/rm/wp-content/uploads/2026/05/property-bcd44c5f-e148-4f8b-b2df-630b0c1addae-F76C1748-seq14.jpg",
+        "https://sirchimp.s3.us-east-1.amazonaws.com/rm/wp-content/uploads/2026/05/property-bcd44c5f-e148-4f8b-b2df-630b0c1addae-D7A15C11-seq16.jpg",
+        "https://sirchimp.s3.us-east-1.amazonaws.com/rm/wp-content/uploads/2026/05/property-bcd44c5f-e148-4f8b-b2df-630b0c1addae-D0CDA6C7-seq18.jpg"
+      ]
+    },
+    {
+      "name": "Habanero Living<br>Unit 403",
+      "short": "Habanero 403",
+      "plain": "Habanero Living Unit 403",
+      "zone": "Gonzalo Guerrero · Calle 36 Norte",
+      "city": "Playa del Carmen",
+      "m2": 96.9,
+      "bed": 2,
+      "bath": "2",
+      "levels": null,
+      "price": 235000,
+      "type": "CONDO",
+      "badge_en": "READY TO MOVE IN · LOCK-OFF",
+      "badge_es": "LISTO PARA HABITAR · LOCK-OFF",
+      "features": [
+        "Lock-off layout: 2nd bedroom has its own bath, kitchenette and balcony — rent it separately",
+        "Fully furnished with high-end Italian furniture · sofa bed space for a 3rd sleeping area",
+        "Two balconies (interior and exterior views) · 4th floor",
+        "Rooftop pool with grill area · elevator · laundry · covered parking"
+      ],
+      "note": "HOA approx. $436/mo (7,496 MXN) · property tax approx. $218/yr (3,750 MXN) · USD at 17.2",
+      "folder": "1ep4ArF_RLBEX9ZMPpZlL14jB2CXIIKeW",
+      "photos": [
+        "1vFdsO31vZp22Yzgz-PYdWRM3W8O1ymi2",
+        "1gCy2Fz1PIkfSKDleNUpwpacKFmGOG0LO",
+        "1l-Qrfobq2OsLscS71Q5QLYeXRGsBpeFT",
+        "1SrHfuqZkRa9wF7CPnNNde5-GL2l3H-IK",
+        "1Q-_Caq1VnENoRbiLIwOR_AKNM3_JEuom",
+        "1UGb-h5-7xU3Ref20VpfPWGNiIDUWM9XT",
+        "1qsOJyFiqBZ5S8GCj0RDRJgo6CHJcuVd2",
+        "1vxnBLRGxSBi_N9S1sxkmr6wW4C1Fupe3"
+      ]
+    }
+  ]
+}
