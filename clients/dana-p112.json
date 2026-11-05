@@ -1,0 +1,82 @@
+{
+  "client": "Dana",
+  "slug": "dana-p112",
+  "city": "Puerto Aventuras",
+  "subtitle": "PUERTO AVENTURAS · RIVIERA MAYA · MÉXICO",
+  "footer_location": "PUERTO AVENTURAS · QUINTANA ROO · MÉXICO",
+  "whatsapp": "16463424105",
+  "properties": [
+    {
+      "name": "Casa Coco<br>4-Bed Pool Home",
+      "short": "Casa Coco",
+      "plain": "Casa Coco 4-Bedroom Home",
+      "zone": "Puerto Aventuras",
+      "city": "Puerto Aventuras",
+      "m2": 300,
+      "bed": 4,
+      "bath": "3",
+      "levels": 2,
+      "price": 695000,
+      "type": "HOUSE",
+      "badge_en": "REDUCED · TURNKEY · PROVEN RENTAL",
+      "badge_es": "PRECIO REDUCIDO · LLAVE EN MANO · RENTA PROBADA",
+      "features": [
+        "Private pool with tropical garden, deck, patio and enclosed furnished lanai",
+        "Sold fully furnished · equipped kitchen with high-end extras",
+        "28 solar panels · central A/C plus individual units",
+        "Gated community with 24-hour security · pets allowed · 2 parking spaces"
+      ],
+      "note": "Reduced to $695,000 USD · 480 m² lot · 3,228 sq ft construction · proven vacation rental",
+      "folder": "1YSVPLRVf2bw7bol3c75GeZhrViisRWAV",
+      "photos": ["1uwzXbr3XUPxt_1ssOJAEz7mRUSzLqQR6","1gYFsHkO0vubFmDrfYkMyg4ePvZOAthVr","19fjbs2Cd-NwdTVDXIdLqb663FU0_1zl0","1i5wu6rzjmKuTxqk2Gzz1TGgiEIvao_as","1K598tO8KA5FX6Av9Bpupf4xI1fbZ_mVE","1uGeh2lmQGOco-XINJoQ1H8D9zVp3Osq8","1yOr9T0DArwweFFpklhtz6bFqnttfs_fZ","1ki3x2c6jn3twZIoLExl8UUZQ7FzWHO1f"]
+    },
+    {
+      "name": "Golf View<br>3-Bed Pool Home",
+      "short": "PA 3-Bed Golf View",
+      "plain": "Puerto Aventuras 3-Bedroom Golf View Home",
+      "zone": "Puerto Aventuras",
+      "city": "Puerto Aventuras",
+      "m2": 192,
+      "bed": 3,
+      "bath": "3.5",
+      "levels": null,
+      "price": 650000,
+      "type": "HOUSE",
+      "badge_en": "GOLF COURSE VIEWS · PRIVATE POOL",
+      "badge_es": "VISTA AL GOLF · ALBERCA PRIVADA",
+      "features": [
+        "Private pool with deck and golf course views",
+        "3 bedrooms, each with its own en-suite bath, plus half bath",
+        "15 solar panels · mini-split A/C throughout · cistern",
+        "Gated marina &amp; golf community · 24-hour security · pets allowed"
+      ],
+      "note": "480 m² lot · 2 parking spaces · near beach access, golf &amp; 2 marinas",
+      "folder": "1ALS9y82tXjISUiqQMTGvShYuT_IZZ2bd",
+      "photos": ["11NAFJHdedEk79y1m4562ABXJ_qzqOCta","1ENGZzpIf3i32Ulh2wzKsLcKP-5Fk3x7n","1QU9zCBdJYV5PXuaesPDVLSRlDsd7k1HY","1FHhGKaH_lQoRHaSUJwF4mSdRDH-w7gse","1UutU7NZ48F9irkv6Hwd0kdZzdhMMcCrJ","1G-LbmcGS-_8VsSQIV8v1tBXZWKZkcGLq","16UUC0uLgr1QLyDjXOGDxoAp9LQhNIXq0","1ZBWI2s164WDsf_plHFt5SSdBFTsB_ytz"]
+    },
+    {
+      "name": "Fisher House<br>Single-Story on the Golf",
+      "short": "Fisher House",
+      "plain": "Fisher House 3-Bedroom Single-Story",
+      "zone": "Caleta Yalku",
+      "city": "Puerto Aventuras",
+      "m2": 387,
+      "bed": 3,
+      "bath": "3.5",
+      "levels": 1,
+      "price": 799000,
+      "type": "HOUSE",
+      "badge_en": "SINGLE-STORY · GOLF COURSE VIEWS",
+      "badge_es": "UNA PLANTA · VISTA AL GOLF",
+      "features": [
+        "Private pool and garden overlooking the golf course · covered terrace",
+        "Master suite with sitting area · brick dome ceiling (cúpula) in 2nd bedroom",
+        "Maid's quarters with private bath · whole-house water softener · 2-car garage",
+        "Furnished · 2-minute walk to restaurants &amp; shops · gated, guarded community"
+      ],
+      "note": "840 m² lot · HOA approx. $79/mo (1,356 MXN) · taxes approx. $419/yr (7,212 MXN) · USD at 17.2",
+      "folder": "1RS_9pLy9QWXGfyH-j-kIEljps5NZw0uS",
+      "photos": ["1clq3OzBmaaVpKZ2GWoFxP0_BjK18DyxJ","1C-h6-nA23pNlf6uHCgB7-xfqzUzJwOVT","1Jht4ouRQOb1di6ISbHmAEpcaCU21xRgB","1pyLl1DMITe0G0PbCoeVatYmhP8DkhMQI","1ZfXHe5KSIuvbd3CeU8zN82089x3HBdjf","15y05DhMV5Ls_eumS_43on0UmqhKdcV74","1skpu1cnrezCNQHsKjbPjIYRwf1Bbs7c_","1_p0PfFcjJq9Vfcmx6RDe33lu-VXuM8hV"]
+    }
+  ]
+}
