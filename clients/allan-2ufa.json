@@ -7,36 +7,36 @@
   "whatsapp": "16463424105",
   "properties": [
     {
-      "name": "Casa Caramelo<br>4-Bed Villa",
-      "short": "Casa Caramelo",
-      "plain": "Casa Caramelo 4-Bed Villa",
-      "zone": "La Veleta",
+      "name": "Kaanal House<br>2-Bed Duplex",
+      "short": "Kaanal House",
+      "plain": "Kaanal House 2-Bed Duplex",
+      "zone": "Calle 10 Sur",
       "city": "Tulum",
-      "m2": 252,
-      "bed": 4,
-      "bath": "4.5",
-      "levels": null,
-      "price": 369000,
-      "type": "VILLA",
-      "badge_en": "PRICE REDUCED",
-      "badge_es": "PRECIO REDUCIDO",
+      "m2": 281,
+      "bed": 2,
+      "bath": "2.5",
+      "levels": 2,
+      "price": 399000,
+      "type": "HOUSE",
+      "badge_en": "TURNKEY · PRIVATE PLUNGE POOL",
+      "badge_es": "LLAVE EN MANO · ALBERCA PRIVADA",
       "features": [
-        "Price reduced &mdash; previously listed above $440K USD",
-        "252 m² built on a 288 m² lot · private pool &amp; parking",
-        "Two kitchens · turnkey and ready to rent",
-        "La Veleta, across from Nimeño café · seller reports $60K+ gross annual rental income"
+        "Private plunge pool, terrace and private front entrance",
+        "Solar panels · marble floors · wood cabinetry",
+        "Shared pool, swim lane, firepit and BBQ party area",
+        "Gated complex with 24/7 guard, cameras &amp; 2-car secure driveway"
       ],
-      "note": "Reduced from $440K+ · City tax: $9,000 MXN",
-      "folder": "1NbuRdNbfXXWxQMxZdERorusFFDa2p29Z",
+      "note": "Asking price · seller open to offers · approx. 3,023 sq ft construction",
+      "folder": "https://mycasa.mx/all-properties/kaanal-house-premier-tulum-real-estate-investment-978",
       "photos": [
-        "1_VoQLQ5GbhK5jJibuom0cbQiJ7Vchx_F",
-        "1WUlL-zrmPSOqYdN94oOa-25tOnvvCzdu",
-        "17WCiI-enI2BlKPBtJBnYcFDeMDYLFuZx",
-        "17SQ6mL8QhcxTSINhFhCwiy9qOaE8kCS_",
-        "1Klr7i3acmfaeSagSvyPU2QdMIZxzQmO1",
-        "1Anq1hmUt0VT6GxpDULvS8o3Cmbyk5bCi",
-        "1TbBghAS_znkOBHPVPQ7hUDBGfokUx80p",
-        "166ZfZhNU1q_mTrGRBycZT6J3p4xq8drO"
+        "https://cdn.mycasa.mx/public/uploads/properties/978/b98be010-a67a-4725-92e7-5407bb11beae.jpg",
+        "https://cdn.mycasa.mx/public/uploads/properties/978/00a8226f-3159-494e-b478-443f113da12d.jpg",
+        "https://cdn.mycasa.mx/public/uploads/properties/978/48f376a7-3397-4f8b-8582-a60a396e5d09.jpg",
+        "https://cdn.mycasa.mx/public/uploads/properties/978/32ad9fb9-6c97-49f0-a924-7333e4b6703e.jpg",
+        "https://cdn.mycasa.mx/public/uploads/properties/978/75762837-3e3e-494b-aa71-98f616948fb2.jpg",
+        "https://cdn.mycasa.mx/public/uploads/properties/978/060cf8dc-a257-4d0d-81af-030d3fdfefd8.jpg",
+        "https://cdn.mycasa.mx/public/uploads/properties/978/43ad1de7-9d87-4f78-8dff-f3b420bad64f.jpg",
+        "https://cdn.mycasa.mx/public/uploads/properties/978/f4379a8d-5634-4055-ae8a-34a546c5d2b9.jpg"
       ]
     },
     {
@@ -70,6 +70,39 @@
         "1n6vKi7ClD1fKgmvHpsbkhFNTdJLf3K30",
         "1x8EzfZTtBXftcXZKmfAz8xENEL3lzXAI",
         "1gaPk_eUdQX3dMUsgR_Pr_BPPMNpnGz6V"
+      ]
+    },
+    {
+      "name": "Casa Caramelo<br>4-Bed Villa",
+      "short": "Casa Caramelo",
+      "plain": "Casa Caramelo 4-Bed Villa",
+      "zone": "La Veleta",
+      "city": "Tulum",
+      "m2": 252,
+      "bed": 4,
+      "bath": "4.5",
+      "levels": null,
+      "price": 369000,
+      "type": "VILLA",
+      "badge_en": "PRICE REDUCED",
+      "badge_es": "PRECIO REDUCIDO",
+      "features": [
+        "Price reduced &mdash; previously listed above $440K USD",
+        "252 m² built on a 288 m² lot · private pool &amp; parking",
+        "Two kitchens · turnkey and ready to rent",
+        "La Veleta, across from Nimeño café · seller reports $60K+ gross annual rental income"
+      ],
+      "note": "Reduced from $440K+ · City tax: $9,000 MXN",
+      "folder": "1NbuRdNbfXXWxQMxZdERorusFFDa2p29Z",
+      "photos": [
+        "1_VoQLQ5GbhK5jJibuom0cbQiJ7Vchx_F",
+        "1WUlL-zrmPSOqYdN94oOa-25tOnvvCzdu",
+        "17WCiI-enI2BlKPBtJBnYcFDeMDYLFuZx",
+        "17SQ6mL8QhcxTSINhFhCwiy9qOaE8kCS_",
+        "1Klr7i3acmfaeSagSvyPU2QdMIZxzQmO1",
+        "1Anq1hmUt0VT6GxpDULvS8o3Cmbyk5bCi",
+        "1TbBghAS_znkOBHPVPQ7hUDBGfokUx80p",
+        "166ZfZhNU1q_mTrGRBycZT6J3p4xq8drO"
       ]
     }
   ]
