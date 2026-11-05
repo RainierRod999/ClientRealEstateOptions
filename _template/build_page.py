@@ -70,7 +70,7 @@ for i, p in enumerate(props, 1):
       <div class="prop-divider"></div>
       <ul class="prop-features">{feats}</ul>
       <div class="prop-price-block">
-        <p class="prop-price-current">USD {money(p['price'])}</p>
+        <p class="prop-price-current">{(f'<span style="font-size:0.45em;letter-spacing:0.14em;display:block;margin-bottom:6px;" data-en="{p["price_prefix"]}" data-es="{p.get("price_prefix_es", p["price_prefix"])}">{p["price_prefix"]}</span>') if p.get('price_prefix') else ''}USD {money(p['price'])}</p>
         <p class="prop-price-note">{p['note']}</p>
       </div>
       <div class="prop-buttons">
@@ -78,6 +78,7 @@ for i, p in enumerate(props, 1):
         <button class="btn save-btn" onclick="toggleSave(this)" data-en="☆ SAVE" data-es="☆ GUARDAR">☆ SAVE</button>
         <a href="{inquire}" target="_blank" class="btn" data-en="INQUIRE —" data-es="CONSULTAR —">INQUIRE —</a>
       </div>
+      {f'<a href="{p["brochure"] if p["brochure"].startswith("http") else "https://drive.google.com/file/d/"+p["brochure"]+"/view"}" target="_blank" class="btn" style="display:block;text-align:center;margin-top:14px;" data-en="{p.get("brochure_label", "VIEW BROCHURE —")}" data-es="{p.get("brochure_label_es", "VER FOLLETO —")}">{p.get("brochure_label", "VIEW BROCHURE —")}</a>' if p.get('brochure') else ''}
       {f'<a href="{p["video"] if p["video"].startswith("http") else "https://drive.google.com/file/d/"+p["video"]+"/view"}" target="_blank" class="btn video-btn" style="display:block;text-align:center;margin-top:14px;" data-en="▶ WATCH TOUR VIDEO" data-es="▶ VER VIDEO TOUR">▶ WATCH TOUR VIDEO</a>' if p.get('video') else ''}
       <a href="https://wa.me/{WA}" target="_blank" class="like-btn" onclick="likeThis(this)">
         {WA_SVG.replace('width="18" height="18"', 'width="16" height="16"')}
