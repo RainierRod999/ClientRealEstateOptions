@@ -1,0 +1,76 @@
+{
+  "client": "Mitch",
+  "slug": "mitch-8lfl",
+  "city": "Playa del Carmen",
+  "subtitle": "PLAYA DEL CARMEN · RIVIERA MAYA · MÉXICO",
+  "footer_location": "PLAYA DEL CARMEN · QUINTANA ROO · MÉXICO",
+  "whatsapp": "16463424105",
+  "properties": [
+    {
+      "name": "Luna Maya<br>2-Bed Condo",
+      "short": "Luna Maya",
+      "plain": "Luna Maya 2-Bedroom Condo",
+      "zone": "Las Brisas",
+      "city": "Playa del Carmen",
+      "m2": 134.7,
+      "bed": 2,
+      "bath": "2",
+      "levels": null,
+      "price": 275000,
+      "type": "CONDO",
+      "badge_en": "READY TO MOVE IN · STEPS FROM THE BEACH",
+      "badge_es": "LISTO PARA HABITAR · A PASOS DE LA PLAYA",
+      "features": [
+        "Fully furnished 2-bed, 2-bath on the second level · 1,450 sq ft interior",
+        "Pool, palapa and landscaped gardens · beach club access",
+        "Gated building with 24/7 security and doorman · covered parking",
+        "Balcony/covered terrace · A/C, ceiling fans, granite counters &amp; breakfast bar"
+      ],
+      "note": "HOA approx. $303/mo (5,210 MXN) · USD at 17.2 · built 2011",
+      "folder": "",
+      "photos": [
+        "https://sirchimp.s3.us-east-1.amazonaws.com/rm/wp-content/uploads/2026/05/property-bcd44c5f-e148-4f8b-b2df-630b0c1addae-32012F0B-seq2-scaled.jpg",
+        "https://sirchimp.s3.us-east-1.amazonaws.com/rm/wp-content/uploads/2026/05/property-bcd44c5f-e148-4f8b-b2df-630b0c1addae-AE773D6A-seq1-scaled.jpg",
+        "https://sirchimp.s3.us-east-1.amazonaws.com/rm/wp-content/uploads/2026/05/property-bcd44c5f-e148-4f8b-b2df-630b0c1addae-821D8FBB-seq4-scaled.jpg",
+        "https://sirchimp.s3.us-east-1.amazonaws.com/rm/wp-content/uploads/2026/05/property-bcd44c5f-e148-4f8b-b2df-630b0c1addae-1422D641-seq9.jpg",
+        "https://sirchimp.s3.us-east-1.amazonaws.com/rm/wp-content/uploads/2026/05/property-bcd44c5f-e148-4f8b-b2df-630b0c1addae-FCC12EE0-seq11.jpg",
+        "https://sirchimp.s3.us-east-1.amazonaws.com/rm/wp-content/uploads/2026/05/property-bcd44c5f-e148-4f8b-b2df-630b0c1addae-F76C1748-seq14.jpg",
+        "https://sirchimp.s3.us-east-1.amazonaws.com/rm/wp-content/uploads/2026/05/property-bcd44c5f-e148-4f8b-b2df-630b0c1addae-D7A15C11-seq16.jpg",
+        "https://sirchimp.s3.us-east-1.amazonaws.com/rm/wp-content/uploads/2026/05/property-bcd44c5f-e148-4f8b-b2df-630b0c1addae-D0CDA6C7-seq18.jpg"
+      ]
+    },
+    {
+      "name": "Urban Towers<br>Unit B303",
+      "short": "Urban Towers B303",
+      "plain": "Urban Towers Unit B303",
+      "zone": "Zazil-Há · Av. 30 Norte",
+      "city": "Playa del Carmen",
+      "m2": 96.1,
+      "bed": 3,
+      "bath": "2",
+      "levels": null,
+      "price": 313895,
+      "type": "CONDO",
+      "badge_en": "3 BEDROOMS · 5 MIN TO THE BEACH",
+      "badge_es": "3 RECÁMARAS · A 5 MIN DE LA PLAYA",
+      "features": [
+        "3 bedrooms, 2 full baths on the 3rd floor · 84.6 m² interior + 11.4 m² terrace",
+        "Rooftop pool with bar &amp; grill and sundeck, plus a ground-floor pool and zen garden",
+        "Gym, private cinema, kids club, 24/7 security, 2 elevators &amp; underground parking",
+        "Italian kitchen with quartz counters, SMEG appliances · inverter A/C · 5 min to the beach, 3 min to 5th Ave"
+      ],
+      "note": "5,399,000 MXN developer list price (USD at 17.2) · HOA approx. $275/mo (4,727 MXN)",
+      "folder": "1JWw_wT0f_zP6a12KLuxEU3Rn33t79nfx",
+      "photos": [
+        "1ktX7V9Mv6e6QZ7HQFma4anNzE3jLpRjW",
+        "1EQqPYgTQRQkMxeJjAvxDA4apwMxUGlJI",
+        "1cQRmfivMY1pMWHi5QeA9C18IE9d1ZIiv",
+        "1BONFZXemyqS6ckjvuoRH4BZfPfPziM8N",
+        "1lNdyBd6Fgu2jxV1tdwPKJyGu4mLlaLlA",
+        "1WTzHRZ7_G-QBBfnemAYUnSg7N9NljSt7",
+        "1gCwDIy8NzTTi9PBvzNJjcYopL8iMB8aH",
+        "1oUygFKXJnBH1gMJKkRwUkeCNIsV-CR9w"
+      ]
+    }
+  ]
+}
