@@ -14,7 +14,9 @@ if os.path.basename(tpl_path) == 'template-base.html' and not os.path.exists(tpl
     tpl_path = os.path.join(os.path.dirname(tpl_path), 'mycasa-one-sheet.html')
 src = open(tpl_path, encoding='utf-8').read()
 style = re.search(r'<style>(.*?)</style>', src, re.S).group(1)
+style = re.sub(r'#lang-toggle(:hover)?(?=\s*[,{])', lambda m: m.group(0) + ', #print-btn' + (m.group(1) or ''), style)
 cfg = json.load(open(cfg_path, encoding='utf-8'))
+SITE_URL = 'https://clientrealestateoptions.rainierrod.workers.dev/'
 CLIENT = cfg['client']; WA = cfg.get('whatsapp', '16463424105'); CITY = cfg['city']
 SUB = cfg.get('subtitle', CITY.upper() + ' · RIVIERA MAYA · MÉXICO')
 FOOT = cfg.get('footer_location', CITY.upper() + ' · QUINTANA ROO · MÉXICO')
@@ -47,9 +49,10 @@ for i, p in enumerate(props, 1):
     if p['levels']: stats.append((p['levels'], "LEVELS", "NIVELES"))
     stats_html = "".join(f'<div class="prop-stat"><span class="prop-stat-num">{v}</span><span class="prop-stat-label" data-en="{en}" data-es="{es}">{en}</span></div>' for v, en, es in stats)
     feats = "".join(f"<li>{f}</li>" for f in p['features'])
+    like_static = "https://wa.me/%s?text=%s" % (WA, urllib.parse.quote(f"👍 I LIKE THIS ONE!\n\nClient: {CLIENT}\nProperty: {p['plain']} (USD {money(p['price'])})\n\nSent from my {CITY} options page"))
     inquire = "https://wa.me/%s?text=%s" % (WA, urllib.parse.quote_plus(f"Hi Rainier, I'm interested in {p['plain']}. Can we talk?"))
     cards.append(f'''
-  <div class="property-card{" even" if i%2==0 else ""}" data-prop-id="prop-{i}" data-prop-name="{p['plain']}" data-prop-price="{money(p['price'])}">
+  <div class="property-card{" even" if i%2==0 else ""}{" print-break" if i%3==0 and i<len(props) else ""}" data-prop-id="prop-{i}" data-prop-name="{p['plain']}" data-prop-price="{money(p['price'])}">
     <div class="prop-image" style="padding:0;">
       {f'<span class="prop-badge" data-en="{p["badge_en"]}" data-es="{p["badge_es"]}">{p["badge_en"]}</span>' if p['badge_en'] else ''}
       <div class="carousel" id="carousel-{i}">
@@ -80,7 +83,7 @@ for i, p in enumerate(props, 1):
       </div>
       {f'<a href="{p["brochure"] if p["brochure"].startswith("http") else "https://drive.google.com/file/d/"+p["brochure"]+"/view"}" target="_blank" class="btn" style="display:block;text-align:center;margin-top:14px;" data-en="{p.get("brochure_label", "VIEW BROCHURE —")}" data-es="{p.get("brochure_label_es", "VER FOLLETO —")}">{p.get("brochure_label", "VIEW BROCHURE —")}</a>' if p.get('brochure') else ''}
       {f'<a href="{p["video"] if p["video"].startswith("http") else "https://drive.google.com/file/d/"+p["video"]+"/view"}" target="_blank" class="btn video-btn" style="display:block;text-align:center;margin-top:14px;" data-en="▶ WATCH TOUR VIDEO" data-es="▶ VER VIDEO TOUR">▶ WATCH TOUR VIDEO</a>' if p.get('video') else ''}
-      <a href="https://wa.me/{WA}" target="_blank" class="like-btn" onclick="likeThis(this)">
+      <a href="{like_static}" target="_blank" class="like-btn" onclick="likeThis(this)">
         {WA_SVG.replace('width="18" height="18"', 'width="16" height="16"')}
         <span data-en="I LIKE THIS ONE" data-es="ME GUSTA ESTA">I LIKE THIS ONE</span>
       </a>
@@ -103,6 +106,54 @@ extra_css = """
   .like-btn.sent { background: transparent; color: var(--gold); }
   .like-hint { font-size: 0.68rem; color: var(--text-muted); margin-top: 8px; text-align: center; letter-spacing: 0.02em; }
   @media (max-width: 768px) { .prop-image { min-height: 300px; } }
+  #print-btn { right: 86px !important; left: auto !important; }
+  .print-only { display: none; }
+
+  /* ── PRINT / SAVE AS PDF: cover page, 3 properties per page, then comparison + contact ── */
+  @page { size: letter; margin: 0.35in; }
+  @media print {
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    body { font-size: 9pt; }
+    #lang-toggle, #print-btn, #fav-counter, #fav-view, .scroll-indicator,
+    .carousel-btn, .carousel-dots, .carousel-count, .save-btn, .like-hint,
+    #properties > .section-label, #properties > .section-heading { display: none !important; }
+    .print-only { display: block !important; }
+    #hero { height: 10.25in !important; min-height: 0 !important; break-after: page; page-break-after: always; }
+    #properties { padding: 0 !important; margin: 0 !important; max-width: none !important; }
+    .property-card, .property-card.even {
+      flex-direction: row !important; height: 3.3in; min-height: 0 !important; margin: 0 0 0.12in 0 !important;
+      box-shadow: none !important; transform: none !important; break-inside: avoid; page-break-inside: avoid; }
+    .property-card.print-break { break-after: page; page-break-after: always; margin-bottom: 0 !important; }
+    .prop-image { flex: 0 0 42% !important; min-height: 0 !important; height: 100%; }
+    .carousel { position: absolute !important; inset: 0; min-height: 0 !important; height: 100% !important; }
+    .carousel-track { transform: none !important; transition: none !important; height: 100%; }
+    .carousel-slide { display: none; height: 100%; }
+    .carousel-slide:first-child { display: block; }
+    .prop-badge { font-size: 6.5pt !important; padding: 3px 8px !important; top: 10px !important; left: 10px !important; }
+    .prop-text { flex: 1 1 58% !important; padding: 0.16in 0.24in !important; justify-content: center; overflow: hidden; }
+    .prop-number { font-size: 6.5pt !important; margin: 0 0 2px !important; }
+    .prop-name { font-size: 14pt !important; line-height: 1.12 !important; margin: 0 0 2px !important; }
+    .prop-location { font-size: 6.5pt !important; margin: 0 0 6px !important; }
+    .prop-stats { gap: 14px !important; margin: 0 0 4px !important; }
+    .prop-stat-num { font-size: 12pt !important; }
+    .prop-stat-label { font-size: 5.5pt !important; }
+    .prop-divider { margin: 4px 0 !important; }
+    .prop-features { margin: 0 0 4px !important; padding-left: 12px; }
+    .prop-features li { font-size: 7pt !important; line-height: 1.3 !important; margin: 0 !important; padding: 0 0 0 10px !important; }
+    .prop-features li::before { margin-top: 3px !important; }
+    .prop-price-block { margin: 2px 0 0 !important; padding: 4px 0 0 !important; }
+    .prop-price-current { font-size: 13pt !important; margin: 0 !important; }
+    .prop-price-current span { font-size: 6pt !important; margin-bottom: 1px !important; }
+    .prop-price-note { font-size: 6.5pt !important; line-height: 1.3 !important; margin: 1px 0 0 !important; }
+    .prop-buttons { margin-top: 5px !important; gap: 6px !important; }
+    .prop-text .btn, .prop-buttons .btn { padding: 4px 10px !important; font-size: 6.5pt !important; margin-top: 5px !important; }
+    .prop-buttons .btn { margin-top: 0 !important; }
+    .prop-text .like-btn, .like-btn { padding: 6px 14px !important; margin-top: 6px !important; font-size: 7pt !important; }
+    .like-btn svg { width: 11px; height: 11px; }
+    #table-section { break-before: page; page-break-before: always; padding: 0.3in 0 0.2in !important; }
+    #cta { padding: 0.35in 0.3in !important; break-inside: avoid; }
+    .print-note { font-size: 7pt; text-align: center; margin: 0.12in 0 0; opacity: 0.75; }
+  }
 """
 
 page = f'''<!DOCTYPE html>
@@ -123,6 +174,7 @@ page = f'''<!DOCTYPE html>
 
 <div id="main-view">
 <button id="lang-toggle" onclick="toggleLang()"><span id="lang-label">ES</span></button>
+<button id="print-btn" onclick="printPdf()" data-en="PDF ↓" data-es="PDF ↓" title="Print / Save as PDF">PDF ↓</button>
 
 <div id="hero">
   <div class="hero-bg"></div>
@@ -176,6 +228,7 @@ page = f'''<!DOCTYPE html>
     <span data-en="SCHEDULE A VISIT" data-es="AGENDAR VISITA">SCHEDULE A VISIT</span>
   </a>
   <p class="cta-address">{FOOT} &nbsp;·&nbsp; +1 646 342 4105</p>
+  <p class="print-only print-note">Tap any button in this PDF — PHOTOS, INQUIRE, I LIKE THIS ONE — to open it. Live page: {SITE_URL}{cfg.get('slug', CLIENT.lower())}/</p>
 </div>
 '''
 
@@ -198,6 +251,15 @@ script += r'''
     document.querySelectorAll('#dots-' + num + ' .carousel-dot').forEach((d, i) => d.setAttribute('onclick', "goToSlide('carousel-" + num + "'," + i + ")"));
     carouselState[carousel.id] = 0;
     updateCarousel(carousel.id, carousel.querySelectorAll('.carousel-slide').length);
+  }
+
+  // ── PRINT / SAVE AS PDF (3 properties per page via print CSS) ──
+  function printPdf() {
+    document.querySelectorAll('img[loading="lazy"]').forEach(function (im) { im.loading = 'eager'; });
+    document.querySelectorAll('.carousel').forEach(function (c) { try { carouselState[c.id] = 0; updateCarousel(c.id, c.querySelectorAll('.carousel-slide').length); } catch (e) {} });
+    var t = document.title;
+    document.title = 'Mycasa Property Options - ' + CLIENT_NAME + ' - __CITY__';
+    setTimeout(function () { window.print(); document.title = t; }, 300);
   }
 
   // ── "I LIKE THIS ONE" → WhatsApp to Rainier ──
