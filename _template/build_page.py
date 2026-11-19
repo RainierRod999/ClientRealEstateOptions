@@ -57,11 +57,11 @@ for i, p in enumerate(props, 1):
     if p['levels']: stats.append((p['levels'], "LEVELS", "NIVELES"))
     stats_html = "".join(f'<div class="prop-stat"><span class="prop-stat-num">{v}</span><span class="prop-stat-label" data-en="{en}" data-es="{es}">{en}</span></div>' for v, en, es in stats)
     feats = "".join(f"<li>{f}</li>" for f in p['features'])
-    like_static = "https://wa.me/%s?text=%s" % (WA, urllib.parse.quote(f"👍 I LIKE THIS ONE!\n\nClient: {CLIENT}\nProperty: {p['plain']} (USD {money(p['price'])})\n\nSent from my {CITY} options page"))
+    like_static = "https://wa.me/%s?text=%s" % (WA, urllib.parse.quote(f"👍 I LIKE THIS ONE!\n\nClient: {CLIENT}\nProperty: {p['plain']} (USD {(p.get('price_text') or money(p['price']))})\n\nSent from my {CITY} options page"))
     inquire = "https://wa.me/%s?text=%s" % (WA, urllib.parse.quote_plus(f"Hi Rainier, I'm interested in {p['plain']}. Can we talk?"))
     cards.append(f'''
   {('<div class="liked-label"><span class="section-label" data-en="PROPERTIES YOU LIKED" data-es="PROPIEDADES QUE TE GUSTARON">PROPERTIES YOU LIKED</span></div>') if i == FIRST_LIKED else ''}
-  <div class="property-card{" even" if i%2==0 else ""}{" liked collapsed" if p.get('liked') else ""}{" print-break" if i%3==0 and i<len(props) else ""}" data-prop-id="prop-{i}" data-prop-name="{p['plain']}" data-prop-price="{money(p['price'])}">
+  <div class="property-card{" even" if i%2==0 else ""}{" liked collapsed" if p.get('liked') else ""}{" print-break" if i%3==0 and i<len(props) else ""}" data-prop-id="prop-{i}" data-prop-name="{p['plain']}" data-prop-price="{(p.get('price_text') or money(p['price']))}">
     {('<button class="expand-btn" onclick="toggleCard(this)"><span data-en="VIEW FULL DETAILS" data-es="VER TODOS LOS DETALLES">VIEW FULL DETAILS</span> <span class="expand-arrow">&#9660;</span></button><button class="collapse-btn" onclick="toggleCard(this)" aria-label="Collapse">&#9650;</button>') if p.get('liked') else ''}
     <div class="prop-image" style="padding:0;">
       {f'<span class="prop-badge" data-en="{p["badge_en"]}" data-es="{p["badge_es"]}">{p["badge_en"]}</span>' if p['badge_en'] else ''}
@@ -83,7 +83,7 @@ for i, p in enumerate(props, 1):
       <div class="prop-divider"></div>
       <ul class="prop-features">{feats}</ul>
       <div class="prop-price-block">
-        <p class="prop-price-current">{(f'<span style="font-size:0.45em;letter-spacing:0.14em;display:block;margin-bottom:6px;" data-en="{p["price_prefix"]}" data-es="{p.get("price_prefix_es", p["price_prefix"])}">{p["price_prefix"]}</span>') if p.get('price_prefix') else ''}USD {money(p['price'])}</p>
+        <p class="prop-price-current">{(f'<span style="font-size:0.45em;letter-spacing:0.14em;display:block;margin-bottom:6px;" data-en="{p["price_prefix"]}" data-es="{p.get("price_prefix_es", p["price_prefix"])}">{p["price_prefix"]}</span>') if p.get('price_prefix') else ''}USD {(p.get('price_text') or money(p['price']))}</p>
         <p class="prop-price-note">{p['note']}</p>
       </div>
       <div class="prop-buttons">
@@ -108,7 +108,7 @@ for i, p in enumerate(props, 1):
 TABLE_PROPS = [p for p in props if p.get('liked')] or props
 SHOW_BATH = any(p.get('bath') for p in TABLE_PROPS)
 beds = [p['bed'] for p in props]; m2 = [p.get('m2') for p in props]; pr = [p['price'] for p in props]
-rows = "".join(f"<tr><td>{p['short']}</td><td>{p['zone'].split(' · ')[0]}</td><td>{p['bed']}</td>{f"<td>{p['bath']}</td>" if SHOW_BATH else ''}<td>{p.get('m2') or '—'}</td><td>{money(p['price'])}</td></tr>" for p in TABLE_PROPS)
+rows = "".join(f"<tr><td>{p['short']}</td><td>{p['zone'].split(' · ')[0]}</td><td>{p['bed']}</td>{f"<td>{p['bath']}</td>" if SHOW_BATH else ''}<td>{p.get('m2') or '—'}</td><td>{(p.get('price_text') or money(p['price']))}</td></tr>" for p in TABLE_PROPS)
 
 extra_css = """
   .prop-badge { z-index: 12; }

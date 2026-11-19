@@ -108,7 +108,8 @@
         "1oxhYL8iZUS_L7zJ5GZ5cz7NYYZgyNdfI",
         "1LLFZKPOpu7BEmiqruD_aFxbmxxeT6ZBo"
       ],
-      "added": "2026-11-18"
+      "added": "2026-11-18",
+      "new": true
     },
     {
       "name": "Punta Laguna Tower 3<br>3-Bed · 7th Floor",
@@ -120,17 +121,16 @@
       "bed": 3,
       "bath": "",
       "levels": 1,
-      "price": 493400,
+      "price": 493000,
       "type": "CONDO",
       "badge_en": "PRESALE · DELIVERY APRIL 2027",
       "badge_es": "PREVENTA · ENTREGA ABRIL 2027",
       "features": [
-        "7th-floor units facing northeast: golf course, coast, ocean and sunrise",
-        "Presale · Tower 3 delivers April 2027 · Towers 1, 2 and 4 finish next month",
-        "Artigas Arquitectos design on hole 1 of Gran Coyote golf course, inside Corasol",
-        "20+ amenities: pools, gym, coworking, paddle, pickleball · beach shuttle"
+        "7th floor, northeast view: golf, coast, ocean, sunrise",
+        "Presale · Tower 3 delivers April 2027 · Towers 1, 2 &amp; 4 finish next month",
+        "Artigas design on Gran Coyote hole 1 · 20+ amenities"
       ],
-      "note": "3 units: 3-703 MX$8,486,000 (106.8 m²) · 3-701 & 3-704 MX$9,868,000 (126.2 m², ≈ $574K) · HOA MX$60/m²/mo · USD at 17.2",
+      "note": "3-703 MX$8,486,000 · 3-701 &amp; 3-704 MX$9,868,000 · USD at 17.2",
       "folder": "1qe5siYSLZEqCzsJWp8sUoR-_sd9Tz3Wu",
       "brochure": "https://drive.google.com/drive/folders/1__pG11JbH9LzjkJTfv3DniynlU3UI-KN",
       "brochure_label": "VIEW BROCHURE (SPANISH) —",
@@ -144,6 +144,49 @@
         "1KZxSAq8pMqh6NY4AFERutTONR-jfZP-u",
         "1z--WwBsaoTjF-7xBG3S7v307YA_qvaq3",
         "1NUqbGsoDIBG_cnIPtDSx0RWC67mAA6rM"
+      ],
+      "added": "2026-11-19",
+      "new": true,
+      "price_text": "$493K – $574K",
+      "price_prefix": "3 UNITS ON THE 7TH FLOOR",
+      "price_prefix_es": "3 UNIDADES EN EL PISO 7"
+    },
+    {
+      "name": "The Village<br>at Corasol",
+      "short": "The Village 2-Bed",
+      "plain": "The Village 2-Bedroom (Corasol)",
+      "zone": "Corasol · Gran Coyote Golf",
+      "city": "Playa del Carmen",
+      "m2": null,
+      "bed": 2,
+      "bath": "",
+      "levels": null,
+      "price": 430000,
+      "price_text": "$430K – $617K",
+      "price_prefix": "2 BEDROOMS",
+      "price_prefix_es": "2 RECÁMARAS",
+      "type": "CONDO",
+      "badge_en": "IMMEDIATE DELIVERY · GRAN COYOTE GOLF",
+      "badge_es": "ENTREGA INMEDIATA · GOLF GRAN COYOTE",
+      "features": [
+        "Immediate delivery · Sordo Madaleno design",
+        "Views of Gran Coyote golf holes 5, 6 &amp; 9",
+        "25+ amenities · gated Corasol · beach shuttle"
+      ],
+      "note": "94–193 m² · 1 deeded parking space · showroom photos",
+      "folder": "1eTooUfhJYLmad0Emwnmh6kfPJCzcHkIu",
+      "brochure": "1pWjjN1jH-qCBU6s-E_VHIvuK4ubjH3K8",
+      "brochure_label": "VIEW BROCHURE (SPANISH) —",
+      "brochure_label_es": "VER FOLLETO —",
+      "photos": [
+        "1XI0b7AXqKKE-Eo9Jac0cPnO2-5xe8MfY",
+        "1eXzTL7BZP04HzZK87lWATt4upMoyP4z7",
+        "1f3cjtBtrEsDU9TsKyqP2dPvuzuMNy2Up",
+        "1eFRFkDwY3mOBqgvuZIm0Kgdf4qL17HGf",
+        "1S2cvF6L6gkgye2qUqVarjtmtAkHxfxQ1",
+        "1Rqsx7hb1i-iSh1jTZDB7U8nC3-yw7J-c",
+        "1SLHtYET30BmpbN9mIXwIwj_iWvD6mPlh",
+        "1SYiU3k-lxIr2QELbe0OExwbu9YnjnZ2F"
       ],
       "added": "2026-11-19",
       "new": true
