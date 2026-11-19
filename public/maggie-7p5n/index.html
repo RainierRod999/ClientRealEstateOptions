@@ -194,6 +194,24 @@
   .like-hint { font-size: 0.68rem; color: var(--text-muted); margin-top: 8px; text-align: center; letter-spacing: 0.02em; }
   @media (max-width: 768px) { .prop-image { min-height: 300px; } }
   #print-btn { right: 86px !important; left: auto !important; }
+  .property-card { position: relative; }
+  .liked-label { margin: 56px 0 18px; }
+  .property-card.collapsed { min-height: 0 !important; height: 340px; cursor: pointer; }
+  .property-card.collapsed::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 130px; background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.96) 70%); z-index: 15; pointer-events: none; }
+  .property-card.collapsed .carousel-btn, .property-card.collapsed .carousel-dots { display: none; }
+  .property-card.collapsed .prop-text { justify-content: flex-start; }
+  .expand-btn { display: none; }
+  .property-card.collapsed .expand-btn { display: inline-flex; align-items: center; gap: 12px; position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 20; background: #2B55DB; color: #fff; border: none; border-radius: 999px; padding: 18px 44px; font-family: inherit; font-size: 0.85rem; font-weight: 800; letter-spacing: 0.16em; cursor: pointer; box-shadow: 0 10px 28px -8px rgba(17,32,63,0.55); white-space: nowrap; }
+  .property-card.collapsed .expand-btn:hover { background: #11203F; }
+  .expand-arrow { font-size: 0.9em; }
+  .collapse-btn { position: absolute; top: 16px; right: 16px; z-index: 20; width: 46px; height: 46px; border-radius: 50%; border: none; background: #11203F; color: #fff; font-size: 1rem; cursor: pointer; box-shadow: 0 4px 14px rgba(17,32,63,0.35); display: flex; align-items: center; justify-content: center; }
+  .collapse-btn:hover { background: #2B55DB; }
+  .property-card.collapsed .collapse-btn { display: none; }
+  @media (max-width: 768px) {
+    .property-card.collapsed { height: 420px; }
+    .property-card.collapsed .prop-image { min-height: 190px !important; }
+    .property-card.collapsed .expand-btn { padding: 16px 30px; font-size: 0.78rem; }
+  }
   .new-flag { position: absolute; top: 18px; right: 18px; z-index: 12; background: #F89D23; color: #fff; font-size: 0.66rem; font-weight: 800; letter-spacing: 0.18em; padding: 7px 14px; border-radius: 999px; box-shadow: 0 2px 10px rgba(17,32,63,0.25); }
   .added-line { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 12px; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: #6E7E95; }
   .added-new { background: #F89D23; color: #fff; font-weight: 800; letter-spacing: 0.16em; font-size: 0.6rem; padding: 3px 9px; border-radius: 999px; }
@@ -219,6 +237,10 @@
     .carousel-track { transform: none !important; transition: none !important; height: 100%; }
     .carousel-slide { display: none; height: 100%; }
     .carousel-slide:first-child { display: block; }
+    .property-card.collapsed { height: 3.3in !important; cursor: default; }
+    .property-card.collapsed .prop-text { justify-content: center !important; }
+    .property-card.collapsed::after, .expand-btn, .collapse-btn, .liked-label { display: none !important; }
+    .property-card.collapsed .carousel-btn { display: none !important; }
     .new-flag { font-size: 6.5pt !important; padding: 3px 8px !important; top: 10px !important; right: 10px !important; }
     .added-line { font-size: 6pt !important; margin-top: 4px !important; gap: 5px !important; }
     .added-new { font-size: 5.5pt !important; padding: 1px 6px !important; }
@@ -266,10 +288,10 @@
     <p class="hero-subtitle">PLAYACAR · PLAYA DEL CARMEN · RIVIERA MAYA · MÉXICO</p>
   </div>
   <div class="hero-stats">
-    <div class="hero-stat"><span class="hero-stat-number">5</span><span class="hero-stat-label" data-en="PROPERTIES" data-es="PROPIEDADES">PROPERTIES</span></div>
+    <div class="hero-stat"><span class="hero-stat-number">4</span><span class="hero-stat-label" data-en="PROPERTIES" data-es="PROPIEDADES">PROPERTIES</span></div>
     <div class="hero-stat"><span class="hero-stat-number">2–3</span><span class="hero-stat-label" data-en="BEDROOMS" data-es="RECÁMARAS">BEDROOMS</span></div>
-    <div class="hero-stat"><span class="hero-stat-number">131–234</span><span class="hero-stat-label" data-en="M² TOTAL" data-es="M² TOTAL">M² TOTAL</span></div>
-    <div class="hero-stat"><span class="hero-stat-number">$500k–$690k</span><span class="hero-stat-label" data-en="PRICE RANGE" data-es="RANGO DE PRECIO">PRICE RANGE</span></div>
+    <div class="hero-stat"><span class="hero-stat-number">131–220</span><span class="hero-stat-label" data-en="M² TOTAL" data-es="M² TOTAL">M² TOTAL</span></div>
+    <div class="hero-stat"><span class="hero-stat-number">$511k–$690k</span><span class="hero-stat-label" data-en="PRICE RANGE" data-es="RANGO DE PRECIO">PRICE RANGE</span></div>
   </div>
   <div class="scroll-indicator">&#8964;</div>
 </div>
@@ -278,104 +300,14 @@
   <span class="section-label" data-en="CURATED FOR YOU" data-es="SELECCIONADO PARA TI">CURATED FOR YOU</span>
   <h2 class="section-heading" data-en="Properties selected for Maggie & Peter" data-es="Propiedades seleccionadas para Maggie & Peter">Properties selected for Maggie & Peter</h2>
 
-  <div class="property-card" data-prop-id="prop-1" data-prop-name="AWA Playacar F204 2-Bedroom Condo" data-prop-price="$549,000">
-    <div class="prop-image" style="padding:0;">
-      <span class="prop-badge" data-en="DOUBLE TERRACE · FURNISHED · UPGRADED" data-es="DOBLE TERRAZA · AMUEBLADO · MEJORAS">DOUBLE TERRACE · FURNISHED · UPGRADED</span>
-      
-      <div class="carousel" id="carousel-1">
-        <div class="carousel-track" id="track-1">
-          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1lbGTbCqkqAxkLVgu83umgajuOBr4QsTe=w1600" alt="AWA Playacar F204 2-Bedroom Condo photo 1" referrerpolicy="no-referrer"  onerror="dropSlide(this)"></div>
-          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1JUcxcvx9uQqHQojvKzNK0rGQISoIWe1P=w1600" alt="AWA Playacar F204 2-Bedroom Condo photo 2" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
-          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1-6hwKdG44RcXcDF7EaHHUfWX582cV4XV=w1600" alt="AWA Playacar F204 2-Bedroom Condo photo 3" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
-          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1PF0Fnb41XIWTPz-KZhtcPoMkQVdEldgw=w1600" alt="AWA Playacar F204 2-Bedroom Condo photo 4" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
-          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1LQQaDzhwZOzrnmS--xLf1wax2khKhldl=w1600" alt="AWA Playacar F204 2-Bedroom Condo photo 5" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
-          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1n_UbUbABLL3y89zw2KOM03ptUW0Bb0tM=w1600" alt="AWA Playacar F204 2-Bedroom Condo photo 6" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
-          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/15iP-pMurt12-0YAkwu8kZxKAttj1gbvF=w1600" alt="AWA Playacar F204 2-Bedroom Condo photo 7" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
-          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1pJx919LgMYzbb8pdt_NE94lsSaYQ71Ai=w1600" alt="AWA Playacar F204 2-Bedroom Condo photo 8" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
-        </div>
-        <button class="carousel-btn prev" onclick="moveCarousel('carousel-1', -1)" aria-label="Previous photo">&#8592;</button>
-        <button class="carousel-btn next" onclick="moveCarousel('carousel-1', 1)" aria-label="Next photo">&#8594;</button>
-        <div class="carousel-dots" id="dots-1"><div class="carousel-dot active" onclick="goToSlide('carousel-1',0)"></div><div class="carousel-dot" onclick="goToSlide('carousel-1',1)"></div><div class="carousel-dot" onclick="goToSlide('carousel-1',2)"></div><div class="carousel-dot" onclick="goToSlide('carousel-1',3)"></div><div class="carousel-dot" onclick="goToSlide('carousel-1',4)"></div><div class="carousel-dot" onclick="goToSlide('carousel-1',5)"></div><div class="carousel-dot" onclick="goToSlide('carousel-1',6)"></div><div class="carousel-dot" onclick="goToSlide('carousel-1',7)"></div></div>
-      </div>
-    </div>
-    <div class="prop-text">
-      <p class="prop-number">01 · CONDO</p>
-      <h3 class="prop-name">AWA Playacar F204<br>2-Bed Double Terrace</h3>
-      <p class="prop-location">PLAYACAR PHASE II · PLAYA DEL CARMEN</p>
-      <div class="prop-stats"><div class="prop-stat"><span class="prop-stat-num">143</span><span class="prop-stat-label" data-en="M² TOTAL" data-es="M² TOTAL">M² TOTAL</span></div><div class="prop-stat"><span class="prop-stat-num">2</span><span class="prop-stat-label" data-en="BEDROOMS" data-es="RECÁMARAS">BEDROOMS</span></div><div class="prop-stat"><span class="prop-stat-num">2</span><span class="prop-stat-label" data-en="BATHROOMS" data-es="BAÑOS">BATHROOMS</span></div><div class="prop-stat"><span class="prop-stat-num">1</span><span class="prop-stat-label" data-en="LEVELS" data-es="NIVELES">LEVELS</span></div></div>
-      <div class="prop-divider"></div>
-      <ul class="prop-features"><li>Oversized double terrace with dining, lounge and grill areas</li><li>Split-bedroom layout · island kitchen · sold fully furnished</li><li>Upgrades: RO water, softener, smart leak detection, hurricane film</li><li>Rooftop infinity pool, spa, gym, paddle courts · Reef Beach Club access</li></ul>
-      <div class="prop-price-block">
-        <p class="prop-price-current">USD $549,000</p>
-        <p class="prop-price-note">HOA $290 USD/mo · property tax $560 USD/yr (2026) · 142.55 m² (1,534 sq ft) · built 2021</p>
-      </div>
-      <div class="prop-buttons">
-        <a href="https://drive.google.com/drive/folders/11VVVlkyLuOhlTTqti_LZZZQ4UB0m8x_s" target="_blank" class="btn" data-en="PHOTOS —" data-es="FOTOS —">PHOTOS —</a>
-        <button class="btn save-btn" onclick="toggleSave(this)" data-en="☆ SAVE" data-es="☆ GUARDAR">☆ SAVE</button>
-        <a href="https://wa.me/16463424105?text=Hi+Rainier%2C+I%27m+interested+in+AWA+Playacar+F204+2-Bedroom+Condo.+Can+we+talk%3F" target="_blank" class="btn" data-en="INQUIRE —" data-es="CONSULTAR —">INQUIRE —</a>
-      </div>
-      
-      
-      <a href="https://wa.me/16463424105?text=%F0%9F%91%8D%20I%20LIKE%20THIS%20ONE%21%0A%0AClient%3A%20Maggie%20%26%20Peter%0AProperty%3A%20AWA%20Playacar%20F204%202-Bedroom%20Condo%20%28USD%20%24549%2C000%29%0A%0ASent%20from%20my%20Playa%20del%20Carmen%20options%20page" target="_blank" class="like-btn" onclick="likeThis(this)">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        <span data-en="I LIKE THIS ONE" data-es="ME GUSTA ESTA">I LIKE THIS ONE</span>
-      </a>
-      <p class="like-hint" data-en="Opens WhatsApp with a message to Rainier — just tap Send" data-es="Abre WhatsApp con un mensaje para Rainier — solo toca Enviar">Opens WhatsApp with a message to Rainier — just tap Send</p>
-      <p class="added-line"><span data-en="Added 11/18/26" data-es="Agregada 11/18/26">Added 11/18/26</span></p>
-    </div>
-  </div>
-  <div class="property-card even" data-prop-id="prop-2" data-prop-name="AWA Playacar F301 2-Bedroom Penthouse" data-prop-price="$670,000">
-    <div class="prop-image" style="padding:0;">
-      <span class="prop-badge" data-en="PRIVATE ROOFTOP · TURNKEY" data-es="ROOFTOP PRIVADO · LLAVE EN MANO">PRIVATE ROOFTOP · TURNKEY</span>
-      
-      <div class="carousel" id="carousel-2">
-        <div class="carousel-track" id="track-2">
-          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1k5LxyzcHeatbjmBzSHig0GWuhyqZBKPz=w1600" alt="AWA Playacar F301 2-Bedroom Penthouse photo 1" referrerpolicy="no-referrer"  onerror="dropSlide(this)"></div>
-          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1HR3pgAhUWyvJ0d1zfepAlLS8HFflVps2=w1600" alt="AWA Playacar F301 2-Bedroom Penthouse photo 2" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
-          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1iOjQglLEU0yLOQw5VSYfSqICgjq8nUyE=w1600" alt="AWA Playacar F301 2-Bedroom Penthouse photo 3" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
-          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1GrA-xEv7TuXANCK0IekELL5Fve6MsN0u=w1600" alt="AWA Playacar F301 2-Bedroom Penthouse photo 4" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
-          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/18yMUTrta56yDKZ3KtEGIBUL8Rlo6Lrki=w1600" alt="AWA Playacar F301 2-Bedroom Penthouse photo 5" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
-          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1Pcoq8HGzmJz6qhzV4kYHwBLUA_33zGRX=w1600" alt="AWA Playacar F301 2-Bedroom Penthouse photo 6" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
-          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1fyFEqSXVYT4w7hOf3SM2kLxjvMLCLItd=w1600" alt="AWA Playacar F301 2-Bedroom Penthouse photo 7" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
-          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1sQqMl0I0BjbVOk_LZU6W3tAkP2uwgbIw=w1600" alt="AWA Playacar F301 2-Bedroom Penthouse photo 8" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
-        </div>
-        <button class="carousel-btn prev" onclick="moveCarousel('carousel-2', -1)" aria-label="Previous photo">&#8592;</button>
-        <button class="carousel-btn next" onclick="moveCarousel('carousel-2', 1)" aria-label="Next photo">&#8594;</button>
-        <div class="carousel-dots" id="dots-2"><div class="carousel-dot active" onclick="goToSlide('carousel-2',0)"></div><div class="carousel-dot" onclick="goToSlide('carousel-2',1)"></div><div class="carousel-dot" onclick="goToSlide('carousel-2',2)"></div><div class="carousel-dot" onclick="goToSlide('carousel-2',3)"></div><div class="carousel-dot" onclick="goToSlide('carousel-2',4)"></div><div class="carousel-dot" onclick="goToSlide('carousel-2',5)"></div><div class="carousel-dot" onclick="goToSlide('carousel-2',6)"></div><div class="carousel-dot" onclick="goToSlide('carousel-2',7)"></div></div>
-      </div>
-    </div>
-    <div class="prop-text">
-      <p class="prop-number">02 · PENTHOUSE</p>
-      <h3 class="prop-name">AWA Playacar F301<br>2-Bed Rooftop Penthouse</h3>
-      <p class="prop-location">PLAYACAR PHASE II · PLAYA DEL CARMEN</p>
-      <div class="prop-stats"><div class="prop-stat"><span class="prop-stat-num">207</span><span class="prop-stat-label" data-en="M² TOTAL" data-es="M² TOTAL">M² TOTAL</span></div><div class="prop-stat"><span class="prop-stat-num">2</span><span class="prop-stat-label" data-en="BEDROOMS" data-es="RECÁMARAS">BEDROOMS</span></div><div class="prop-stat"><span class="prop-stat-num">2</span><span class="prop-stat-label" data-en="BATHROOMS" data-es="BAÑOS">BATHROOMS</span></div><div class="prop-stat"><span class="prop-stat-num">2</span><span class="prop-stat-label" data-en="LEVELS" data-es="NIVELES">LEVELS</span></div></div>
-      <div class="prop-divider"></div>
-      <ul class="prop-features"><li>Two-level penthouse with private rooftop dining for eight</li><li>Sold furnished · induction cooktop, Teka oven, Napoleon grill</li><li>RO water, on-demand hot water, smart lock · 2 parking spaces</li><li>Gym, spa, sauna, adult pools, golf-cart service, beach club</li></ul>
-      <div class="prop-price-block">
-        <p class="prop-price-current">USD $670,000</p>
-        <p class="prop-price-note">HOA $430 USD/mo · 2,227 sq ft (206.9 m²) indoor + outdoor · built 2022</p>
-      </div>
-      <div class="prop-buttons">
-        <a href="https://drive.google.com/drive/folders/14iNkPeXDsul7XnDy9VOX-Eev79P2MIc_" target="_blank" class="btn" data-en="PHOTOS —" data-es="FOTOS —">PHOTOS —</a>
-        <button class="btn save-btn" onclick="toggleSave(this)" data-en="☆ SAVE" data-es="☆ GUARDAR">☆ SAVE</button>
-        <a href="https://wa.me/16463424105?text=Hi+Rainier%2C+I%27m+interested+in+AWA+Playacar+F301+2-Bedroom+Penthouse.+Can+we+talk%3F" target="_blank" class="btn" data-en="INQUIRE —" data-es="CONSULTAR —">INQUIRE —</a>
-      </div>
-      
-      
-      <a href="https://wa.me/16463424105?text=%F0%9F%91%8D%20I%20LIKE%20THIS%20ONE%21%0A%0AClient%3A%20Maggie%20%26%20Peter%0AProperty%3A%20AWA%20Playacar%20F301%202-Bedroom%20Penthouse%20%28USD%20%24670%2C000%29%0A%0ASent%20from%20my%20Playa%20del%20Carmen%20options%20page" target="_blank" class="like-btn" onclick="likeThis(this)">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        <span data-en="I LIKE THIS ONE" data-es="ME GUSTA ESTA">I LIKE THIS ONE</span>
-      </a>
-      <p class="like-hint" data-en="Opens WhatsApp with a message to Rainier — just tap Send" data-es="Abre WhatsApp con un mensaje para Rainier — solo toca Enviar">Opens WhatsApp with a message to Rainier — just tap Send</p>
-      <p class="added-line"><span data-en="Added 11/18/26" data-es="Agregada 11/18/26">Added 11/18/26</span></p>
-    </div>
-  </div>
-  <div class="property-card print-break" data-prop-id="prop-3" data-prop-name="AWA Playacar E212 3-Bedroom Residence" data-prop-price="$690,000">
+  
+  <div class="property-card" data-prop-id="prop-1" data-prop-name="AWA Playacar E212 3-Bedroom Residence" data-prop-price="$690,000">
+    
     <div class="prop-image" style="padding:0;">
       <span class="prop-badge" data-en="3 BED · TURNKEY · RENTAL-READY" data-es="3 RECÁMARAS · LLAVE EN MANO · LISTO PARA RENTA">3 BED · TURNKEY · RENTAL-READY</span>
       <span class="new-flag" data-en="NEW" data-es="NUEVA">NEW</span>
-      <div class="carousel" id="carousel-3">
-        <div class="carousel-track" id="track-3">
+      <div class="carousel" id="carousel-1">
+        <div class="carousel-track" id="track-1">
           <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1c9ivoX2r7wnK3LlonixosQkbSvtGkF3e=w1600" alt="AWA Playacar E212 3-Bedroom Residence photo 1" referrerpolicy="no-referrer"  onerror="dropSlide(this)"></div>
           <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1Pf917ne3DpHS7L72UkEWqP_zM32tvV3L=w1600" alt="AWA Playacar E212 3-Bedroom Residence photo 2" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
           <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1WacDn0oUWk6oNTatQn6G3sOorYIPbVTz=w1600" alt="AWA Playacar E212 3-Bedroom Residence photo 3" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
@@ -385,13 +317,13 @@
           <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1oxhYL8iZUS_L7zJ5GZ5cz7NYYZgyNdfI=w1600" alt="AWA Playacar E212 3-Bedroom Residence photo 7" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
           <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1LLFZKPOpu7BEmiqruD_aFxbmxxeT6ZBo=w1600" alt="AWA Playacar E212 3-Bedroom Residence photo 8" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
         </div>
-        <button class="carousel-btn prev" onclick="moveCarousel('carousel-3', -1)" aria-label="Previous photo">&#8592;</button>
-        <button class="carousel-btn next" onclick="moveCarousel('carousel-3', 1)" aria-label="Next photo">&#8594;</button>
-        <div class="carousel-dots" id="dots-3"><div class="carousel-dot active" onclick="goToSlide('carousel-3',0)"></div><div class="carousel-dot" onclick="goToSlide('carousel-3',1)"></div><div class="carousel-dot" onclick="goToSlide('carousel-3',2)"></div><div class="carousel-dot" onclick="goToSlide('carousel-3',3)"></div><div class="carousel-dot" onclick="goToSlide('carousel-3',4)"></div><div class="carousel-dot" onclick="goToSlide('carousel-3',5)"></div><div class="carousel-dot" onclick="goToSlide('carousel-3',6)"></div><div class="carousel-dot" onclick="goToSlide('carousel-3',7)"></div></div>
+        <button class="carousel-btn prev" onclick="moveCarousel('carousel-1', -1)" aria-label="Previous photo">&#8592;</button>
+        <button class="carousel-btn next" onclick="moveCarousel('carousel-1', 1)" aria-label="Next photo">&#8594;</button>
+        <div class="carousel-dots" id="dots-1"><div class="carousel-dot active" onclick="goToSlide('carousel-1',0)"></div><div class="carousel-dot" onclick="goToSlide('carousel-1',1)"></div><div class="carousel-dot" onclick="goToSlide('carousel-1',2)"></div><div class="carousel-dot" onclick="goToSlide('carousel-1',3)"></div><div class="carousel-dot" onclick="goToSlide('carousel-1',4)"></div><div class="carousel-dot" onclick="goToSlide('carousel-1',5)"></div><div class="carousel-dot" onclick="goToSlide('carousel-1',6)"></div><div class="carousel-dot" onclick="goToSlide('carousel-1',7)"></div></div>
       </div>
     </div>
     <div class="prop-text">
-      <p class="prop-number">03 · CONDO</p>
+      <p class="prop-number">01 · CONDO</p>
       <h3 class="prop-name">AWA Playacar E212<br>3-Bed Turnkey Residence</h3>
       <p class="prop-location">PLAYACAR PHASE II · PLAYA DEL CARMEN</p>
       <div class="prop-stats"><div class="prop-stat"><span class="prop-stat-num">131</span><span class="prop-stat-label" data-en="M² TOTAL" data-es="M² TOTAL">M² TOTAL</span></div><div class="prop-stat"><span class="prop-stat-num">3</span><span class="prop-stat-label" data-en="BEDROOMS" data-es="RECÁMARAS">BEDROOMS</span></div><div class="prop-stat"><span class="prop-stat-num">3</span><span class="prop-stat-label" data-en="BATHROOMS" data-es="BAÑOS">BATHROOMS</span></div><div class="prop-stat"><span class="prop-stat-num">1</span><span class="prop-stat-label" data-en="LEVELS" data-es="NIVELES">LEVELS</span></div></div>
@@ -416,58 +348,14 @@
       <p class="added-line"><span class="added-new" data-en="NEW" data-es="NUEVA">NEW</span><span data-en="Added 11/18/26" data-es="Agregada 11/18/26">Added 11/18/26</span></p>
     </div>
   </div>
-  <div class="property-card even" data-prop-id="prop-4" data-prop-name="Vaiven del Viento PH32 3-Bedroom Penthouse" data-prop-price="$500,000">
-    <div class="prop-image" style="padding:0;">
-      <span class="prop-badge" data-en="ROOFTOP JACUZZI · TURNKEY" data-es="JACUZZI EN ROOFTOP · LLAVE EN MANO">ROOFTOP JACUZZI · TURNKEY</span>
-      
-      <div class="carousel" id="carousel-4">
-        <div class="carousel-track" id="track-4">
-          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/17Y0IIoQr-2CUfktpDlUjvdCZPwg0fhKS=w1600" alt="Vaiven del Viento PH32 3-Bedroom Penthouse photo 1" referrerpolicy="no-referrer"  onerror="dropSlide(this)"></div>
-          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1f-je0IA9j0QOTXDpMy0QIS6XpSDLzTUC=w1600" alt="Vaiven del Viento PH32 3-Bedroom Penthouse photo 2" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
-          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/19oy8hTnNxfzF3fkFArpjhdltJcw1406V=w1600" alt="Vaiven del Viento PH32 3-Bedroom Penthouse photo 3" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
-          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1BCv7OicCBm4CeeqyKjaBSot4q8ctzwjm=w1600" alt="Vaiven del Viento PH32 3-Bedroom Penthouse photo 4" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
-          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1Djty73UG9IeCZ-R3H1uRBnqFmy7AaVIo=w1600" alt="Vaiven del Viento PH32 3-Bedroom Penthouse photo 5" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
-          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/19QtH5q6ax-0BlmZf7mjoXhyn9qmIXcB2=w1600" alt="Vaiven del Viento PH32 3-Bedroom Penthouse photo 6" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
-          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1S2JOQs2GBIXM-w7hF6h0azqpyi_Zxvgh=w1600" alt="Vaiven del Viento PH32 3-Bedroom Penthouse photo 7" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
-          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1xcWAB4LCAdkpw4m9Q9IqDGVjtLBRWkoy=w1600" alt="Vaiven del Viento PH32 3-Bedroom Penthouse photo 8" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
-        </div>
-        <button class="carousel-btn prev" onclick="moveCarousel('carousel-4', -1)" aria-label="Previous photo">&#8592;</button>
-        <button class="carousel-btn next" onclick="moveCarousel('carousel-4', 1)" aria-label="Next photo">&#8594;</button>
-        <div class="carousel-dots" id="dots-4"><div class="carousel-dot active" onclick="goToSlide('carousel-4',0)"></div><div class="carousel-dot" onclick="goToSlide('carousel-4',1)"></div><div class="carousel-dot" onclick="goToSlide('carousel-4',2)"></div><div class="carousel-dot" onclick="goToSlide('carousel-4',3)"></div><div class="carousel-dot" onclick="goToSlide('carousel-4',4)"></div><div class="carousel-dot" onclick="goToSlide('carousel-4',5)"></div><div class="carousel-dot" onclick="goToSlide('carousel-4',6)"></div><div class="carousel-dot" onclick="goToSlide('carousel-4',7)"></div></div>
-      </div>
-    </div>
-    <div class="prop-text">
-      <p class="prop-number">04 · PENTHOUSE</p>
-      <h3 class="prop-name">Vaivén del Viento PH32<br>3-Bed Rooftop Penthouse</h3>
-      <p class="prop-location">PLAYACAR PHASE II · PLAYA DEL CARMEN</p>
-      <div class="prop-stats"><div class="prop-stat"><span class="prop-stat-num">234</span><span class="prop-stat-label" data-en="M² TOTAL" data-es="M² TOTAL">M² TOTAL</span></div><div class="prop-stat"><span class="prop-stat-num">3</span><span class="prop-stat-label" data-en="BEDROOMS" data-es="RECÁMARAS">BEDROOMS</span></div><div class="prop-stat"><span class="prop-stat-num">3</span><span class="prop-stat-label" data-en="BATHROOMS" data-es="BAÑOS">BATHROOMS</span></div></div>
-      <div class="prop-divider"></div>
-      <ul class="prop-features"><li>Private rooftop terrace with jacuzzi, pergola and outdoor lounge</li><li>Third-floor penthouse · sold turnkey, fully furnished and equipped</li><li>4 pools, gym, business center, concierge · 24/7 controlled access</li><li>1 deeded covered parking space · available immediately</li></ul>
-      <div class="prop-price-block">
-        <p class="prop-price-current">USD $500,000</p>
-        <p class="prop-price-note">Asking $9,000,000 MXN (USD shown at 18.0 MXN) · HOA $6,982 MXN/mo · 233.53 m² · built 2011</p>
-      </div>
-      <div class="prop-buttons">
-        <a href="https://drive.google.com/drive/folders/1t2BpQb5qfclxrjq7K86VOdHyeTEplB8c" target="_blank" class="btn" data-en="PHOTOS —" data-es="FOTOS —">PHOTOS —</a>
-        <button class="btn save-btn" onclick="toggleSave(this)" data-en="☆ SAVE" data-es="☆ GUARDAR">☆ SAVE</button>
-        <a href="https://wa.me/16463424105?text=Hi+Rainier%2C+I%27m+interested+in+Vaiven+del+Viento+PH32+3-Bedroom+Penthouse.+Can+we+talk%3F" target="_blank" class="btn" data-en="INQUIRE —" data-es="CONSULTAR —">INQUIRE —</a>
-      </div>
-      
-      
-      <a href="https://wa.me/16463424105?text=%F0%9F%91%8D%20I%20LIKE%20THIS%20ONE%21%0A%0AClient%3A%20Maggie%20%26%20Peter%0AProperty%3A%20Vaiven%20del%20Viento%20PH32%203-Bedroom%20Penthouse%20%28USD%20%24500%2C000%29%0A%0ASent%20from%20my%20Playa%20del%20Carmen%20options%20page" target="_blank" class="like-btn" onclick="likeThis(this)">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        <span data-en="I LIKE THIS ONE" data-es="ME GUSTA ESTA">I LIKE THIS ONE</span>
-      </a>
-      <p class="like-hint" data-en="Opens WhatsApp with a message to Rainier — just tap Send" data-es="Abre WhatsApp con un mensaje para Rainier — solo toca Enviar">Opens WhatsApp with a message to Rainier — just tap Send</p>
-      <p class="added-line"><span data-en="Added 11/18/26" data-es="Agregada 11/18/26">Added 11/18/26</span></p>
-    </div>
-  </div>
-  <div class="property-card" data-prop-id="prop-5" data-prop-name="Vaiven del Mar 3-Bedroom Residence" data-prop-price="$511,000">
+  
+  <div class="property-card even" data-prop-id="prop-2" data-prop-name="Vaiven del Mar 3-Bedroom Residence" data-prop-price="$511,000">
+    
     <div class="prop-image" style="padding:0;">
       <span class="prop-badge" data-en="PRIVATE ROOFTOP JACUZZI · UNFURNISHED" data-es="JACUZZI EN ROOFTOP PRIVADO · SIN MUEBLES">PRIVATE ROOFTOP JACUZZI · UNFURNISHED</span>
       <span class="new-flag" data-en="NEW" data-es="NUEVA">NEW</span>
-      <div class="carousel" id="carousel-5">
-        <div class="carousel-track" id="track-5">
+      <div class="carousel" id="carousel-2">
+        <div class="carousel-track" id="track-2">
           <div class="carousel-slide"><img src="https://static.tokkobroker.com/pictures/8428010_26777062408220881353179232923438447150689214327627853964477304433848483566338.jpg" alt="Vaiven del Mar 3-Bedroom Residence photo 1" referrerpolicy="no-referrer"  onerror="dropSlide(this)"></div>
           <div class="carousel-slide"><img src="https://static.tokkobroker.com/pictures/8428010_68840685478677169269646276743200909506098629403362964281279092995438316027169.jpg" alt="Vaiven del Mar 3-Bedroom Residence photo 2" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
           <div class="carousel-slide"><img src="https://static.tokkobroker.com/pictures/8428010_109069862631832658533157903772294653669404821601814329630209712441322418389369.jpg" alt="Vaiven del Mar 3-Bedroom Residence photo 3" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
@@ -476,13 +364,13 @@
           <div class="carousel-slide"><img src="https://static.tokkobroker.com/pictures/8428010_41842887676479479326816102418748113905819095312524348085192922986270859623181.jpg" alt="Vaiven del Mar 3-Bedroom Residence photo 6" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
           <div class="carousel-slide"><img src="https://static.tokkobroker.com/pictures/8428010_114725573281504915787558211702367711134333022676680344412112906626669864353617.jpg" alt="Vaiven del Mar 3-Bedroom Residence photo 7" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
         </div>
-        <button class="carousel-btn prev" onclick="moveCarousel('carousel-5', -1)" aria-label="Previous photo">&#8592;</button>
-        <button class="carousel-btn next" onclick="moveCarousel('carousel-5', 1)" aria-label="Next photo">&#8594;</button>
-        <div class="carousel-dots" id="dots-5"><div class="carousel-dot active" onclick="goToSlide('carousel-5',0)"></div><div class="carousel-dot" onclick="goToSlide('carousel-5',1)"></div><div class="carousel-dot" onclick="goToSlide('carousel-5',2)"></div><div class="carousel-dot" onclick="goToSlide('carousel-5',3)"></div><div class="carousel-dot" onclick="goToSlide('carousel-5',4)"></div><div class="carousel-dot" onclick="goToSlide('carousel-5',5)"></div><div class="carousel-dot" onclick="goToSlide('carousel-5',6)"></div></div>
+        <button class="carousel-btn prev" onclick="moveCarousel('carousel-2', -1)" aria-label="Previous photo">&#8592;</button>
+        <button class="carousel-btn next" onclick="moveCarousel('carousel-2', 1)" aria-label="Next photo">&#8594;</button>
+        <div class="carousel-dots" id="dots-2"><div class="carousel-dot active" onclick="goToSlide('carousel-2',0)"></div><div class="carousel-dot" onclick="goToSlide('carousel-2',1)"></div><div class="carousel-dot" onclick="goToSlide('carousel-2',2)"></div><div class="carousel-dot" onclick="goToSlide('carousel-2',3)"></div><div class="carousel-dot" onclick="goToSlide('carousel-2',4)"></div><div class="carousel-dot" onclick="goToSlide('carousel-2',5)"></div><div class="carousel-dot" onclick="goToSlide('carousel-2',6)"></div></div>
       </div>
     </div>
     <div class="prop-text">
-      <p class="prop-number">05 · CONDO</p>
+      <p class="prop-number">02 · CONDO</p>
       <h3 class="prop-name">Vaivén del Mar<br>3-Bed Rooftop Residence</h3>
       <p class="prop-location">PLAYACAR PHASE II · PLAYA DEL CARMEN</p>
       <div class="prop-stats"><div class="prop-stat"><span class="prop-stat-num">220</span><span class="prop-stat-label" data-en="M² TOTAL" data-es="M² TOTAL">M² TOTAL</span></div><div class="prop-stat"><span class="prop-stat-num">3</span><span class="prop-stat-label" data-en="BEDROOMS" data-es="RECÁMARAS">BEDROOMS</span></div><div class="prop-stat"><span class="prop-stat-num">3</span><span class="prop-stat-label" data-en="BATHROOMS" data-es="BAÑOS">BATHROOMS</span></div><div class="prop-stat"><span class="prop-stat-num">2</span><span class="prop-stat-label" data-en="LEVELS" data-es="NIVELES">LEVELS</span></div></div>
@@ -507,6 +395,102 @@
       <p class="added-line"><span class="added-new" data-en="NEW" data-es="NUEVA">NEW</span><span data-en="Added 11/18/26" data-es="Agregada 11/18/26">Added 11/18/26</span></p>
     </div>
   </div>
+  <div class="liked-label"><span class="section-label" data-en="PROPERTIES YOU LIKED" data-es="PROPIEDADES QUE TE GUSTARON">PROPERTIES YOU LIKED</span></div>
+  <div class="property-card liked collapsed print-break" data-prop-id="prop-3" data-prop-name="AWA Playacar F204 2-Bedroom Condo" data-prop-price="$549,000">
+    <button class="expand-btn" onclick="toggleCard(this)"><span data-en="VIEW FULL DETAILS" data-es="VER TODOS LOS DETALLES">VIEW FULL DETAILS</span> <span class="expand-arrow">&#9660;</span></button><button class="collapse-btn" onclick="toggleCard(this)" aria-label="Collapse">&#9650;</button>
+    <div class="prop-image" style="padding:0;">
+      <span class="prop-badge" data-en="DOUBLE TERRACE · FURNISHED · UPGRADED" data-es="DOBLE TERRAZA · AMUEBLADO · MEJORAS">DOUBLE TERRACE · FURNISHED · UPGRADED</span>
+      
+      <div class="carousel" id="carousel-3">
+        <div class="carousel-track" id="track-3">
+          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1lbGTbCqkqAxkLVgu83umgajuOBr4QsTe=w1600" alt="AWA Playacar F204 2-Bedroom Condo photo 1" referrerpolicy="no-referrer"  onerror="dropSlide(this)"></div>
+          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1JUcxcvx9uQqHQojvKzNK0rGQISoIWe1P=w1600" alt="AWA Playacar F204 2-Bedroom Condo photo 2" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
+          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1-6hwKdG44RcXcDF7EaHHUfWX582cV4XV=w1600" alt="AWA Playacar F204 2-Bedroom Condo photo 3" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
+          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1PF0Fnb41XIWTPz-KZhtcPoMkQVdEldgw=w1600" alt="AWA Playacar F204 2-Bedroom Condo photo 4" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
+          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1LQQaDzhwZOzrnmS--xLf1wax2khKhldl=w1600" alt="AWA Playacar F204 2-Bedroom Condo photo 5" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
+          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1n_UbUbABLL3y89zw2KOM03ptUW0Bb0tM=w1600" alt="AWA Playacar F204 2-Bedroom Condo photo 6" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
+          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/15iP-pMurt12-0YAkwu8kZxKAttj1gbvF=w1600" alt="AWA Playacar F204 2-Bedroom Condo photo 7" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
+          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1pJx919LgMYzbb8pdt_NE94lsSaYQ71Ai=w1600" alt="AWA Playacar F204 2-Bedroom Condo photo 8" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
+        </div>
+        <button class="carousel-btn prev" onclick="moveCarousel('carousel-3', -1)" aria-label="Previous photo">&#8592;</button>
+        <button class="carousel-btn next" onclick="moveCarousel('carousel-3', 1)" aria-label="Next photo">&#8594;</button>
+        <div class="carousel-dots" id="dots-3"><div class="carousel-dot active" onclick="goToSlide('carousel-3',0)"></div><div class="carousel-dot" onclick="goToSlide('carousel-3',1)"></div><div class="carousel-dot" onclick="goToSlide('carousel-3',2)"></div><div class="carousel-dot" onclick="goToSlide('carousel-3',3)"></div><div class="carousel-dot" onclick="goToSlide('carousel-3',4)"></div><div class="carousel-dot" onclick="goToSlide('carousel-3',5)"></div><div class="carousel-dot" onclick="goToSlide('carousel-3',6)"></div><div class="carousel-dot" onclick="goToSlide('carousel-3',7)"></div></div>
+      </div>
+    </div>
+    <div class="prop-text">
+      <p class="prop-number">03 · CONDO</p>
+      <h3 class="prop-name">AWA Playacar F204<br>2-Bed Double Terrace</h3>
+      <p class="prop-location">PLAYACAR PHASE II · PLAYA DEL CARMEN</p>
+      <div class="prop-stats"><div class="prop-stat"><span class="prop-stat-num">143</span><span class="prop-stat-label" data-en="M² TOTAL" data-es="M² TOTAL">M² TOTAL</span></div><div class="prop-stat"><span class="prop-stat-num">2</span><span class="prop-stat-label" data-en="BEDROOMS" data-es="RECÁMARAS">BEDROOMS</span></div><div class="prop-stat"><span class="prop-stat-num">2</span><span class="prop-stat-label" data-en="BATHROOMS" data-es="BAÑOS">BATHROOMS</span></div><div class="prop-stat"><span class="prop-stat-num">1</span><span class="prop-stat-label" data-en="LEVELS" data-es="NIVELES">LEVELS</span></div></div>
+      <div class="prop-divider"></div>
+      <ul class="prop-features"><li>Oversized double terrace with dining, lounge and grill areas</li><li>Split-bedroom layout · island kitchen · sold fully furnished</li><li>Upgrades: RO water, softener, smart leak detection, hurricane film</li><li>Rooftop infinity pool, spa, gym, paddle courts · Reef Beach Club access</li></ul>
+      <div class="prop-price-block">
+        <p class="prop-price-current">USD $549,000</p>
+        <p class="prop-price-note">HOA $290 USD/mo · property tax $560 USD/yr (2026) · 142.55 m² (1,534 sq ft) · built 2021</p>
+      </div>
+      <div class="prop-buttons">
+        <a href="https://drive.google.com/drive/folders/11VVVlkyLuOhlTTqti_LZZZQ4UB0m8x_s" target="_blank" class="btn" data-en="PHOTOS —" data-es="FOTOS —">PHOTOS —</a>
+        <button class="btn save-btn" onclick="toggleSave(this)" data-en="☆ SAVE" data-es="☆ GUARDAR">☆ SAVE</button>
+        <a href="https://wa.me/16463424105?text=Hi+Rainier%2C+I%27m+interested+in+AWA+Playacar+F204+2-Bedroom+Condo.+Can+we+talk%3F" target="_blank" class="btn" data-en="INQUIRE —" data-es="CONSULTAR —">INQUIRE —</a>
+      </div>
+      
+      
+      <a href="https://wa.me/16463424105?text=%F0%9F%91%8D%20I%20LIKE%20THIS%20ONE%21%0A%0AClient%3A%20Maggie%20%26%20Peter%0AProperty%3A%20AWA%20Playacar%20F204%202-Bedroom%20Condo%20%28USD%20%24549%2C000%29%0A%0ASent%20from%20my%20Playa%20del%20Carmen%20options%20page" target="_blank" class="like-btn" onclick="likeThis(this)">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span data-en="I LIKE THIS ONE" data-es="ME GUSTA ESTA">I LIKE THIS ONE</span>
+      </a>
+      <p class="like-hint" data-en="Opens WhatsApp with a message to Rainier — just tap Send" data-es="Abre WhatsApp con un mensaje para Rainier — solo toca Enviar">Opens WhatsApp with a message to Rainier — just tap Send</p>
+      <p class="added-line"><span data-en="Added 11/18/26" data-es="Agregada 11/18/26">Added 11/18/26</span></p>
+    </div>
+  </div>
+  
+  <div class="property-card even liked collapsed" data-prop-id="prop-4" data-prop-name="AWA Playacar F301 2-Bedroom Penthouse" data-prop-price="$670,000">
+    <button class="expand-btn" onclick="toggleCard(this)"><span data-en="VIEW FULL DETAILS" data-es="VER TODOS LOS DETALLES">VIEW FULL DETAILS</span> <span class="expand-arrow">&#9660;</span></button><button class="collapse-btn" onclick="toggleCard(this)" aria-label="Collapse">&#9650;</button>
+    <div class="prop-image" style="padding:0;">
+      <span class="prop-badge" data-en="PRIVATE ROOFTOP · TURNKEY" data-es="ROOFTOP PRIVADO · LLAVE EN MANO">PRIVATE ROOFTOP · TURNKEY</span>
+      
+      <div class="carousel" id="carousel-4">
+        <div class="carousel-track" id="track-4">
+          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1k5LxyzcHeatbjmBzSHig0GWuhyqZBKPz=w1600" alt="AWA Playacar F301 2-Bedroom Penthouse photo 1" referrerpolicy="no-referrer"  onerror="dropSlide(this)"></div>
+          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1HR3pgAhUWyvJ0d1zfepAlLS8HFflVps2=w1600" alt="AWA Playacar F301 2-Bedroom Penthouse photo 2" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
+          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1iOjQglLEU0yLOQw5VSYfSqICgjq8nUyE=w1600" alt="AWA Playacar F301 2-Bedroom Penthouse photo 3" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
+          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1GrA-xEv7TuXANCK0IekELL5Fve6MsN0u=w1600" alt="AWA Playacar F301 2-Bedroom Penthouse photo 4" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
+          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/18yMUTrta56yDKZ3KtEGIBUL8Rlo6Lrki=w1600" alt="AWA Playacar F301 2-Bedroom Penthouse photo 5" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
+          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1Pcoq8HGzmJz6qhzV4kYHwBLUA_33zGRX=w1600" alt="AWA Playacar F301 2-Bedroom Penthouse photo 6" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
+          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1fyFEqSXVYT4w7hOf3SM2kLxjvMLCLItd=w1600" alt="AWA Playacar F301 2-Bedroom Penthouse photo 7" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
+          <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1sQqMl0I0BjbVOk_LZU6W3tAkP2uwgbIw=w1600" alt="AWA Playacar F301 2-Bedroom Penthouse photo 8" referrerpolicy="no-referrer" loading="lazy" onerror="dropSlide(this)"></div>
+        </div>
+        <button class="carousel-btn prev" onclick="moveCarousel('carousel-4', -1)" aria-label="Previous photo">&#8592;</button>
+        <button class="carousel-btn next" onclick="moveCarousel('carousel-4', 1)" aria-label="Next photo">&#8594;</button>
+        <div class="carousel-dots" id="dots-4"><div class="carousel-dot active" onclick="goToSlide('carousel-4',0)"></div><div class="carousel-dot" onclick="goToSlide('carousel-4',1)"></div><div class="carousel-dot" onclick="goToSlide('carousel-4',2)"></div><div class="carousel-dot" onclick="goToSlide('carousel-4',3)"></div><div class="carousel-dot" onclick="goToSlide('carousel-4',4)"></div><div class="carousel-dot" onclick="goToSlide('carousel-4',5)"></div><div class="carousel-dot" onclick="goToSlide('carousel-4',6)"></div><div class="carousel-dot" onclick="goToSlide('carousel-4',7)"></div></div>
+      </div>
+    </div>
+    <div class="prop-text">
+      <p class="prop-number">04 · PENTHOUSE</p>
+      <h3 class="prop-name">AWA Playacar F301<br>2-Bed Rooftop Penthouse</h3>
+      <p class="prop-location">PLAYACAR PHASE II · PLAYA DEL CARMEN</p>
+      <div class="prop-stats"><div class="prop-stat"><span class="prop-stat-num">207</span><span class="prop-stat-label" data-en="M² TOTAL" data-es="M² TOTAL">M² TOTAL</span></div><div class="prop-stat"><span class="prop-stat-num">2</span><span class="prop-stat-label" data-en="BEDROOMS" data-es="RECÁMARAS">BEDROOMS</span></div><div class="prop-stat"><span class="prop-stat-num">2</span><span class="prop-stat-label" data-en="BATHROOMS" data-es="BAÑOS">BATHROOMS</span></div><div class="prop-stat"><span class="prop-stat-num">2</span><span class="prop-stat-label" data-en="LEVELS" data-es="NIVELES">LEVELS</span></div></div>
+      <div class="prop-divider"></div>
+      <ul class="prop-features"><li>Two-level penthouse with private rooftop dining for eight</li><li>Sold furnished · induction cooktop, Teka oven, Napoleon grill</li><li>RO water, on-demand hot water, smart lock · 2 parking spaces</li><li>Gym, spa, sauna, adult pools, golf-cart service, beach club</li></ul>
+      <div class="prop-price-block">
+        <p class="prop-price-current">USD $670,000</p>
+        <p class="prop-price-note">HOA $430 USD/mo · 2,227 sq ft (206.9 m²) indoor + outdoor · built 2022</p>
+      </div>
+      <div class="prop-buttons">
+        <a href="https://drive.google.com/drive/folders/14iNkPeXDsul7XnDy9VOX-Eev79P2MIc_" target="_blank" class="btn" data-en="PHOTOS —" data-es="FOTOS —">PHOTOS —</a>
+        <button class="btn save-btn" onclick="toggleSave(this)" data-en="☆ SAVE" data-es="☆ GUARDAR">☆ SAVE</button>
+        <a href="https://wa.me/16463424105?text=Hi+Rainier%2C+I%27m+interested+in+AWA+Playacar+F301+2-Bedroom+Penthouse.+Can+we+talk%3F" target="_blank" class="btn" data-en="INQUIRE —" data-es="CONSULTAR —">INQUIRE —</a>
+      </div>
+      
+      
+      <a href="https://wa.me/16463424105?text=%F0%9F%91%8D%20I%20LIKE%20THIS%20ONE%21%0A%0AClient%3A%20Maggie%20%26%20Peter%0AProperty%3A%20AWA%20Playacar%20F301%202-Bedroom%20Penthouse%20%28USD%20%24670%2C000%29%0A%0ASent%20from%20my%20Playa%20del%20Carmen%20options%20page" target="_blank" class="like-btn" onclick="likeThis(this)">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span data-en="I LIKE THIS ONE" data-es="ME GUSTA ESTA">I LIKE THIS ONE</span>
+      </a>
+      <p class="like-hint" data-en="Opens WhatsApp with a message to Rainier — just tap Send" data-es="Abre WhatsApp con un mensaje para Rainier — solo toca Enviar">Opens WhatsApp with a message to Rainier — just tap Send</p>
+      <p class="added-line"><span data-en="Added 11/18/26" data-es="Agregada 11/18/26">Added 11/18/26</span></p>
+    </div>
+  </div>
 </section>
 
 <div id="table-section">
@@ -523,7 +507,7 @@
           <th>M²</th>
           <th data-en="PRICE USD" data-es="PRECIO USD">PRICE USD</th>
         </tr></thead>
-        <tbody><tr><td>AWA F204</td><td>Playacar Phase II</td><td>2</td><td>2</td><td>143</td><td>$549,000</td></tr><tr><td>AWA F301 PH</td><td>Playacar Phase II</td><td>2</td><td>2</td><td>207</td><td>$670,000</td></tr><tr><td>AWA E212</td><td>Playacar Phase II</td><td>3</td><td>3</td><td>131</td><td>$690,000</td></tr><tr><td>Vaivén PH32</td><td>Playacar Phase II</td><td>3</td><td>3</td><td>234</td><td>$500,000</td></tr><tr><td>Vaivén del Mar</td><td>Playacar Phase II</td><td>3</td><td>3</td><td>220</td><td>$511,000</td></tr></tbody>
+        <tbody><tr><td>AWA E212</td><td>Playacar Phase II</td><td>3</td><td>3</td><td>131</td><td>$690,000</td></tr><tr><td>Vaivén del Mar</td><td>Playacar Phase II</td><td>3</td><td>3</td><td>220</td><td>$511,000</td></tr><tr><td>AWA F204</td><td>Playacar Phase II</td><td>2</td><td>2</td><td>143</td><td>$549,000</td></tr><tr><td>AWA F301 PH</td><td>Playacar Phase II</td><td>2</td><td>2</td><td>207</td><td>$670,000</td></tr></tbody>
       </table>
     </div>
   </div>
@@ -716,6 +700,18 @@
     carouselState[carousel.id] = 0;
     updateCarousel(carousel.id, carousel.querySelectorAll('.carousel-slide').length);
   }
+
+  // ── LIKED CARDS: collapsed accordion ──
+  function toggleCard(el) {
+    var card = el.closest('.property-card');
+    var collapsing = !card.classList.contains('collapsed');
+    card.classList.toggle('collapsed');
+    if (collapsing) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+  document.addEventListener('click', function (e) {
+    var card = e.target.closest && e.target.closest('.property-card.collapsed');
+    if (card && !e.target.closest('a,button')) card.classList.remove('collapsed');
+  });
 
   // ── PRINT / SAVE AS PDF (3 properties per page via print CSS) ──
   function printPdf() {

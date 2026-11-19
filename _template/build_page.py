@@ -43,6 +43,9 @@ WA_SVG = re.search(r'(<svg xmlns.*?</svg>)', src, re.S).group(1)
 def money(n): return f"${n:,.0f}"
 def k(n): return f"${n/1e6:.1f}M" if n >= 1e6 else f"${n/1e3:.0f}k"
 
+# 'liked': true -> client already tapped I LIKE THIS ONE: card moves to the bottom, shown as a collapsed accordion
+props = [p for p in props if not p.get('liked')] + [p for p in props if p.get('liked')]
+FIRST_LIKED = next((n for n, p in enumerate(props, 1) if p.get('liked')), None)
 cards = []
 for i, p in enumerate(props, 1):
     ids = p['photos'].split(',')
@@ -57,7 +60,9 @@ for i, p in enumerate(props, 1):
     like_static = "https://wa.me/%s?text=%s" % (WA, urllib.parse.quote(f"👍 I LIKE THIS ONE!\n\nClient: {CLIENT}\nProperty: {p['plain']} (USD {money(p['price'])})\n\nSent from my {CITY} options page"))
     inquire = "https://wa.me/%s?text=%s" % (WA, urllib.parse.quote_plus(f"Hi Rainier, I'm interested in {p['plain']}. Can we talk?"))
     cards.append(f'''
-  <div class="property-card{" even" if i%2==0 else ""}{" print-break" if i%3==0 and i<len(props) else ""}" data-prop-id="prop-{i}" data-prop-name="{p['plain']}" data-prop-price="{money(p['price'])}">
+  {('<div class="liked-label"><span class="section-label" data-en="PROPERTIES YOU LIKED" data-es="PROPIEDADES QUE TE GUSTARON">PROPERTIES YOU LIKED</span></div>') if i == FIRST_LIKED else ''}
+  <div class="property-card{" even" if i%2==0 else ""}{" liked collapsed" if p.get('liked') else ""}{" print-break" if i%3==0 and i<len(props) else ""}" data-prop-id="prop-{i}" data-prop-name="{p['plain']}" data-prop-price="{money(p['price'])}">
+    {('<button class="expand-btn" onclick="toggleCard(this)"><span data-en="VIEW FULL DETAILS" data-es="VER TODOS LOS DETALLES">VIEW FULL DETAILS</span> <span class="expand-arrow">&#9660;</span></button><button class="collapse-btn" onclick="toggleCard(this)" aria-label="Collapse">&#9650;</button>') if p.get('liked') else ''}
     <div class="prop-image" style="padding:0;">
       {f'<span class="prop-badge" data-en="{p["badge_en"]}" data-es="{p["badge_es"]}">{p["badge_en"]}</span>' if p['badge_en'] else ''}
       {'<span class="new-flag" data-en="NEW" data-es="NUEVA">NEW</span>' if p.get('new') else ''}
@@ -113,6 +118,24 @@ extra_css = """
   .like-hint { font-size: 0.68rem; color: var(--text-muted); margin-top: 8px; text-align: center; letter-spacing: 0.02em; }
   @media (max-width: 768px) { .prop-image { min-height: 300px; } }
   #print-btn { right: 86px !important; left: auto !important; }
+  .property-card { position: relative; }
+  .liked-label { margin: 56px 0 18px; }
+  .property-card.collapsed { min-height: 0 !important; height: 340px; cursor: pointer; }
+  .property-card.collapsed::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 130px; background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.96) 70%); z-index: 15; pointer-events: none; }
+  .property-card.collapsed .carousel-btn, .property-card.collapsed .carousel-dots { display: none; }
+  .property-card.collapsed .prop-text { justify-content: flex-start; }
+  .expand-btn { display: none; }
+  .property-card.collapsed .expand-btn { display: inline-flex; align-items: center; gap: 12px; position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 20; background: #2B55DB; color: #fff; border: none; border-radius: 999px; padding: 18px 44px; font-family: inherit; font-size: 0.85rem; font-weight: 800; letter-spacing: 0.16em; cursor: pointer; box-shadow: 0 10px 28px -8px rgba(17,32,63,0.55); white-space: nowrap; }
+  .property-card.collapsed .expand-btn:hover { background: #11203F; }
+  .expand-arrow { font-size: 0.9em; }
+  .collapse-btn { position: absolute; top: 16px; right: 16px; z-index: 20; width: 46px; height: 46px; border-radius: 50%; border: none; background: #11203F; color: #fff; font-size: 1rem; cursor: pointer; box-shadow: 0 4px 14px rgba(17,32,63,0.35); display: flex; align-items: center; justify-content: center; }
+  .collapse-btn:hover { background: #2B55DB; }
+  .property-card.collapsed .collapse-btn { display: none; }
+  @media (max-width: 768px) {
+    .property-card.collapsed { height: 420px; }
+    .property-card.collapsed .prop-image { min-height: 190px !important; }
+    .property-card.collapsed .expand-btn { padding: 16px 30px; font-size: 0.78rem; }
+  }
   .new-flag { position: absolute; top: 18px; right: 18px; z-index: 12; background: #F89D23; color: #fff; font-size: 0.66rem; font-weight: 800; letter-spacing: 0.18em; padding: 7px 14px; border-radius: 999px; box-shadow: 0 2px 10px rgba(17,32,63,0.25); }
   .added-line { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 12px; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: #6E7E95; }
   .added-new { background: #F89D23; color: #fff; font-weight: 800; letter-spacing: 0.16em; font-size: 0.6rem; padding: 3px 9px; border-radius: 999px; }
@@ -138,6 +161,10 @@ extra_css = """
     .carousel-track { transform: none !important; transition: none !important; height: 100%; }
     .carousel-slide { display: none; height: 100%; }
     .carousel-slide:first-child { display: block; }
+    .property-card.collapsed { height: 3.3in !important; cursor: default; }
+    .property-card.collapsed .prop-text { justify-content: center !important; }
+    .property-card.collapsed::after, .expand-btn, .collapse-btn, .liked-label { display: none !important; }
+    .property-card.collapsed .carousel-btn { display: none !important; }
     .new-flag { font-size: 6.5pt !important; padding: 3px 8px !important; top: 10px !important; right: 10px !important; }
     .added-line { font-size: 6pt !important; margin-top: 4px !important; gap: 5px !important; }
     .added-new { font-size: 5.5pt !important; padding: 1px 6px !important; }
@@ -264,6 +291,18 @@ script += r'''
     carouselState[carousel.id] = 0;
     updateCarousel(carousel.id, carousel.querySelectorAll('.carousel-slide').length);
   }
+
+  // ── LIKED CARDS: collapsed accordion ──
+  function toggleCard(el) {
+    var card = el.closest('.property-card');
+    var collapsing = !card.classList.contains('collapsed');
+    card.classList.toggle('collapsed');
+    if (collapsing) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+  document.addEventListener('click', function (e) {
+    var card = e.target.closest && e.target.closest('.property-card.collapsed');
+    if (card && !e.target.closest('a,button')) card.classList.remove('collapsed');
+  });
 
   // ── PRINT / SAVE AS PDF (3 properties per page via print CSS) ──
   function printPdf() {
