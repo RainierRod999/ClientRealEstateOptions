@@ -194,6 +194,9 @@
   .like-hint { font-size: 0.68rem; color: var(--text-muted); margin-top: 8px; text-align: center; letter-spacing: 0.02em; }
   @media (max-width: 768px) { .prop-image { min-height: 300px; } }
   #print-btn { right: 86px !important; left: auto !important; }
+  .new-flag { position: absolute; top: 18px; right: 18px; z-index: 12; background: #F89D23; color: #fff; font-size: 0.66rem; font-weight: 800; letter-spacing: 0.18em; padding: 7px 14px; border-radius: 999px; box-shadow: 0 2px 10px rgba(17,32,63,0.25); }
+  .added-line { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 12px; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: #6E7E95; }
+  .added-new { background: #F89D23; color: #fff; font-weight: 800; letter-spacing: 0.16em; font-size: 0.6rem; padding: 3px 9px; border-radius: 999px; }
   .print-only { display: none; }
 
   /* ── PRINT / SAVE AS PDF: cover page, 3 properties per page, then comparison + contact ── */
@@ -216,6 +219,9 @@
     .carousel-track { transform: none !important; transition: none !important; height: 100%; }
     .carousel-slide { display: none; height: 100%; }
     .carousel-slide:first-child { display: block; }
+    .new-flag { font-size: 6.5pt !important; padding: 3px 8px !important; top: 10px !important; right: 10px !important; }
+    .added-line { font-size: 6pt !important; margin-top: 4px !important; gap: 5px !important; }
+    .added-new { font-size: 5.5pt !important; padding: 1px 6px !important; }
     .prop-badge { font-size: 6.5pt !important; padding: 3px 8px !important; top: 10px !important; left: 10px !important; }
     .prop-text { flex: 1 1 58% !important; padding: 0.16in 0.24in !important; justify-content: center; overflow: hidden; }
     .prop-number { font-size: 6.5pt !important; margin: 0 0 2px !important; }
@@ -275,6 +281,7 @@
   <div class="property-card" data-prop-id="prop-1" data-prop-name="AWA Playacar F204 2-Bedroom Condo" data-prop-price="$549,000">
     <div class="prop-image" style="padding:0;">
       <span class="prop-badge" data-en="DOUBLE TERRACE · FURNISHED · UPGRADED" data-es="DOBLE TERRAZA · AMUEBLADO · MEJORAS">DOUBLE TERRACE · FURNISHED · UPGRADED</span>
+      
       <div class="carousel" id="carousel-1">
         <div class="carousel-track" id="track-1">
           <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1lbGTbCqkqAxkLVgu83umgajuOBr4QsTe=w1600" alt="AWA Playacar F204 2-Bedroom Condo photo 1" referrerpolicy="no-referrer"  onerror="dropSlide(this)"></div>
@@ -315,11 +322,13 @@
         <span data-en="I LIKE THIS ONE" data-es="ME GUSTA ESTA">I LIKE THIS ONE</span>
       </a>
       <p class="like-hint" data-en="Opens WhatsApp with a message to Rainier — just tap Send" data-es="Abre WhatsApp con un mensaje para Rainier — solo toca Enviar">Opens WhatsApp with a message to Rainier — just tap Send</p>
+      <p class="added-line"><span data-en="Added 11/18/26" data-es="Agregada 11/18/26">Added 11/18/26</span></p>
     </div>
   </div>
   <div class="property-card even" data-prop-id="prop-2" data-prop-name="AWA Playacar F301 2-Bedroom Penthouse" data-prop-price="$670,000">
     <div class="prop-image" style="padding:0;">
       <span class="prop-badge" data-en="PRIVATE ROOFTOP · TURNKEY" data-es="ROOFTOP PRIVADO · LLAVE EN MANO">PRIVATE ROOFTOP · TURNKEY</span>
+      
       <div class="carousel" id="carousel-2">
         <div class="carousel-track" id="track-2">
           <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1k5LxyzcHeatbjmBzSHig0GWuhyqZBKPz=w1600" alt="AWA Playacar F301 2-Bedroom Penthouse photo 1" referrerpolicy="no-referrer"  onerror="dropSlide(this)"></div>
@@ -360,11 +369,13 @@
         <span data-en="I LIKE THIS ONE" data-es="ME GUSTA ESTA">I LIKE THIS ONE</span>
       </a>
       <p class="like-hint" data-en="Opens WhatsApp with a message to Rainier — just tap Send" data-es="Abre WhatsApp con un mensaje para Rainier — solo toca Enviar">Opens WhatsApp with a message to Rainier — just tap Send</p>
+      <p class="added-line"><span data-en="Added 11/18/26" data-es="Agregada 11/18/26">Added 11/18/26</span></p>
     </div>
   </div>
   <div class="property-card print-break" data-prop-id="prop-3" data-prop-name="AWA Playacar E212 3-Bedroom Residence" data-prop-price="$690,000">
     <div class="prop-image" style="padding:0;">
       <span class="prop-badge" data-en="3 BED · TURNKEY · RENTAL-READY" data-es="3 RECÁMARAS · LLAVE EN MANO · LISTO PARA RENTA">3 BED · TURNKEY · RENTAL-READY</span>
+      <span class="new-flag" data-en="NEW" data-es="NUEVA">NEW</span>
       <div class="carousel" id="carousel-3">
         <div class="carousel-track" id="track-3">
           <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1c9ivoX2r7wnK3LlonixosQkbSvtGkF3e=w1600" alt="AWA Playacar E212 3-Bedroom Residence photo 1" referrerpolicy="no-referrer"  onerror="dropSlide(this)"></div>
@@ -405,11 +416,13 @@
         <span data-en="I LIKE THIS ONE" data-es="ME GUSTA ESTA">I LIKE THIS ONE</span>
       </a>
       <p class="like-hint" data-en="Opens WhatsApp with a message to Rainier — just tap Send" data-es="Abre WhatsApp con un mensaje para Rainier — solo toca Enviar">Opens WhatsApp with a message to Rainier — just tap Send</p>
+      <p class="added-line"><span class="added-new" data-en="NEW" data-es="NUEVA">NEW</span><span data-en="Added 11/18/26" data-es="Agregada 11/18/26">Added 11/18/26</span></p>
     </div>
   </div>
   <div class="property-card even" data-prop-id="prop-4" data-prop-name="Vaiven del Viento PH32 3-Bedroom Penthouse" data-prop-price="$500,000">
     <div class="prop-image" style="padding:0;">
       <span class="prop-badge" data-en="ROOFTOP JACUZZI · TURNKEY" data-es="JACUZZI EN ROOFTOP · LLAVE EN MANO">ROOFTOP JACUZZI · TURNKEY</span>
+      
       <div class="carousel" id="carousel-4">
         <div class="carousel-track" id="track-4">
           <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/17Y0IIoQr-2CUfktpDlUjvdCZPwg0fhKS=w1600" alt="Vaiven del Viento PH32 3-Bedroom Penthouse photo 1" referrerpolicy="no-referrer"  onerror="dropSlide(this)"></div>
@@ -450,11 +463,13 @@
         <span data-en="I LIKE THIS ONE" data-es="ME GUSTA ESTA">I LIKE THIS ONE</span>
       </a>
       <p class="like-hint" data-en="Opens WhatsApp with a message to Rainier — just tap Send" data-es="Abre WhatsApp con un mensaje para Rainier — solo toca Enviar">Opens WhatsApp with a message to Rainier — just tap Send</p>
+      <p class="added-line"><span data-en="Added 11/18/26" data-es="Agregada 11/18/26">Added 11/18/26</span></p>
     </div>
   </div>
   <div class="property-card" data-prop-id="prop-5" data-prop-name="Vaiven del Mar 3-Bedroom Residence" data-prop-price="$511,000">
     <div class="prop-image" style="padding:0;">
       <span class="prop-badge" data-en="PRIVATE ROOFTOP JACUZZI · UNFURNISHED" data-es="JACUZZI EN ROOFTOP PRIVADO · SIN MUEBLES">PRIVATE ROOFTOP JACUZZI · UNFURNISHED</span>
+      <span class="new-flag" data-en="NEW" data-es="NUEVA">NEW</span>
       <div class="carousel" id="carousel-5">
         <div class="carousel-track" id="track-5">
           <div class="carousel-slide"><img src="https://static.tokkobroker.com/pictures/8428010_26777062408220881353179232923438447150689214327627853964477304433848483566338.jpg" alt="Vaiven del Mar 3-Bedroom Residence photo 1" referrerpolicy="no-referrer"  onerror="dropSlide(this)"></div>
@@ -494,6 +509,7 @@
         <span data-en="I LIKE THIS ONE" data-es="ME GUSTA ESTA">I LIKE THIS ONE</span>
       </a>
       <p class="like-hint" data-en="Opens WhatsApp with a message to Rainier — just tap Send" data-es="Abre WhatsApp con un mensaje para Rainier — solo toca Enviar">Opens WhatsApp with a message to Rainier — just tap Send</p>
+      <p class="added-line"><span class="added-new" data-en="NEW" data-es="NUEVA">NEW</span><span data-en="Added 11/18/26" data-es="Agregada 11/18/26">Added 11/18/26</span></p>
     </div>
   </div>
 </section>

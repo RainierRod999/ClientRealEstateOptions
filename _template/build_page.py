@@ -26,6 +26,11 @@ for p in props:
     p.setdefault('levels', None); p.setdefault('note', ''); p.setdefault('type', 'PROPERTY')
     p.setdefault('badge_en', ''); p.setdefault('badge_es', p.get('badge_en', ''))
     p.setdefault('short', p['plain']); p.setdefault('name', p['plain'])
+    # 'added' = date the property was put on the page (YYYY-MM-DD) -> shown as "Added MM/DD/YY"
+    # 'new'   = true for properties added after the page was first sent -> orange NEW flag
+    p['added_fmt'] = ''
+    if p.get('added'):
+        y, mo, d = str(p['added']).split('-')[:3]; p['added_fmt'] = f"{int(mo):02d}/{int(d):02d}/{y[-2:]}"
 def slot(name, default):
     m = re.search(r'<!-- SLOT:%s -->(.*?)<!-- /SLOT:%s -->' % (name, name), src, re.S)
     return m.group(1).strip() if m else default
@@ -55,6 +60,7 @@ for i, p in enumerate(props, 1):
   <div class="property-card{" even" if i%2==0 else ""}{" print-break" if i%3==0 and i<len(props) else ""}" data-prop-id="prop-{i}" data-prop-name="{p['plain']}" data-prop-price="{money(p['price'])}">
     <div class="prop-image" style="padding:0;">
       {f'<span class="prop-badge" data-en="{p["badge_en"]}" data-es="{p["badge_es"]}">{p["badge_en"]}</span>' if p['badge_en'] else ''}
+      {'<span class="new-flag" data-en="NEW" data-es="NUEVA">NEW</span>' if p.get('new') else ''}
       <div class="carousel" id="carousel-{i}">
         <div class="carousel-track" id="track-{i}">
 {slides}
@@ -88,6 +94,7 @@ for i, p in enumerate(props, 1):
         <span data-en="I LIKE THIS ONE" data-es="ME GUSTA ESTA">I LIKE THIS ONE</span>
       </a>
       <p class="like-hint" data-en="Opens WhatsApp with a message to Rainier — just tap Send" data-es="Abre WhatsApp con un mensaje para Rainier — solo toca Enviar">Opens WhatsApp with a message to Rainier — just tap Send</p>
+      {(f'<p class="added-line">' + ('<span class="added-new" data-en="NEW" data-es="NUEVA">NEW</span>' if p.get('new') else '') + f'<span data-en="Added {p["added_fmt"]}" data-es="Agregada {p["added_fmt"]}">Added {p["added_fmt"]}</span></p>') if p['added_fmt'] else ''}
     </div>
   </div>''')
 
@@ -107,6 +114,9 @@ extra_css = """
   .like-hint { font-size: 0.68rem; color: var(--text-muted); margin-top: 8px; text-align: center; letter-spacing: 0.02em; }
   @media (max-width: 768px) { .prop-image { min-height: 300px; } }
   #print-btn { right: 86px !important; left: auto !important; }
+  .new-flag { position: absolute; top: 18px; right: 18px; z-index: 12; background: #F89D23; color: #fff; font-size: 0.66rem; font-weight: 800; letter-spacing: 0.18em; padding: 7px 14px; border-radius: 999px; box-shadow: 0 2px 10px rgba(17,32,63,0.25); }
+  .added-line { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 12px; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: #6E7E95; }
+  .added-new { background: #F89D23; color: #fff; font-weight: 800; letter-spacing: 0.16em; font-size: 0.6rem; padding: 3px 9px; border-radius: 999px; }
   .print-only { display: none; }
 
   /* ── PRINT / SAVE AS PDF: cover page, 3 properties per page, then comparison + contact ── */
@@ -129,6 +139,9 @@ extra_css = """
     .carousel-track { transform: none !important; transition: none !important; height: 100%; }
     .carousel-slide { display: none; height: 100%; }
     .carousel-slide:first-child { display: block; }
+    .new-flag { font-size: 6.5pt !important; padding: 3px 8px !important; top: 10px !important; right: 10px !important; }
+    .added-line { font-size: 6pt !important; margin-top: 4px !important; gap: 5px !important; }
+    .added-new { font-size: 5.5pt !important; padding: 1px 6px !important; }
     .prop-badge { font-size: 6.5pt !important; padding: 3px 8px !important; top: 10px !important; left: 10px !important; }
     .prop-text { flex: 1 1 58% !important; padding: 0.16in 0.24in !important; justify-content: center; overflow: hidden; }
     .prop-number { font-size: 6.5pt !important; margin: 0 0 2px !important; }
