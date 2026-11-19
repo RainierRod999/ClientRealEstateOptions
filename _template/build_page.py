@@ -104,9 +104,11 @@ for i, p in enumerate(props, 1):
 
 # fix "PENTHOUSE" label for villa
 
-SHOW_BATH = any(p.get('bath') for p in props)
+# Comparison table: once the client has liked any property, list only the liked ones (otherwise all)
+TABLE_PROPS = [p for p in props if p.get('liked')] or props
+SHOW_BATH = any(p.get('bath') for p in TABLE_PROPS)
 beds = [p['bed'] for p in props]; m2 = [p.get('m2') for p in props]; pr = [p['price'] for p in props]
-rows = "".join(f"<tr><td>{p['short']}</td><td>{p['zone'].split(' · ')[0]}</td><td>{p['bed']}</td>{f"<td>{p['bath']}</td>" if SHOW_BATH else ''}<td>{p.get('m2') or '—'}</td><td>{money(p['price'])}</td></tr>" for p in props)
+rows = "".join(f"<tr><td>{p['short']}</td><td>{p['zone'].split(' · ')[0]}</td><td>{p['bed']}</td>{f"<td>{p['bath']}</td>" if SHOW_BATH else ''}<td>{p.get('m2') or '—'}</td><td>{money(p['price'])}</td></tr>" for p in TABLE_PROPS)
 
 extra_css = """
   .prop-badge { z-index: 12; }

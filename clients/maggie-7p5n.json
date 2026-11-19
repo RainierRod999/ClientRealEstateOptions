@@ -110,39 +110,6 @@
       ],
       "added": "2026-11-18",
       "new": true
-    },
-    {
-      "name": "Vaivén del Mar<br>3-Bed Rooftop Residence",
-      "short": "Vaivén del Mar",
-      "plain": "Vaiven del Mar 3-Bedroom Residence",
-      "zone": "Playacar Phase II",
-      "city": "Playa del Carmen",
-      "m2": 220,
-      "bed": 3,
-      "bath": "3",
-      "levels": 2,
-      "price": 511000,
-      "type": "CONDO",
-      "badge_en": "PRIVATE ROOFTOP JACUZZI · UNFURNISHED",
-      "badge_es": "JACUZZI EN ROOFTOP PRIVADO · SIN MUEBLES",
-      "features": [
-        "Private rooftop with jacuzzi plus a large terrace off the living room",
-        "3 bedrooms, each with its own bath · primary walk-in closet",
-        "Kitchen with marble counters and cedar cabinetry · laundry and pantry",
-        "2 side-by-side covered parking spaces + private storage room"
-      ],
-      "note": "Asking $9,200,000 MXN, non-negotiable (USD shown at 18.0 MXN) · HOA $8,900 MXN/mo incl. water · 2026 property tax paid",
-      "photos": [
-        "https://static.tokkobroker.com/pictures/8428010_26777062408220881353179232923438447150689214327627853964477304433848483566338.jpg",
-        "https://static.tokkobroker.com/pictures/8428010_68840685478677169269646276743200909506098629403362964281279092995438316027169.jpg",
-        "https://static.tokkobroker.com/pictures/8428010_109069862631832658533157903772294653669404821601814329630209712441322418389369.jpg",
-        "https://static.tokkobroker.com/pictures/8428010_76007600379347787639750421113473802291923578754564418767296532901899396268590.jpg",
-        "https://static.tokkobroker.com/pictures/8428010_79185506388149357657804484024099893446457960716936532273625581776892858729834.jpg",
-        "https://static.tokkobroker.com/pictures/8428010_41842887676479479326816102418748113905819095312524348085192922986270859623181.jpg",
-        "https://static.tokkobroker.com/pictures/8428010_114725573281504915787558211702367711134333022676680344412112906626669864353617.jpg"
-      ],
-      "added": "2026-11-18",
-      "new": true
     }
   ]
 }
