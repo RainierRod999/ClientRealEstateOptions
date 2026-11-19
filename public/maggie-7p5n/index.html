@@ -296,7 +296,6 @@
         <button class="carousel-btn prev" onclick="moveCarousel('carousel-1', -1)" aria-label="Previous photo">&#8592;</button>
         <button class="carousel-btn next" onclick="moveCarousel('carousel-1', 1)" aria-label="Next photo">&#8594;</button>
         <div class="carousel-dots" id="dots-1"><div class="carousel-dot active" onclick="goToSlide('carousel-1',0)"></div><div class="carousel-dot" onclick="goToSlide('carousel-1',1)"></div><div class="carousel-dot" onclick="goToSlide('carousel-1',2)"></div><div class="carousel-dot" onclick="goToSlide('carousel-1',3)"></div><div class="carousel-dot" onclick="goToSlide('carousel-1',4)"></div><div class="carousel-dot" onclick="goToSlide('carousel-1',5)"></div><div class="carousel-dot" onclick="goToSlide('carousel-1',6)"></div><div class="carousel-dot" onclick="goToSlide('carousel-1',7)"></div></div>
-        <div class="carousel-count" id="count-1">1 / 8</div>
       </div>
     </div>
     <div class="prop-text">
@@ -343,7 +342,6 @@
         <button class="carousel-btn prev" onclick="moveCarousel('carousel-2', -1)" aria-label="Previous photo">&#8592;</button>
         <button class="carousel-btn next" onclick="moveCarousel('carousel-2', 1)" aria-label="Next photo">&#8594;</button>
         <div class="carousel-dots" id="dots-2"><div class="carousel-dot active" onclick="goToSlide('carousel-2',0)"></div><div class="carousel-dot" onclick="goToSlide('carousel-2',1)"></div><div class="carousel-dot" onclick="goToSlide('carousel-2',2)"></div><div class="carousel-dot" onclick="goToSlide('carousel-2',3)"></div><div class="carousel-dot" onclick="goToSlide('carousel-2',4)"></div><div class="carousel-dot" onclick="goToSlide('carousel-2',5)"></div><div class="carousel-dot" onclick="goToSlide('carousel-2',6)"></div><div class="carousel-dot" onclick="goToSlide('carousel-2',7)"></div></div>
-        <div class="carousel-count" id="count-2">1 / 8</div>
       </div>
     </div>
     <div class="prop-text">
@@ -390,7 +388,6 @@
         <button class="carousel-btn prev" onclick="moveCarousel('carousel-3', -1)" aria-label="Previous photo">&#8592;</button>
         <button class="carousel-btn next" onclick="moveCarousel('carousel-3', 1)" aria-label="Next photo">&#8594;</button>
         <div class="carousel-dots" id="dots-3"><div class="carousel-dot active" onclick="goToSlide('carousel-3',0)"></div><div class="carousel-dot" onclick="goToSlide('carousel-3',1)"></div><div class="carousel-dot" onclick="goToSlide('carousel-3',2)"></div><div class="carousel-dot" onclick="goToSlide('carousel-3',3)"></div><div class="carousel-dot" onclick="goToSlide('carousel-3',4)"></div><div class="carousel-dot" onclick="goToSlide('carousel-3',5)"></div><div class="carousel-dot" onclick="goToSlide('carousel-3',6)"></div><div class="carousel-dot" onclick="goToSlide('carousel-3',7)"></div></div>
-        <div class="carousel-count" id="count-3">1 / 8</div>
       </div>
     </div>
     <div class="prop-text">
@@ -437,7 +434,6 @@
         <button class="carousel-btn prev" onclick="moveCarousel('carousel-4', -1)" aria-label="Previous photo">&#8592;</button>
         <button class="carousel-btn next" onclick="moveCarousel('carousel-4', 1)" aria-label="Next photo">&#8594;</button>
         <div class="carousel-dots" id="dots-4"><div class="carousel-dot active" onclick="goToSlide('carousel-4',0)"></div><div class="carousel-dot" onclick="goToSlide('carousel-4',1)"></div><div class="carousel-dot" onclick="goToSlide('carousel-4',2)"></div><div class="carousel-dot" onclick="goToSlide('carousel-4',3)"></div><div class="carousel-dot" onclick="goToSlide('carousel-4',4)"></div><div class="carousel-dot" onclick="goToSlide('carousel-4',5)"></div><div class="carousel-dot" onclick="goToSlide('carousel-4',6)"></div><div class="carousel-dot" onclick="goToSlide('carousel-4',7)"></div></div>
-        <div class="carousel-count" id="count-4">1 / 8</div>
       </div>
     </div>
     <div class="prop-text">
@@ -483,7 +479,6 @@
         <button class="carousel-btn prev" onclick="moveCarousel('carousel-5', -1)" aria-label="Previous photo">&#8592;</button>
         <button class="carousel-btn next" onclick="moveCarousel('carousel-5', 1)" aria-label="Next photo">&#8594;</button>
         <div class="carousel-dots" id="dots-5"><div class="carousel-dot active" onclick="goToSlide('carousel-5',0)"></div><div class="carousel-dot" onclick="goToSlide('carousel-5',1)"></div><div class="carousel-dot" onclick="goToSlide('carousel-5',2)"></div><div class="carousel-dot" onclick="goToSlide('carousel-5',3)"></div><div class="carousel-dot" onclick="goToSlide('carousel-5',4)"></div><div class="carousel-dot" onclick="goToSlide('carousel-5',5)"></div><div class="carousel-dot" onclick="goToSlide('carousel-5',6)"></div></div>
-        <div class="carousel-count" id="count-5">1 / 7</div>
       </div>
     </div>
     <div class="prop-text">
@@ -577,7 +572,7 @@
     const idx = carouselState[id];
     const num = id.split('-')[1];
     document.getElementById('track-' + num).style.transform = 'translateX(-' + (idx * 100) + '%)';
-    document.getElementById('count-' + num).textContent = (idx + 1) + ' / ' + slides;
+    var cnt = document.getElementById('count-' + num); if (cnt) cnt.textContent = (idx + 1) + ' / ' + slides;
     document.querySelectorAll('#dots-' + num + ' .carousel-dot').forEach((d, i) => {
       d.classList.toggle('active', i === idx);
     });

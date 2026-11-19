@@ -68,7 +68,6 @@ for i, p in enumerate(props, 1):
         <button class="carousel-btn prev" onclick="moveCarousel('carousel-{i}', -1)" aria-label="Previous photo">&#8592;</button>
         <button class="carousel-btn next" onclick="moveCarousel('carousel-{i}', 1)" aria-label="Next photo">&#8594;</button>
         <div class="carousel-dots" id="dots-{i}">{dots}</div>
-        <div class="carousel-count" id="count-{i}">1 / {len(ids)}</div>
       </div>
     </div>
     <div class="prop-text">

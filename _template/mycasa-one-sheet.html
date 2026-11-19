@@ -238,7 +238,7 @@
     const idx = carouselState[id];
     const num = id.split('-')[1];
     document.getElementById('track-' + num).style.transform = 'translateX(-' + (idx * 100) + '%)';
-    document.getElementById('count-' + num).textContent = (idx + 1) + ' / ' + slides;
+    var cnt = document.getElementById('count-' + num); if (cnt) cnt.textContent = (idx + 1) + ' / ' + slides;
     document.querySelectorAll('#dots-' + num + ' .carousel-dot').forEach((d, i) => {
       d.classList.toggle('active', i === idx);
     });
