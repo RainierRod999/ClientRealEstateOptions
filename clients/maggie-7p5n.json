@@ -108,8 +108,7 @@
         "1oxhYL8iZUS_L7zJ5GZ5cz7NYYZgyNdfI",
         "1LLFZKPOpu7BEmiqruD_aFxbmxxeT6ZBo"
       ],
-      "added": "2026-11-18",
-      "new": true
+      "added": "2026-11-18"
     },
     {
       "name": "Punta Laguna Tower 3<br>3-Bed · 7th Floor",
@@ -146,7 +145,6 @@
         "1NUqbGsoDIBG_cnIPtDSx0RWC67mAA6rM"
       ],
       "added": "2026-11-19",
-      "new": true,
       "price_text": "$471K – $548K",
       "price_prefix": "3 UNITS ON THE 7TH FLOOR",
       "price_prefix_es": "3 UNIDADES EN EL PISO 7"
@@ -188,7 +186,41 @@
         "1SLHtYET30BmpbN9mIXwIwj_iWvD6mPlh",
         "1SYiU3k-lxIr2QELbe0OExwbu9YnjnZ2F"
       ],
-      "added": "2026-11-19",
+      "added": "2026-11-19"
+    },
+    {
+      "name": "The Village 2-204<br>3-Bed Golf-View Residence",
+      "short": "The Village 2-204",
+      "plain": "The Village 2-204 3-Bedroom Residence (Corasol)",
+      "zone": "Corasol · Gran Coyote Golf",
+      "city": "Playa del Carmen",
+      "m2": 147,
+      "bed": 3,
+      "bath": "3",
+      "levels": 1,
+      "price": 419000,
+      "type": "CONDO",
+      "badge_en": "PRICE DROP $180K · GOLF VIEWS",
+      "badge_es": "BAJA DE PRECIO $180K · VISTA AL GOLF",
+      "features": [
+        "2 bedrooms + den (easily a 3rd bedroom) · 3 full baths · lock-off layout",
+        "Central A/C · walk-in closets · ~$20K in recent upgrades",
+        "Golf course views · private 2nd-floor location · covered parking",
+        "Rooftop jacuzzi &amp; gym, pool, concierge, café · full Corasol amenities"
+      ],
+      "note": "Was $599,000 USD · 147 m² total (1,582 sq ft) · 130 m² interior · built 2022",
+      "folder": "1DttcMsBBmY3BjNQ_2pf94SXVm-NjYjBr",
+      "photos": [
+        "1UmM_XRqV9wCACQt6qjhwvtoKXyUz5pog",
+        "1Qkp_RZ2sT2EkSThJZbE2MRerDF16kR6A",
+        "1FjKyrsxPSfrC705t9w7QUAnK11d44Dkg",
+        "1CpJf1oi8gYhzS4mLPkEAAjx0PngDSn4Y",
+        "1xxtR5Y499ITfHobLg6ehgaWSo0XRcX-3",
+        "1ImPx3ahkBEp4Dsaa3mJ6dkUjYU4gUErE",
+        "1_zowqmRHu08t-zfcRIjPZaRCuHekkZQH",
+        "1lzDyFLP9CwCX4ic3T_ALT2UMQD2enKJB"
+      ],
+      "added": "2026-11-25",
       "new": true
     }
   ]
