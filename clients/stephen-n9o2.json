@@ -107,6 +107,41 @@
         "11gTtndkjtTWA4-oyI-IbD-qalMtSqaQG"
       ],
       "added": "2026-11-25"
+    },
+    {
+      "name": "Quinto Sol<br>2-Bed Condo",
+      "short": "Quinto Sol",
+      "plain": "Quinto Sol 2-Bed Condo",
+      "zone": "Aldea Zama",
+      "city": "Tulum",
+      "m2": 73,
+      "bed": 2,
+      "bath": "2.5",
+      "levels": null,
+      "price": 144444,
+      "type": "CONDO",
+      "badge_en": "UNDER $150K · TURNKEY · JUNGLE VIEWS",
+      "badge_es": "MENOS DE $150K · LLAVE EN MANO · VISTA A LA SELVA",
+      "features": [
+        "Fully furnished, turnkey 2-bed, 2.5-bath on the 3rd floor · elevator",
+        "Peaceful jungle views · adults-only pool with sunset views",
+        "Pet friendly · 24-hour security",
+        "Aldea Zama's commercial strip: cafés and shops steps away"
+      ],
+      "note": "Asking 2,600,000 MXN · USD at 18 · HOA approx. $191/mo (3,440 MXN) · resale",
+      "folder": "1oA9TxGsuO4ZTNAMoGRIm7jESaxJBQDy3",
+      "photos": [
+        "1MyiA4NgANwINDEJlwNjAhGmPv2clfTdO",
+        "1ZBCQ2GY9fL1Vb5ErQg5q0iYxy4v8f4IU",
+        "1bKT6G7CK_D-1tw98KEP5QCDsormNYIDU",
+        "1f6-_YS5MThQbqQ5oRtfvFhBS23MHEqHB",
+        "1-FFORP9XricOsmYUJkMtWXF8CwnCqvWn",
+        "1VI2CynpDOYgXmPvahXZoCrd-SgJ_quJd",
+        "1WrRdK2t8_D4BqL2KjU9Klez_1kdEwTBJ",
+        "1sWUDhEBiNllv2siTqeaCxLdheIPv-Wxs"
+      ],
+      "added": "2026-11-25",
+      "new": true
     }
   ]
 }
