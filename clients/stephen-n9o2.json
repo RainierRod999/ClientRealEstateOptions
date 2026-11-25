@@ -142,6 +142,41 @@
       ],
       "added": "2026-11-25",
       "new": true
+    },
+    {
+      "name": "Aldea Maya<br>Penthouse",
+      "short": "Aldea Maya PH",
+      "plain": "Aldea Maya Penthouse",
+      "zone": "Aldea Maya · Aldea Zama",
+      "city": "Tulum",
+      "m2": null,
+      "bed": 2,
+      "bath": "2.5",
+      "levels": null,
+      "price": 195000,
+      "type": "PENTHOUSE",
+      "badge_en": "PRIVATE ROOFTOP POOL",
+      "badge_es": "ALBERCA PRIVADA EN ROOFTOP",
+      "features": [
+        "Private rooftop pool with sun loungers, charcoal grill and outdoor lounge &amp; dining",
+        "2 bedrooms, 2.5 baths · bright, designer-finished penthouse",
+        "Gated community with vehicle access control, 24-hour security and parking",
+        "Paved streets, underground wiring and bike lanes · about 10 min walk to downtown"
+      ],
+      "note": "Asking 3,500,000 MXN (approx. $195K) · currently a 4.89★ Airbnb rental",
+      "folder": "",
+      "photos": [
+        "https://a0.muscache.com/im/pictures/1c7c2b25-89c5-4e34-8595-faebccfd3a5b.jpg?im_w=1200",
+        "https://a0.muscache.com/im/pictures/13d202e1-17bc-4fb7-826e-0e7de24a56b3.jpg?im_w=1200",
+        "https://a0.muscache.com/im/pictures/615d620e-491a-4e4e-841c-e1fe09edfffd.jpg?im_w=1200",
+        "https://a0.muscache.com/im/pictures/a3dc3a15-13fb-495e-8741-165b668c0101.jpg?im_w=1200",
+        "https://a0.muscache.com/im/pictures/c56fe963-70fd-4783-84f1-e7ab082f7cf2.jpg?im_w=1200",
+        "https://a0.muscache.com/im/pictures/07fb8ca5-115e-483a-ae1c-394b8949689d.jpg?im_w=1200",
+        "https://a0.muscache.com/im/pictures/85945582-a373-40d3-89cb-1f390a85c7c6.jpg?im_w=1200",
+        "https://a0.muscache.com/im/pictures/a8a6a4eb-b00e-4a4e-ab44-9f7db4f4130f.jpg?im_w=1200"
+      ],
+      "added": "2026-11-25",
+      "new": true
     }
   ]
 }
