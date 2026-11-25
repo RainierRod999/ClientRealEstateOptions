@@ -140,8 +140,7 @@
         "1WrRdK2t8_D4BqL2KjU9Klez_1kdEwTBJ",
         "1sWUDhEBiNllv2siTqeaCxLdheIPv-Wxs"
       ],
-      "added": "2026-11-25",
-      "new": true
+      "added": "2026-11-25"
     },
     {
       "name": "Aldea Maya<br>Penthouse",
@@ -174,6 +173,40 @@
         "1rVVZm-a0OutW78DiFseXxTwA83Vm3dBo",
         "1d5zz-g1tKG3LLCEzgNpUAjtbmryYdVL2",
         "1_W6Hkit1auIuX0zC89HA-d6GUYOt-Kue"
+      ],
+      "added": "2026-11-25"
+    },
+    {
+      "name": "Yaxiik<br>2-Bed House",
+      "short": "Yaxiik House",
+      "plain": "Yaxiik 2-Bedroom House",
+      "zone": "Yaxiik · Aldea Zama",
+      "city": "Tulum",
+      "m2": null,
+      "bed": 2,
+      "bath": null,
+      "levels": null,
+      "price": 190000,
+      "type": "HOUSE",
+      "badge_en": "HOUSE WITH ROOFTOP LOUNGE",
+      "badge_es": "CASA CON TERRAZA EN ROOFTOP",
+      "features": [
+        "Covered rooftop lounge under a natural palapa-style roof",
+        "Open kitchen with stone island &amp; bar seating",
+        "Floating wood staircase · private garden patio off the living room",
+        "Gated Yaxiik community inside Aldea Zama with pool &amp; sun loungers"
+      ],
+      "note": "Asking price · HOA &amp; taxes available on request",
+      "folder": "11taoGCwpUIBtX6WhizxWXmRoPeuylQ7-",
+      "photos": [
+        "1Ll5bojprfofhfKGtquE_FMAp06SmnymR",
+        "1wzo6KWJEOMSyBCuRFKB48AFksg-onFA4",
+        "11dw-doxAXN9jjg1N0Ycr0lGNSSGvfLnL",
+        "1DciT9ei4WtQ7bj61hCGZ6HFpfMswpffb",
+        "1cm7nzCtud0N97bcR5hG3DwJYzhO26ZXd",
+        "1h__fR1_Kd3J5O733KV4ZdL8Vs6YUGLlb",
+        "1TodUITQeb6bp-baqGAJZY9O9ePGTSENO",
+        "1eNksddL2bbIurdrEhKxY6BoW7M-I1FQ0"
       ],
       "added": "2026-11-25",
       "new": true
