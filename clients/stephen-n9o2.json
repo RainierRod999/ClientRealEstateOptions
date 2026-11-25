@@ -21,12 +21,12 @@
       "badge_en": "LOCK-OFF · QUIET, FINISHED NEIGHBORHOOD",
       "badge_es": "LOCK-OFF · ZONA TRANQUILA Y TERMINADA",
       "features": [
-        "Lock-off duplex: separate entrance per floor, so you can live on one level and rent the other",
-        "Private rooftop with plunge pool, daybeds, outdoor shower &amp; workout gear",
-        "Aldea Zama is fully paved with all utilities underground: one of Tulum's most finished areas",
-        "No construction left around the building, so quiet nights and weekends are the norm · 13 units, nightly security"
+        "Lock-off duplex: live on one level, rent the other",
+        "Private rooftop: plunge pool, daybeds, outdoor shower &amp; gym gear",
+        "Aldea Zama is fully paved, with all utilities underground",
+        "No construction left nearby: quiet nights &amp; weekends · 13 units"
       ],
-      "note": "HOA approx. $324/mo (5,833 MXN) · USD at 18 · sold furnished · approx. 2,100 sq ft",
+      "note": "HOA approx. $324/mo (5,833 MXN) · USD at 18 · furnished · approx. 2,100 sq ft",
       "folder": "1jxqnX5GvXFePxQWGye0A9ueInYI9yHI_",
       "photos": [
         "1VtFNT_0_pVR5JHqICcqCxLlU1nkAokHy",
@@ -39,6 +39,74 @@
         "1RtcVBEnGs6FIQWiu5UPTZfCvliR-ZAtI"
       ],
       "added": "2026-11-24"
+    },
+    {
+      "name": "Prana<br>Penthouse",
+      "short": "Prana PH",
+      "plain": "Prana Penthouse",
+      "zone": "Aldea Zama",
+      "city": "Tulum",
+      "m2": 146.6,
+      "bed": 2,
+      "bath": "2.5",
+      "levels": "1 + Roof",
+      "price": 190000,
+      "type": "PENTHOUSE",
+      "badge_en": "PRICE REDUCED · PRIVATE ROOFTOP JACUZZI",
+      "badge_es": "PRECIO REDUCIDO · JACUZZI PRIVADO EN ROOFTOP",
+      "features": [
+        "Top-floor penthouse with a private rooftop: jacuzzi, lounge, BBQ grill &amp; outdoor shower",
+        "2 king bedrooms, 2.5 baths · A/C in living area and bedrooms",
+        "Balcony overlooking the pool · approx. 91 m² interior + 56 m² outdoor",
+        "Aldea Zama: bike lane to town, about 10 min by bike to the beaches"
+      ],
+      "note": "HOA approx. $250/mo (4,501 MXN) · property tax approx. $271/yr (4,879 MXN) · USD at 18",
+      "folder": "",
+      "photos": [
+        "https://storage.googleapis.com/moskito/2025/09/s-tulum-real-estate-prana-rooftop-jacuzzi-scaled-1.jpg.webp",
+        "https://storage.googleapis.com/moskito/2025/09/r-tulum-real-estate-prana-rooftop-terrace-scaled-1.jpg.webp",
+        "https://storage.googleapis.com/moskito/2025/09/a-tulum-real-estate-prana-living-room-scaled.jpg.webp",
+        "https://storage.googleapis.com/moskito/2025/09/c-tulum-real-estate-prana-living-area-to-terrace-scaled-1.jpg.webp",
+        "https://storage.googleapis.com/moskito/2025/09/g-tulum-real-estate-prana-kitchen-to-living-space-scaled-1.jpg.webp",
+        "https://storage.googleapis.com/moskito/2025/09/j-tulum-real-estate-prana-master-bedroom-scaled-1.jpg.webp",
+        "https://storage.googleapis.com/moskito/2025/09/u-tulum-real-estate-prana-common-area-pool-scaled-1.jpg.webp",
+        "https://storage.googleapis.com/moskito/2025/09/d-tulum-real-estate-prana-balcony-view-scaled-1.jpg.webp"
+      ],
+      "added": "2026-11-25"
+    },
+    {
+      "name": "Puerta Zama<br>Natura 206",
+      "short": "Natura 206",
+      "plain": "Puerta Zama Natura 206",
+      "zone": "Aldea Zama",
+      "city": "Tulum",
+      "m2": 136.7,
+      "bed": 2,
+      "bath": "2",
+      "levels": null,
+      "price": 189000,
+      "type": "CONDO",
+      "badge_en": "JUST REDUCED · PRIVATE JACUZZI",
+      "badge_es": "RECIÉN REDUCIDO · JACUZZI PRIVADO",
+      "features": [
+        "Private terrace with its own jacuzzi",
+        "Sold furnished &amp; equipped · move-in ready",
+        "Approx. 98 m² interior + 38 m² outdoor · 2 full bathrooms",
+        "Puerta Zama: garden-wrapped community pools inside Aldea Zama"
+      ],
+      "note": "HOA approx. $209/mo (3,755 MXN) · property tax approx. $314/yr (5,649 MXN) · USD at 18",
+      "folder": "1oGOIN7uTGKzbKUzlKL-m3EcnDEx9xmOA",
+      "photos": [
+        "1vVEQq9--8Kjos8jaXPdcx6U3qKvwug6j",
+        "1rqNpYYHolGJXJioQzoyKgS56MI3n37B1",
+        "1mvKlaBt7Kabbq0YQK0jPDxp03Nbv4bYg",
+        "1zYRto0NPAU49od0cfOihJXVYBGxLcawR",
+        "1iC7EaO4hun6DNzoF5p5ajHrVeDmvOMIU",
+        "11IPDtikYfKlJxHUyVP1TBZiEwnH8Pa48",
+        "1fvP10OgPtyXZUM4ecR91fDVUIB-RwKo4",
+        "11gTtndkjtTWA4-oyI-IbD-qalMtSqaQG"
+      ],
+      "added": "2026-11-25"
     }
   ]
 }
