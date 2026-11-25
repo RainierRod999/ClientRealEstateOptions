@@ -41,9 +41,9 @@
       "added": "2026-11-24"
     },
     {
-      "name": "Prana<br>Penthouse",
+      "name": "Prana Penthouse<br>with Private Rooftop",
       "short": "Prana PH",
-      "plain": "Prana Penthouse",
+      "plain": "Prana Penthouse with Private Rooftop",
       "zone": "Aldea Zama",
       "city": "Tulum",
       "m2": 146.6,
@@ -52,10 +52,10 @@
       "levels": "1 + Roof",
       "price": 190000,
       "type": "PENTHOUSE",
-      "badge_en": "PRICE REDUCED · PRIVATE ROOFTOP JACUZZI",
-      "badge_es": "PRECIO REDUCIDO · JACUZZI PRIVADO EN ROOFTOP",
+      "badge_en": "YOUR OWN PRIVATE ROOFTOP · PRICE REDUCED",
+      "badge_es": "ROOFTOP PRIVADO PROPIO · PRECIO REDUCIDO",
       "features": [
-        "Top-floor penthouse with a private rooftop: jacuzzi, lounge, BBQ grill &amp; outdoor shower",
+        "Your own private rooftop, not shared: jacuzzi, lounge, BBQ grill &amp; outdoor shower",
         "2 king bedrooms, 2.5 baths · A/C in living area and bedrooms",
         "Balcony overlooking the pool · approx. 91 m² interior + 56 m² outdoor",
         "Aldea Zama: bike lane to town, about 10 min by bike to the beaches"
